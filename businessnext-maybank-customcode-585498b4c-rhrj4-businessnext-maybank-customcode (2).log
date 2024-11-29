@@ -1,0 +1,848 @@
+[40m[1m[33mwarn[39m[22m[49m: Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository[50]
+      Using an in-memory repository. Keys will not be persisted to storage.
+[40m[1m[33mwarn[39m[22m[49m: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[59]
+      Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+[40m[1m[33mwarn[39m[22m[49m: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+      No XML encryptor configured. Key {548339d2-1990-45c7-b629-0edfccc7aa7f} may be persisted to storage in unencrypted form.
+[40m[1m[33mwarn[39m[22m[49m: Microsoft.AspNetCore.Server.Kestrel[0]
+      Overriding address(es) 'http://+:5000'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:5000
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /home/businessnext/app/
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingFalse
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg1NTYsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.d7NRfvgOb7wquPBDu4xov6BtyKzxeqGP84nAo-FDk5s","expires_in":"2024-11-29T13:35:56.8507995+08:00","token_type":"bearer"}
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg1NTYsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.d7NRfvgOb7wquPBDu4xov6BtyKzxeqGP84nAo-FDk5s
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:35:56; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:35:57; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:35:57; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"userID":"SPIO04255","domain":null,"name":"Adrian M. Pacaldo","emailAddress":"ampacaldo@maybank.com.ph","role":"","department":"Central Insurance","lastLogon":"11/29/2024 1:05:57 PM","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNQSU8wNDI1NSIsInN1YiI6Im1heWJhbmtAMTEiLCJqdGkiOiJTUElPMDQyNTVtYXliYW5rQDExIiwiZXhwIjoxNzMyODU4NTU3LCJpc3MiOiJFSUlfSldUX0FVVEhFTlRJQ0FUSUNBVElPTiIsImF1ZCI6IltNQ0ZWXSxbR0hDXSxbQlRFWF0sW0FUTURBU0hCT0FSRF0sW0NPTExFQ1RJT05TXSxbT05FTE9HSU5dLFtETVNdLFtNWUZPUk1TXSJ9.T3fJFBzaZHEqsP5Cb3wkSQqIZsChHCuLYwl0gj-hFME"}
+29-11-2024 10:36:18; Controller Name : API Connection; Class Name : David;
+Log : Request Generation Complete : { "SubscriberId": 985, "Id": 36, "Version": "1.0", "Name": "", "List": "[{name:'ip_Application_Type',value:'',type:'String'},{name:'ip_Condition',value:'N',type:'String'},{name:'ip_Days_Purchased',value:'',type:'Integer'}]" }
+29-11-2024 10:36:18; Controller Name : API Connection; Class Name : David;
+Log : HTTP Response : OK
+29-11-2024 10:36:18; Controller Name : API Connection; Class Name : David;
+Log : Response : {"IsSuccess":true,"ErrorCode":null,"ErrorMessage":"","Results":[{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_Deviation_msg","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_Deviation_msg","value":"No Deviation","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_PDA_Level","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_PDA_Level","value":"L1","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleId","internalName":"Sys_Rule_RuleId","value":"36","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleVersion","internalName":"Sys_Rule_RuleVersion","value":"1.0","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"}],"RuleVersion":"1.0"}
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg1ODMsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.C7zXuu1G-LJ1hVX_1MkGCEkXOXrlNgwKNdcjwEErfq0","expires_in":"2024-11-29T13:36:23.5801926+08:00","token_type":"bearer"}
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg1ODMsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.C7zXuu1G-LJ1hVX_1MkGCEkXOXrlNgwKNdcjwEErfq0
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:36:23; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"userID":"SPIO05138","domain":null,"name":"Monica S. Batausa","emailAddress":"msbatausa@maybank.com.ph","role":"","department":"Auto Finance","lastLogon":"11/29/2024 1:06:23 PM","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNQSU8wNTEzOCIsInN1YiI6Ik5vdjIwMjQhIiwianRpIjoiU1BJTzA1MTM4Tm92MjAyNCEiLCJleHAiOjE3MzI4NTg1ODMsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.oKrzVtJdlO49EBEkw6K8ZgZCdzNJDjNyjdLaWAC9G2I"}
+29-11-2024 10:36:29; Controller Name : API Connection; Class Name : David;
+Log : Request Generation Complete : { "SubscriberId": 985, "Id": 36, "Version": "1.0", "Name": "", "List": "[{name:'ip_Application_Type',value:'',type:'String'},{name:'ip_Condition',value:'N',type:'String'},{name:'ip_Days_Purchased',value:'',type:'Integer'}]" }
+29-11-2024 10:36:29; Controller Name : API Connection; Class Name : David;
+Log : HTTP Response : OK
+29-11-2024 10:36:29; Controller Name : API Connection; Class Name : David;
+Log : Response : {"IsSuccess":true,"ErrorCode":null,"ErrorMessage":"","Results":[{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_Deviation_msg","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_Deviation_msg","value":"No Deviation","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_PDA_Level","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_PDA_Level","value":"L1","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleId","internalName":"Sys_Rule_RuleId","value":"36","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleVersion","internalName":"Sys_Rule_RuleVersion","value":"1.0","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"}],"RuleVersion":"1.0"}
+29-11-2024 10:36:33; Controller Name : API Connection; Class Name : David;
+Log : Request Generation Complete : { "SubscriberId": 985, "Id": 36, "Version": "1.0", "Name": "", "List": "[{name:'ip_Application_Type',value:'',type:'String'},{name:'ip_Condition',value:'N',type:'String'},{name:'ip_Days_Purchased',value:'',type:'Integer'}]" }
+29-11-2024 10:36:33; Controller Name : API Connection; Class Name : David;
+Log : HTTP Response : OK
+29-11-2024 10:36:33; Controller Name : API Connection; Class Name : David;
+Log : Response : {"IsSuccess":true,"ErrorCode":null,"ErrorMessage":"","Results":[{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_Deviation_msg","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_Deviation_msg","value":"No Deviation","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_PDA_Level","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_PDA_Level","value":"L1","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleId","internalName":"Sys_Rule_RuleId","value":"36","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleVersion","internalName":"Sys_Rule_RuleVersion","value":"1.0","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"}],"RuleVersion":"1.0"}
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg1OTYsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.erbEn9rmL8j0uCXwXNJ8BIV_6wtINLZXTOcS7eilxw8","expires_in":"2024-11-29T13:36:36.2076338+08:00","token_type":"bearer"}
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg1OTYsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.erbEn9rmL8j0uCXwXNJ8BIV_6wtINLZXTOcS7eilxw8
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:36:36; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"userID":"SPIO05786","domain":null,"name":"Pocholo Randy M. Estimo","emailAddress":"pmestimo@maybank.com.ph","role":"","department":"Auto Finance","lastLogon":"11/29/2024 1:06:36 PM","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNQSU8wNTc4NiIsInN1YiI6Ik1heWJhbmtANSIsImp0aSI6IlNQSU8wNTc4Nk1heWJhbmtANSIsImV4cCI6MTczMjg1ODU5NiwiaXNzIjoiRUlJX0pXVF9BVVRIRU5USUNBVElDQVRJT04iLCJhdWQiOiJbTUNGVl0sW0dIQ10sW0JURVhdLFtBVE1EQVNIQk9BUkRdLFtDT0xMRUNUSU9OU10sW09ORUxPR0lOXSxbRE1TXSxbTVlGT1JNU10ifQ.8ZmkP4nhs11bTyn_jhHCUNWjdTj04pNtYDMP2PQDpTE"}
+29-11-2024 10:36:36; Controller Name : API Connection; Class Name : David;
+Log : Request Generation Complete : { "SubscriberId": 985, "Id": 36, "Version": "1.0", "Name": "", "List": "[{name:'ip_Application_Type',value:'',type:'String'},{name:'ip_Condition',value:'N',type:'String'},{name:'ip_Days_Purchased',value:'',type:'Integer'}]" }
+29-11-2024 10:36:36; Controller Name : API Connection; Class Name : David;
+Log : HTTP Response : OK
+29-11-2024 10:36:36; Controller Name : API Connection; Class Name : David;
+Log : Response : {"IsSuccess":true,"ErrorCode":null,"ErrorMessage":"","Results":[{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_Deviation_msg","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_Deviation_msg","value":"No Deviation","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"op_PDA_Level","internalName":"A_d540619e-407b-457b-8116-a0cb40061f46_op_PDA_Level","value":"L1","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleId","internalName":"Sys_Rule_RuleId","value":"36","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"},{"subscriberId":0,"ruleId":0,"applicationId":0,"categoryId":0,"name":"RuleVersion","internalName":"Sys_Rule_RuleVersion","value":"1.0","isDecisionCell":false,"argumentDirection":2,"category":2,"isClass":false,"sourceType":null,"type":"String","source":null,"propertyName":null,"version":"1.0"}],"RuleVersion":"1.0"}
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Request.ContentType: text/xml
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Request.MethodType : Post
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:36:38; Controller Name : ApiConnection/Post; Class Name : GetResult (6);
+Log : Post API Call (Response): <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetFinalRatingResponse xmlns="http://tempuri.org/"><GetFinalRatingResult>L</GetFinalRatingResult></GetFinalRatingResponse></soap:Body></soap:Envelope>
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Request.ContentType: text/xml
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Request.MethodType : Post
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:37:58; Controller Name : ApiConnection/Post; Class Name : GetResult (6);
+Log : Post API Call (Response): <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetFinalRatingResponse xmlns="http://tempuri.org/"><GetFinalRatingResult>L</GetFinalRatingResult></GetFinalRatingResponse></soap:Body></soap:Envelope>
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:12; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg2OTIsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.0txNpr0-I3gR-5IudxjqpVYWwh0bin-uTYtlEpe8Dyc","expires_in":"2024-11-29T13:38:12.9986774+08:00","token_type":"bearer"}
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg2OTIsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.0txNpr0-I3gR-5IudxjqpVYWwh0bin-uTYtlEpe8Dyc
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:13; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"userID":"SPIO04570","domain":null,"name":"Chuck Raymund John B. Oblad","emailAddress":"cboblad@maybank.com.ph","role":"","department":"Auto Finance","lastLogon":"11/29/2024 1:08:13 PM","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNwaW8wNDU3MCIsInN1YiI6Ik91dGxvb2tAMDEiLCJqdGkiOiJzcGlvMDQ1NzBPdXRsb29rQDAxIiwiZXhwIjoxNzMyODU4NjkzLCJpc3MiOiJFSUlfSldUX0FVVEhFTlRJQ0FUSUNBVElPTiIsImF1ZCI6IltNQ0ZWXSxbR0hDXSxbQlRFWF0sW0FUTURBU0hCT0FSRF0sW0NPTExFQ1RJT05TXSxbT05FTE9HSU5dLFtETVNdLFtNWUZPUk1TXSJ9.npvngvSqjqekPyRgDyV47bJD0tMH-4uZBL82bipHmv0"}
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MDcsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.dsq4fmjmdannfAZFCqNvgqyHEvMRSfgDo0wd11HPRYQ","expires_in":"2024-11-29T13:38:27.0250518+08:00","token_type":"bearer"}
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MDcsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.dsq4fmjmdannfAZFCqNvgqyHEvMRSfgDo0wd11HPRYQ
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 8The remote server returned an error: (404) Not Found.
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 4: Error in Response = RecordNotFound
+
+29-Nov-2024 10:38:27 <Web Post Service> Exception Caught!
+29-Nov-2024 10:38:27 <Web Post Service> Message: The remote server returned an error: (404) Not Found.
+29-11-2024 10:38:27; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): RecordNotFound
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MTIsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.dWHI2d1jfu4v0hFOalI-EnKmZh4ofXvIfzKudS8m00E","expires_in":"2024-11-29T13:38:32.9340026+08:00","token_type":"bearer"}
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MTIsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.dWHI2d1jfu4v0hFOalI-EnKmZh4ofXvIfzKudS8m00E
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:32; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"userID":"vstalang","domain":null,"name":"Vivian S. Talang","emailAddress":"vstalang@maybank.com.ph","role":"","department":"Community Financial Services","lastLogon":"11/29/2024 1:08:33 PM","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InZzdGFsYW5nIiwic3ViIjoibWF5YmFua0AxIiwianRpIjoidnN0YWxhbmdtYXliYW5rQDEiLCJleHAiOjE3MzI4NTg3MTMsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.7nPb_JzyNrMntd2wQkY5Er2Y_Z276ZCJyTqSpHrszdo"}
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MTMsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.Dgmhco1F-oMb5hylBCBVE38KIFqjmZAJvo2qj4_GgGk","expires_in":"2024-11-29T13:38:33.5815252+08:00","token_type":"bearer"}
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MTMsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.Dgmhco1F-oMb5hylBCBVE38KIFqjmZAJvo2qj4_GgGk
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:33; Controller Name : LDAP; Class Name : GetResult (6);
+Log : Post API Call (Response): {"userID":"SPIO05691","domain":null,"name":"Eleazah Jeane B. Romanillos","emailAddress":"ebromanillos@maybank.com.ph","role":"","department":"Auto Finance","lastLogon":"11/29/2024 1:08:33 PM","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNwaW8wNTY5MSIsInN1YiI6Ik1heWJhbmtAMDQiLCJqdGkiOiJzcGlvMDU2OTFNYXliYW5rQDA0IiwiZXhwIjoxNzMyODU4NzEzLCJpc3MiOiJFSUlfSldUX0FVVEhFTlRJQ0FUSUNBVElPTiIsImF1ZCI6IltNQ0ZWXSxbR0hDXSxbQlRFWF0sW0FUTURBU0hCT0FSRF0sW0NPTExFQ1RJT05TXSxbT05FTE9HSU5dLFtETVNdLFtNWUZPUk1TXSJ9.hwgT-aExfWnWSsCaR8IrXBCeFgAQ-oleDJol1d-NCao"}
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Request.ContentType: text/xml
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : GetResult (1);
+Log : Request.MethodType : Post
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:38; Controller Name : ApiConnection/Post; Class Name : GetResult (6);
+Log : Post API Call (Response): <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetFinalRatingResponse xmlns="http://tempuri.org/"><GetFinalRatingResult>L</GetFinalRatingResult></GetFinalRatingResponse></soap:Body></soap:Envelope>
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token : 
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (6);
+Log : Post API Call (Response): {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MzAsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.ubpaWrztnkAtYZQjMzbOV5XVm7xstO5sJU4xVa4AbT0","expires_in":"2024-11-29T13:38:50.9045461+08:00","token_type":"bearer"}
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Auth Token : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFTExFUjEiLCJzdWIiOiJDT0xMRUNUSU9OUyIsImp0aSI6IlRFTExFUjFDT0xMRUNUSU9OU2dybHlhUG90aGRRQWwyWjg1T0JVMzUwcm8iLCJleHAiOjE3MzI4NTg3MzAsImlzcyI6IkVJSV9KV1RfQVVUSEVOVElDQVRJQ0FUSU9OIiwiYXVkIjoiW01DRlZdLFtHSENdLFtCVEVYXSxbQVRNREFTSEJPQVJEXSxbQ09MTEVDVElPTlNdLFtPTkVMT0dJTl0sW0RNU10sW01ZRk9STVNdIn0.ubpaWrztnkAtYZQjMzbOV5XVm7xstO5sJU4xVa4AbT0
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:38:50; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:38:51; Controller Name : APIConnection; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:38:51; Controller Name : APIConnection; Class Name : GetResult (6);
+Log : Post API Call (Response): [{"cifNo":"F063331","name":"JONA DELA CRUZ FERRER","dob":"1998078","mobileNo":"09639320751"},{"cifNo":"D134248","name":"MARY ROSE FLORES DELA CRUZ","dob":"1998078","mobileNo":"09531329949"},{"cifNo":"D125738","name":"JELLY SARMIENTO DELA CRUZ","dob":"1998078","mobileNo":"09934284795"}]
+--------------------------TU REQUEST API CALLING------------------------
+SEND REQUEST LOG :<?xml version="1.0" encoding="utf-16"?>
+<XMLAPIRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UniqueID>116086435</UniqueID>
+  <ItemTypeID>403</ItemTypeID>
+  <ItemID>77544</ItemID>
+  <RequestJson>
+        {
+        "RequestInfo": {
+        "SolutionSetId":"290",
+        "ExecuteLatestVersion":"true",
+        "ExecutionMode": "NewWithContext"
+        },
+        "Fields": {
+        "ServiceType": "DSBUREAUHARDPULL",
+        "TrailLevel": "0",
+        "Applicants_IO": {
+        "Applicant": [{
+        "ApplicantFirstName": "MARGIE",
+        "ApplicantMiddleName": "PACULAN",
+        "ApplicantLastName": "VERONA",
+        "CivilStatus": "U","Gender": "2",
+        "DateOfBirth": "26091988",
+        "Nationality": "PHL",
+        "MothersMaidenName": "",
+        "Ids": {
+     "Id": [  { "IdType" : "Other", "IdNumber" : "3279214916246539" } ]
+     },
+        "AliasFirstName": "",
+        "AliasMiddleName": "",
+        "AliasLastName": "",
+        "AliasMothersMaidenName": "",
+        "Addresses": {
+        "Address": [{
+		
+        "AddressLine1": " . La Union STO. TOMAS UBAGAN 2505",
+        "AddressLine2": "",
+        "AddressLine3": "",
+        "AddressLine4": "",
+        "AddressLine5": "",
+		
+        "ZipCode":      "2505",
+        "AddressType":  "R",
+        "Country":      "PHL"
+        }]
+        },
+        "ContactNumbers": {
+        "ContactNumber": [{
+        "CountryCode": "",
+        "PhoneNumber": "3100676",
+        "AreaCode": "091",
+        "ContactNumberType": "M"
+        },
+        ]},
+        "Employment": {},
+        }
+        ]
+        },
+        "ApplicationData_IO": {
+        "ApplicationReceiptDate": "29112024",
+        "EnquiryAmount": "1069500",
+        "EnquiryType": "6090",
+        "CurrencyCode": "PHP",
+        "Channel": "1",
+        "Product": "1",
+        "SubProduct": "01"
+        }}}
+        </RequestJson>
+  <MethodType>Post</MethodType>
+  <URL>https://decisioncentre.transunion.com.ph/DCAQM/InstanceA/TU.DE.Pont/applications</URL>
+  <URLType />
+  <URLValues />
+  <ContentType />
+  <SoapAction />
+  <AuthToken />
+  <UIDHeader />
+  <CustomHeader1_Name />
+  <CustomHeader1_Value />
+  <CustomHeader2_Name />
+  <CustomHeader2_Value />
+  <CustomHeader3_Name />
+  <CustomHeader3_Value />
+  <CustomHeader4_Name />
+  <CustomHeader4_Value />
+  <CustomHeader5_Name />
+  <CustomHeader5_Value />
+  <returnString>true</returnString>
+  <returnXML>false</returnXML>
+  <ByPassSSL>false</ByPassSSL>
+  <GenerateTokenLog>false</GenerateTokenLog>
+  <GenerateAuthToken>true</GenerateAuthToken>
+  <AuthTokenHeaderKey>Maybank_Prod1</AuthTokenHeaderKey>
+  <AuthTokenHeaderValue>M@ybankSeptember24!</AuthTokenHeaderValue>
+  <TokenURL>https://decisioncentre.transunion.com.ph/DCAQM/InstanceA/TU.DE.Pont/Token</TokenURL>
+  <SplitLatLng>false</SplitLatLng>
+  <GenerateResponseLog>true</GenerateResponseLog>
+</XMLAPIRequest>
+29-11-2024 10:39:18; Controller Name : ApiConnection/TU; Class Name : Token Generate Request AB ;
+Log : Auth Token : True
+29-11-2024 10:39:18; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : True
+29-11-2024 10:39:18; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : Maybank_Prod1
+29-11-2024 10:39:18; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : M@ybankSeptember24!
+29-11-2024 10:39:18; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token : Basic TWF5YmFua19Qcm9kMTpNQHliYW5rU2VwdGVtYmVyMjQh
+29-11-2024 10:39:18; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Request.ContentType: application/x-www-form-urlencoded
+29-11-2024 10:39:18; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : GetResult (2);
+Log : Post API Call (Response): {"access_token":"Yzmjrq-rPyAAbd0a4IYs7IvD8zRJO-EcOOHQ6lS0I6c9P_tjAZOKi1_5UqBrSaN6LY3uck5aQC8GyLACjykm9RrdhlxwrWHeG45J5CSKEGvNtMxzzCWcbSJKq5FmXTP2T8AfPdsD1016nLBegd5TfbSTWCJPBO8oEXvcZWAOa720Bka-YJSdOl-GSbAR_iKkEMIKewrbmV9sgLwLed3HhLtg-k09gLEoCOoYA81FrobsqkfswD_dCtLMFiEBh76OoigHq5oFDnXwfIRbyq92OzeDlNkzK1pzG3F91kS9m9dazVYXEc_kMQR3NA2Mf8KHUvjbThSmTDFBfOCW0QVCe0OmMNu_3Mq-kB_3mtky34U","token_type":"bearer","expires_in":1199,"userName":"Maybank_Prod1",".issued":"Fri, 29 Nov 2024 05:09:19 GMT",".expires":"Fri, 29 Nov 2024 05:29:19 GMT"}
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : TransUnionManagement;
+Log : GENERATED TOKEN VALUE : Yzmjrq-rPyAAbd0a4IYs7IvD8zRJO-EcOOHQ6lS0I6c9P_tjAZOKi1_5UqBrSaN6LY3uck5aQC8GyLACjykm9RrdhlxwrWHeG45J5CSKEGvNtMxzzCWcbSJKq5FmXTP2T8AfPdsD1016nLBegd5TfbSTWCJPBO8oEXvcZWAOa720Bka-YJSdOl-GSbAR_iKkEMIKewrbmV9sgLwLed3HhLtg-k09gLEoCOoYA81FrobsqkfswD_dCtLMFiEBh76OoigHq5oFDnXwfIRbyq92OzeDlNkzK1pzG3F91kS9m9dazVYXEc_kMQR3NA2Mf8KHUvjbThSmTDFBfOCW0QVCe0OmMNu_3Mq-kB_3mtky34U
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token LINE 36 : False
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token LINE 37 : 
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token LINE 38 : 
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Auth Token : Bearer Yzmjrq-rPyAAbd0a4IYs7IvD8zRJO-EcOOHQ6lS0I6c9P_tjAZOKi1_5UqBrSaN6LY3uck5aQC8GyLACjykm9RrdhlxwrWHeG45J5CSKEGvNtMxzzCWcbSJKq5FmXTP2T8AfPdsD1016nLBegd5TfbSTWCJPBO8oEXvcZWAOa720Bka-YJSdOl-GSbAR_iKkEMIKewrbmV9sgLwLed3HhLtg-k09gLEoCOoYA81FrobsqkfswD_dCtLMFiEBh76OoigHq5oFDnXwfIRbyq92OzeDlNkzK1pzG3F91kS9m9dazVYXEc_kMQR3NA2Mf8KHUvjbThSmTDFBfOCW0QVCe0OmMNu_3Mq-kB_3mtky34U
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Request.ContentType: application/json
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : GetResult (1);
+Log : Request.MethodType : POST
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : isLoggingTrue
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 1
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 2
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 3
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 4
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 5
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : STP Connections;
+Log : 2_Step 2: - Request Generation Completed
+29-11-2024 10:39:19; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 6
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : CallPostRestApi;
+Log : CallPostRestApi line 7
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : GetResult (6);
+Log : Post API Call (Response): {"Status":"Success","ResponseInfo":{"ApplicationId":110845740,"SolutionSetInstanceId":"69d2827e-b0de-4cf8-a959-479d287805f0"},"Fields":{"Applicants_IO":{"Applicant":[{"Attributes":{"ServiceType":"DSBUREAUHARDPULL"},"DSBureauHardPullStatus":{"IsSuccess":true,"Outcome":"Success"},"DSBureauHardPullData":{"Response":{"Data":{"RawResponse":"TUEF110000000000000000000000017BB01600901033073509529112024130921NA03N010106MARGIE0207PACULAN0306VERONA0501U060826091988070120803PHLID03I01011632792149162465390205OTHERPA03A010133. LA UNION STO. TOMAS UBAGAN 2505060425050701Y0801N0901N1001N1101N1201N130829112024140829112024PH03P01010263020291030731006760501S0601M0701N0808291120240908291120241001NSM03S0101010020100301004010SC03S010104SCR102036980301104070.043470502FFBC07BCC00010101NBC07BCC00020101NBC07BCC00210102-5BC07BCC00440102-5BC07BCC00450102-5BC07BCC00620102-5BC07BCC00820102-5BC07BCC01180102-5BC07BCC01490102-5BC07BCC02490102-5BC07BCC02670101NBC07BCCIS010102-1BC08BCPMTSTR0104NOBCBC06AT103S0102-4BC05CO04S0102-4BC05RP04S0102-4BC05G310S0102-4BC06DM006S0102-6BC14HIGHEST_INCOME0102-1BC13LOWEST_INCOME0102-1BC08UTIL_OFF0102-4BC18UTIL_ACTIVE_L6_OFF0102-6BC11MAX_MOB_OFF0102-4BC26PAYMENTRATIO_LESSUB_L6_OFF0102-6BC17HIGHEST_LIMIT_OFF0102-1BC05AT01S01010BC05AT02S0102-4BC05BC01S0102-4BC05BC02S0102-4BC05G001B0102-4BC05G002B0102-4BC05G003S0102-4BC05G058S0102-4BC05G063S0102-4BC05G068S0102-4ES02**","CreditReport":{"BCC":{"BCCSegment":[{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G068S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G063S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G058S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G003S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G002B","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G001B","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"BC02S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"BC01S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"AT02S","SegmentTagLength":"05"},{"BCCValue":"0","BCCValueLength":"01","SegmentTag":"AT01S","SegmentTagLength":"05"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"HIGHEST_LIMIT_OFF","SegmentTagLength":"17"},{"BCCValue":"-6","BCCValueLength":"02","SegmentTag":"PAYMENTRATIO_LESSUB_L6_OFF","SegmentTagLength":"26"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"MAX_MOB_OFF","SegmentTagLength":"11"},{"BCCValue":"-6","BCCValueLength":"02","SegmentTag":"UTIL_ACTIVE_L6_OFF","SegmentTagLength":"18"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"UTIL_OFF","SegmentTagLength":"08"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"LOWEST_INCOME","SegmentTagLength":"13"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"HIGHEST_INCOME","SegmentTagLength":"14"},{"BCCValue":"-6","BCCValueLength":"02","SegmentTag":"DM006S","SegmentTagLength":"06"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G310S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"RP04S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"CO04S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"AT103S","SegmentTagLength":"06"},{"BCCValue":"NOBC","BCCValueLength":"04","SegmentTag":"BCPMTSTR","SegmentTagLength":"08"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"BCCIS01","SegmentTagLength":"07"},{"BCCValue":"N","BCCValueLength":"01","SegmentTag":"BCC0267","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0249","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0149","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0118","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0082","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0062","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0045","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0044","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0021","SegmentTagLength":"07"},{"BCCValue":"N","BCCValueLength":"01","SegmentTag":"BCC0002","SegmentTagLength":"07"},{"BCCValue":"N","BCCValueLength":"01","SegmentTag":"BCC0001","SegmentTagLength":"07"}]},"SC":{"ScoreSegment":{"RiskGrade":"FF","RiskGradeLength":"02","PredictedProbability":"0.04347","PredictedProbabilityLength":"07","Segment":"1","SegmentLength":"01","Score":"698","ScoreLength":"03","ScoreType":"SCR1","ScoreTypeLength":"04","SegmentTag":"S01","SegmentTagLength":"03"}},"SM":{"SummarySegment":{"EnquiryAlert":"0","EnquiryAlertLength":"01","AliasNameAlert":"0","AliasNameAlertLength":"01","ClosedAccount":"0","ClosedAccountLength":"01","OpenAccount":"0","OpenAccountLength":"01","SegmentTag":"S01","SegmentTagLength":"03"}},"PH":{"ContactNumberSegment":[{"MultipleContributor":"N","LastReportedDate":"29112024","FileSinceDate":"29112024","ReportedViaAcct":"N","NumberType":"M","NumberTypeFieldLength":"01","Format":"S","FormatFieldLength":"01","ContactNumber":"3100676","ContactNumberFieldLength":"07","AreaCode":"91","AreaCodeFieldLength":"02","CountryCode":"63","CountryCodeFieldLength":"02","SegmentTag":"P01","SegmentTagLength":"03"}]},"PA":{"PrimaryAddressSegment":[{"LastReportedDate":"29112024","FileSinceDate":"29112024","ReportedViaAct":"N","AddressOfUnknownType":"N","AddressOfOtherType":"N","BillingAddress":"N","OfficialAddress":"N","OfficialAddressFieldLength":"01","ResidentialAddress":"Y","ZipCode":"2505","ZipCodeFieldLength":"04","AddressLine1":". LA UNION STO. TOMAS UBAGAN 2505","AddressLine1FieldLength":"33","SegmentTag":"A01","SegmentTagLength":"03"}]},"ID":{"IDSegment":[{"IDType":"OTHER","IDTypeLength":"05","IDNumber":"3279214916246539","IDNumberLength":"16","SegmentTag":"I01","SegmentTagLength":"03"}]},"NA":{"NameSegment":{"Nationality":"PHL","NationalityLength":"03","Gender":"2","GenderLength":"01","DOB":"26091988","DOBLength":"08","CivilStatus":"U","CivilStatusLength":"01","LastName":"VERONA","LastNameLength":"06","MiddleName":"PACULAN","MiddleNameLength":"07","FirstName":"MARGIE","FirstNameLength":"06","SegmentTag":"N01","SegmentTagLength":"03"}},"Header":{"TimeProcessed":"130921","DateProcessed":"29112024","EnquiryControlNumber":"330735095","SubjectReturnCode":"0","UserId":"BB01600901","MemberReferenceNumber":"0000000000000000000000017","Version11":"11","SegmentTag":"TUEF"}},"CreditReportHTML":"&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width: 100%; font-family: Calibri, Arial, Helvetica, sans-serif;&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td width=&quot;20%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Name:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;40%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            MARGIE PACULAN VERONA\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;17%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;23%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Member Code No:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            BB01600901\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Member Reference No.:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            0000000000000000000000017\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Control:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                           330735095\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Purpose:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            New Application\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Account Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            Auto Loans - Acquisition of cars for domestic use only\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Amount:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            PHP 1,069,500.00\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                    &lt;td colspan=&quot;4&quot; height=&quot;10px&quot;&gt;&lt;/td&gt;\r\n                    &lt;/tr&gt;                    \r\n                &lt;/table&gt;\r\n                &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;\r\n&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;\r\n&lt;head&gt;\r\n    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;\r\n    &lt;title&gt;Philippines - Credit Report&lt;/title&gt;\r\n   &lt;style type=&quot;text/css&quot;&gt;\r\n        body\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            margin: 5px 5px 5px 5px;\r\n            color: #000000;\r\n        }\r\n        .header\r\n        {\r\n            border: 0px solid black;\r\n            width: 1000px;\r\n            margin: 0 auto;\r\n        }\r\n        \r\n        .maincontainer\r\n        {\r\n            border: 1px solid black;\r\n            width: 1000px;\r\n            margin: 0 auto;\r\n        }\r\n        \r\n        .tblBorder\r\n        {            \r\n            border-collapse: collapse;\r\n            border: 1px solid black;\r\n        }\r\n        \r\n        table.tblBorder tr td\r\n        {\r\n            border:1px solid black;\r\n            border-collapse: collapse;\r\n        }\r\n        \r\n        .Divider\r\n        {\r\n            height: 1px;\r\n            line-height: 0.2;\r\n            color: #bdbebd;\r\n            background-color: #ffffff;\r\n            width: 100%;\r\n        }\r\n        .sectionheading\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: White;\r\n            background-color: #0295BE;\r\n            text-align: center;\r\n            font-size: 10pt;\r\n            font-weight: bold;\r\n            padding: 0px 0px 0px 0px;\r\n        }\r\n        \r\n         .bccsectionheading\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: White;\r\n            background-color: #0295BE;\r\n            font-size: 10pt;\r\n            font-weight: bold;\r\n            padding: 0px 0px 0px 0px;\r\n        }\r\n        \r\n        .headerFieldTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            font-weight: bold;           \r\n        }\r\n        \r\n        .reportFieldTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            font-weight: bold;\r\n            border:1px solid black;\r\n            \r\n        }\r\n        \r\n        .reportFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n             text-transform:uppercase;\r\n        }\r\n        \r\n         .bccFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            padding-left:5px;\r\n        }\r\n        \r\n        \r\n        .HeaderSubTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            text-align: center;\r\n        }\r\n        \r\n        .sectionheading_subtitle\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: White;\r\n            background-color: #4a927b;\r\n            text-align: center;\r\n            font-size: 10pt;\r\n            font-weight: bold;\r\n            padding: 0 0 5px 0;\r\n        }\r\n        .sectionheading_Yellow\r\n        {\r\n            color: #A9D161;\r\n            background-color: #A9D161;\r\n        }\r\n        .sectionheading_Brown\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            background-color: #FCD800;\r\n            text-align: center;\r\n            font-size: 11pt;\r\n            font-weight: bold;\r\n        }\r\n        .sectionheading_Black\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: Black;\r\n            background-color: #948673;\r\n            text-align: center;\r\n            font-size: 9pt;\r\n            font-weight: bold;\r\n        }\r\n        .sectionheading_White\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: Black;\r\n            background-color: White;\r\n            text-align: center;\r\n            font-size:9pt;\r\n            font-weight: bold;\r\n        }\r\n        \r\n        .piFieldTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #7b7d7b;\r\n            font-style: italic;\r\n            font-size: 9pt;\r\n            font-weight: bold;\r\n        }\r\n        .piFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            font-size: 9pt;\r\n            border:1px solid black;\r\n            text-transform:uppercase;\r\n        }\r\n        .ContactFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            font-size: 9pt;\r\n            border:1px solid black;\r\n            padding-top:12px;\r\n        }        \r\n        .piAddress\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            font-size: 9pt;\r\n            border:1px solid black;\r\n            text-transform:uppercase;\r\n            padding-left:4px;\r\n        }\r\n        .inputText\r\n        {\r\n            font-family: Calibri, Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            padding-bottom: 3px;\r\n            font-weight:bold;\r\n            vertical-align:top;        \r\n        }\r\n        .inputValue\r\n        {\r\n            font-family: Calibri, Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            padding-bottom: 3px;\r\n            vertical-align:top;\r\n            text-transform:uppercase;\r\n            word-wrap: break-word;\r\n        }\r\n    &lt;/style&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;   &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt; \r\n    &lt;tr&gt;\r\n    &lt;td&gt;&lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;\r\n        \r\n                      &lt;tr&gt;\r\n                        &lt;td width=&quot;20%&quot; class=&quot;inputText&quot;&gt;\r\n                            Input Criteria:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;80%&quot; colspan=&quot;3&quot;  class=&quot;inputValue&quot;&gt;\r\n                            ,-,-\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;\r\n  &lt;/tr&gt;\r\n  &lt;tr&gt;\r\n    &lt;td style=&quot;height:16px;&quot;&gt;\r\n    &lt;/td&gt;\r\n  &lt;/tr&gt;    \r\n    &lt;tr&gt;\r\n    &lt;td&gt;&lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n        &lt;tr&gt;\r\n          &lt;td colspan=&quot;4&quot; class=&quot;sectionheading&quot;&gt;\r\n            Personal Information\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n                        &lt;td width=&quot;26%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Name:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;74%&quot; colspan=&quot;3&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;MARGIE PACULAN VERONA\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Mother&#39;s Maiden Full Name:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;28%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;22%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Nationality/Citizenship:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;24%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;PHL\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Civil Status:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Unknown\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Number Of Dependents:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Date Of Birth:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;26-Sep-1988\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Home Ownership:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Gender:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Male\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Car Ownership:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;\r\n  &lt;/tr&gt;\r\n  &lt;tr&gt;\r\n    &lt;td style=&quot;height:16px;&quot;&gt;\r\n    &lt;/td&gt;\r\n  &lt;/tr&gt;&lt;tr&gt;\r\n    &lt;td&gt;\r\n      &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;2&quot; class=&quot;sectionheading&quot;&gt;\r\n                            ID Information\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot; width=&quot;26%&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;ID Number:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot; width=&quot;74%&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;3279214916246539\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot; width=&quot;26%&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;ID Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;OTHER\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                   &lt;/table&gt;&lt;/td&gt;\r\n  &lt;/tr&gt;\r\n  &lt;tr&gt;\r\n    &lt;td style=&quot;height:16px;&quot;&gt;\r\n    &lt;/td&gt;\r\n  &lt;/tr&gt;&lt;tr&gt;\r\n    &lt;td&gt;\r\n     &lt;table width=&quot;100%&quot; class=&quot;tblBorder&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;2&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Address Information\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td width=&quot;26%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Address:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piAddress&quot; width=&quot;74%&quot;&gt;\r\n                           . LA UNION STO. TOMAS UBAGAN 2505\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Zip Code:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;2505\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Residential\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Reported Via Account :\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;N\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;File Since Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Last Reported Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n             &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt; &lt;tr&gt;\r\n    &lt;td&gt;\r\n       &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;6&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Contact Information\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td width=&quot;19%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Country Code:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;8%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;63\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Area Code:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;91\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;18%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Contact Number:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;3100676\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Ext/Call:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Mobile\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Reported Via Account:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;N\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;File Since Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Last Reported Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                \r\n        &lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n            &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;&lt;tr&gt;\r\n            &lt;td&gt;\r\n                &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;4&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Summary\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Open Account\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Alias Name\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Closed Account\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Previous Enquiry\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n             &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;&lt;tr&gt;\r\n            &lt;td&gt;\r\n                &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;2&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Score\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt; &lt;tr&gt;\r\n                        &lt;td width=&quot;30%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Score Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;70%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;SCR1\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Score:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;698\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Segment:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;1\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Predicted Probability:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0.04347\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Risk Grade:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;FF\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n            &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;&lt;/table&gt;&lt;p style=&quot;page-break-after: always;&quot;&gt;&amp;nbsp&amp;nbsp;&lt;/p&gt;&lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;\r\n&lt;tr&gt;\r\n    &lt;td&gt;\r\n    &lt;table width=&quot;100%&quot; class=&quot;tblBorder&quot;&gt;\r\n    &lt;tr&gt;&lt;td colspan=&quot;3&quot; class=&quot;sectionheading_Brown&quot;&gt;\r\n            BUREAU CREDIT CHARACTERISTICS (BCC)\r\n          &lt;/td&gt;\r\n          &lt;/tr&gt;\r\n          &lt;tr&gt;\r\n           &lt;td width=&quot;10%&quot; class=&quot;reportFieldTitle&quot; align=&quot;center&quot;&gt;\r\n                           ID\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;75%&quot; class=&quot;reportFieldTitle&quot; align=&quot;center&quot;&gt;\r\n                           BCC\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;reportFieldTitle&quot; align=&quot;center&quot;&gt;\r\n                           Value\r\n                        &lt;/td&gt;\r\n        &lt;/tr&gt;  &lt;tr&gt;\r\n           &lt;td width=&quot;10%&quot; class=&quot;bccsectionheading&quot; align=&quot;left&quot;&gt;\r\n                         &amp;nbsp;&amp;nbsp;Category\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;75%&quot; class=&quot;bccsectionheading&quot; align=&quot;left&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;bccsectionheading&quot;&gt;                           \r\n                        &lt;/td&gt;\r\n        &lt;/tr&gt;     &lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0001&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;The inquiry address submitted is matched with the at least one being reported via account contribution for the consumer (Address Fuzzy Logic Match)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;N&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0002&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;The inquiry phone number submitted is matched with the at least one being reported via account contribution for the consumer (Phone Number Fuzzy Logic Match)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;N&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0021&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total number of Over limit Account (Revolving Account)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0044&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total Credit Limit (Restructured Loan Account)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0045&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total Outstanding Balance (Terms and Other Account)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0062&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total Unbilled Balance (Consumer Level)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0082&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Monthly Obligation: 4% of Outstanding Balance of Revolving Account + Installment Amount of Terms and Other Account&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0118&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0149&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0249&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0267&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;The inquiry address submitted is matched with the at least one being reported via account contribution for the consumer which loaded at least 6 months before (Address Fuzzy Logic Match)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;N&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCCIS01&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Income Estimator&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCPMTSTR&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;NOBC&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;AT103S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;CO04S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;RP04S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G310S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;DM006S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;HIGHEST_INCOME&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;LOWEST_INCOME&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;UTIL_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;UTIL_ACTIVE_L6_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;MAX_MOB_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;PAYMENTRATIO_LESSUB_L6_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;HIGHEST_LIMIT_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;AT01S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;AT02S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BC01S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BC02S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G001B&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G002B&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G003S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G058S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G063S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G068S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;\r\n&lt;/table&gt;"}}},"ServiceTypeHistory":{"ServiceTypes":[{"Name":"DSBUREAUHARDPULL","ServiceCalledDateTime":"2024-11-29T13:09:22.3320585+08:00","IsSuccess":true}]}}]},"ApplicationData_IO":{},"Decision":"Pass"}}
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : TransUnionManagement;
+Log : TU Api Call Complete; API Response - {
+  "ItemID" : "77544",
+  "ItemTypeID" : "403",
+  "UniqueID" : "116086435",
+  "ResponseCode" : "200",
+  "ResponseType" : "True",
+  "ResponseMessage" : "Post API Call",
+  "Data" : {"Status":"Success","ResponseInfo":{"ApplicationId":110845740,"SolutionSetInstanceId":"69d2827e-b0de-4cf8-a959-479d287805f0"},"Fields":{"Applicants_IO":{"Applicant":[{"Attributes":{"ServiceType":"DSBUREAUHARDPULL"},"DSBureauHardPullStatus":{"IsSuccess":true,"Outcome":"Success"},"DSBureauHardPullData":{"Response":{"Data":{"RawResponse":"TUEF110000000000000000000000017BB01600901033073509529112024130921NA03N010106MARGIE0207PACULAN0306VERONA0501U060826091988070120803PHLID03I01011632792149162465390205OTHERPA03A010133. LA UNION STO. TOMAS UBAGAN 2505060425050701Y0801N0901N1001N1101N1201N130829112024140829112024PH03P01010263020291030731006760501S0601M0701N0808291120240908291120241001NSM03S0101010020100301004010SC03S010104SCR102036980301104070.043470502FFBC07BCC00010101NBC07BCC00020101NBC07BCC00210102-5BC07BCC00440102-5BC07BCC00450102-5BC07BCC00620102-5BC07BCC00820102-5BC07BCC01180102-5BC07BCC01490102-5BC07BCC02490102-5BC07BCC02670101NBC07BCCIS010102-1BC08BCPMTSTR0104NOBCBC06AT103S0102-4BC05CO04S0102-4BC05RP04S0102-4BC05G310S0102-4BC06DM006S0102-6BC14HIGHEST_INCOME0102-1BC13LOWEST_INCOME0102-1BC08UTIL_OFF0102-4BC18UTIL_ACTIVE_L6_OFF0102-6BC11MAX_MOB_OFF0102-4BC26PAYMENTRATIO_LESSUB_L6_OFF0102-6BC17HIGHEST_LIMIT_OFF0102-1BC05AT01S01010BC05AT02S0102-4BC05BC01S0102-4BC05BC02S0102-4BC05G001B0102-4BC05G002B0102-4BC05G003S0102-4BC05G058S0102-4BC05G063S0102-4BC05G068S0102-4ES02**","CreditReport":{"BCC":{"BCCSegment":[{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G068S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G063S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G058S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G003S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G002B","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G001B","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"BC02S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"BC01S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"AT02S","SegmentTagLength":"05"},{"BCCValue":"0","BCCValueLength":"01","SegmentTag":"AT01S","SegmentTagLength":"05"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"HIGHEST_LIMIT_OFF","SegmentTagLength":"17"},{"BCCValue":"-6","BCCValueLength":"02","SegmentTag":"PAYMENTRATIO_LESSUB_L6_OFF","SegmentTagLength":"26"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"MAX_MOB_OFF","SegmentTagLength":"11"},{"BCCValue":"-6","BCCValueLength":"02","SegmentTag":"UTIL_ACTIVE_L6_OFF","SegmentTagLength":"18"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"UTIL_OFF","SegmentTagLength":"08"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"LOWEST_INCOME","SegmentTagLength":"13"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"HIGHEST_INCOME","SegmentTagLength":"14"},{"BCCValue":"-6","BCCValueLength":"02","SegmentTag":"DM006S","SegmentTagLength":"06"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"G310S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"RP04S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"CO04S","SegmentTagLength":"05"},{"BCCValue":"-4","BCCValueLength":"02","SegmentTag":"AT103S","SegmentTagLength":"06"},{"BCCValue":"NOBC","BCCValueLength":"04","SegmentTag":"BCPMTSTR","SegmentTagLength":"08"},{"BCCValue":"-1","BCCValueLength":"02","SegmentTag":"BCCIS01","SegmentTagLength":"07"},{"BCCValue":"N","BCCValueLength":"01","SegmentTag":"BCC0267","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0249","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0149","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0118","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0082","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0062","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0045","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0044","SegmentTagLength":"07"},{"BCCValue":"-5","BCCValueLength":"02","SegmentTag":"BCC0021","SegmentTagLength":"07"},{"BCCValue":"N","BCCValueLength":"01","SegmentTag":"BCC0002","SegmentTagLength":"07"},{"BCCValue":"N","BCCValueLength":"01","SegmentTag":"BCC0001","SegmentTagLength":"07"}]},"SC":{"ScoreSegment":{"RiskGrade":"FF","RiskGradeLength":"02","PredictedProbability":"0.04347","PredictedProbabilityLength":"07","Segment":"1","SegmentLength":"01","Score":"698","ScoreLength":"03","ScoreType":"SCR1","ScoreTypeLength":"04","SegmentTag":"S01","SegmentTagLength":"03"}},"SM":{"SummarySegment":{"EnquiryAlert":"0","EnquiryAlertLength":"01","AliasNameAlert":"0","AliasNameAlertLength":"01","ClosedAccount":"0","ClosedAccountLength":"01","OpenAccount":"0","OpenAccountLength":"01","SegmentTag":"S01","SegmentTagLength":"03"}},"PH":{"ContactNumberSegment":[{"MultipleContributor":"N","LastReportedDate":"29112024","FileSinceDate":"29112024","ReportedViaAcct":"N","NumberType":"M","NumberTypeFieldLength":"01","Format":"S","FormatFieldLength":"01","ContactNumber":"3100676","ContactNumberFieldLength":"07","AreaCode":"91","AreaCodeFieldLength":"02","CountryCode":"63","CountryCodeFieldLength":"02","SegmentTag":"P01","SegmentTagLength":"03"}]},"PA":{"PrimaryAddressSegment":[{"LastReportedDate":"29112024","FileSinceDate":"29112024","ReportedViaAct":"N","AddressOfUnknownType":"N","AddressOfOtherType":"N","BillingAddress":"N","OfficialAddress":"N","OfficialAddressFieldLength":"01","ResidentialAddress":"Y","ZipCode":"2505","ZipCodeFieldLength":"04","AddressLine1":". LA UNION STO. TOMAS UBAGAN 2505","AddressLine1FieldLength":"33","SegmentTag":"A01","SegmentTagLength":"03"}]},"ID":{"IDSegment":[{"IDType":"OTHER","IDTypeLength":"05","IDNumber":"3279214916246539","IDNumberLength":"16","SegmentTag":"I01","SegmentTagLength":"03"}]},"NA":{"NameSegment":{"Nationality":"PHL","NationalityLength":"03","Gender":"2","GenderLength":"01","DOB":"26091988","DOBLength":"08","CivilStatus":"U","CivilStatusLength":"01","LastName":"VERONA","LastNameLength":"06","MiddleName":"PACULAN","MiddleNameLength":"07","FirstName":"MARGIE","FirstNameLength":"06","SegmentTag":"N01","SegmentTagLength":"03"}},"Header":{"TimeProcessed":"130921","DateProcessed":"29112024","EnquiryControlNumber":"330735095","SubjectReturnCode":"0","UserId":"BB01600901","MemberReferenceNumber":"0000000000000000000000017","Version11":"11","SegmentTag":"TUEF"}},"CreditReportHTML":"&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width: 100%; font-family: Calibri, Arial, Helvetica, sans-serif;&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td width=&quot;20%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Name:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;40%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            MARGIE PACULAN VERONA\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;17%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;23%&quot; style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Member Code No:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            BB01600901\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Member Reference No.:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            0000000000000000000000017\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Control:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                           330735095\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Purpose:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            New Application\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Account Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            Auto Loans - Acquisition of cars for domestic use only\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri , Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;font-weight:bold;&quot;&gt;\r\n                            Inquiry Amount:\r\n                        &lt;/td&gt;\r\n                        &lt;td style=&quot;font-family: Calibri, Arial, Helvetica, sans-serif;color: #000;font-size: 9pt;padding-bottom: 3px;text-transform:uppercase;&quot;&gt;\r\n                            PHP 1,069,500.00\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                    &lt;td colspan=&quot;4&quot; height=&quot;10px&quot;&gt;&lt;/td&gt;\r\n                    &lt;/tr&gt;                    \r\n                &lt;/table&gt;\r\n                &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;\r\n&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;\r\n&lt;head&gt;\r\n    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;\r\n    &lt;title&gt;Philippines - Credit Report&lt;/title&gt;\r\n   &lt;style type=&quot;text/css&quot;&gt;\r\n        body\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            margin: 5px 5px 5px 5px;\r\n            color: #000000;\r\n        }\r\n        .header\r\n        {\r\n            border: 0px solid black;\r\n            width: 1000px;\r\n            margin: 0 auto;\r\n        }\r\n        \r\n        .maincontainer\r\n        {\r\n            border: 1px solid black;\r\n            width: 1000px;\r\n            margin: 0 auto;\r\n        }\r\n        \r\n        .tblBorder\r\n        {            \r\n            border-collapse: collapse;\r\n            border: 1px solid black;\r\n        }\r\n        \r\n        table.tblBorder tr td\r\n        {\r\n            border:1px solid black;\r\n            border-collapse: collapse;\r\n        }\r\n        \r\n        .Divider\r\n        {\r\n            height: 1px;\r\n            line-height: 0.2;\r\n            color: #bdbebd;\r\n            background-color: #ffffff;\r\n            width: 100%;\r\n        }\r\n        .sectionheading\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: White;\r\n            background-color: #0295BE;\r\n            text-align: center;\r\n            font-size: 10pt;\r\n            font-weight: bold;\r\n            padding: 0px 0px 0px 0px;\r\n        }\r\n        \r\n         .bccsectionheading\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: White;\r\n            background-color: #0295BE;\r\n            font-size: 10pt;\r\n            font-weight: bold;\r\n            padding: 0px 0px 0px 0px;\r\n        }\r\n        \r\n        .headerFieldTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            font-weight: bold;           \r\n        }\r\n        \r\n        .reportFieldTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            font-weight: bold;\r\n            border:1px solid black;\r\n            \r\n        }\r\n        \r\n        .reportFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n             text-transform:uppercase;\r\n        }\r\n        \r\n         .bccFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            padding-left:5px;\r\n        }\r\n        \r\n        \r\n        .HeaderSubTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            text-align: center;\r\n        }\r\n        \r\n        .sectionheading_subtitle\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: White;\r\n            background-color: #4a927b;\r\n            text-align: center;\r\n            font-size: 10pt;\r\n            font-weight: bold;\r\n            padding: 0 0 5px 0;\r\n        }\r\n        .sectionheading_Yellow\r\n        {\r\n            color: #A9D161;\r\n            background-color: #A9D161;\r\n        }\r\n        .sectionheading_Brown\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            background-color: #FCD800;\r\n            text-align: center;\r\n            font-size: 11pt;\r\n            font-weight: bold;\r\n        }\r\n        .sectionheading_Black\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: Black;\r\n            background-color: #948673;\r\n            text-align: center;\r\n            font-size: 9pt;\r\n            font-weight: bold;\r\n        }\r\n        .sectionheading_White\r\n        {\r\n            font-family: Calibri,Arial, Helvetica, sans-serif;\r\n            color: Black;\r\n            background-color: White;\r\n            text-align: center;\r\n            font-size:9pt;\r\n            font-weight: bold;\r\n        }\r\n        \r\n        .piFieldTitle\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #7b7d7b;\r\n            font-style: italic;\r\n            font-size: 9pt;\r\n            font-weight: bold;\r\n        }\r\n        .piFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            font-size: 9pt;\r\n            border:1px solid black;\r\n            text-transform:uppercase;\r\n        }\r\n        .ContactFieldValue\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            font-size: 9pt;\r\n            border:1px solid black;\r\n            padding-top:12px;\r\n        }        \r\n        .piAddress\r\n        {\r\n            font-family: Calibri , Arial, Helvetica, sans-serif;\r\n            color: #000000;\r\n            font-size: 9pt;\r\n            border:1px solid black;\r\n            text-transform:uppercase;\r\n            padding-left:4px;\r\n        }\r\n        .inputText\r\n        {\r\n            font-family: Calibri, Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            padding-bottom: 3px;\r\n            font-weight:bold;\r\n            vertical-align:top;        \r\n        }\r\n        .inputValue\r\n        {\r\n            font-family: Calibri, Arial, Helvetica, sans-serif;\r\n            color: #000;\r\n            font-size: 9pt;\r\n            padding-bottom: 3px;\r\n            vertical-align:top;\r\n            text-transform:uppercase;\r\n            word-wrap: break-word;\r\n        }\r\n    &lt;/style&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;   &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt; \r\n    &lt;tr&gt;\r\n    &lt;td&gt;&lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;\r\n        \r\n                      &lt;tr&gt;\r\n                        &lt;td width=&quot;20%&quot; class=&quot;inputText&quot;&gt;\r\n                            Input Criteria:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;80%&quot; colspan=&quot;3&quot;  class=&quot;inputValue&quot;&gt;\r\n                            ,-,-\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;\r\n  &lt;/tr&gt;\r\n  &lt;tr&gt;\r\n    &lt;td style=&quot;height:16px;&quot;&gt;\r\n    &lt;/td&gt;\r\n  &lt;/tr&gt;    \r\n    &lt;tr&gt;\r\n    &lt;td&gt;&lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n        &lt;tr&gt;\r\n          &lt;td colspan=&quot;4&quot; class=&quot;sectionheading&quot;&gt;\r\n            Personal Information\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n                        &lt;td width=&quot;26%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Name:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;74%&quot; colspan=&quot;3&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;MARGIE PACULAN VERONA\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Mother&#39;s Maiden Full Name:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;28%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;22%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Nationality/Citizenship:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;24%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;PHL\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Civil Status:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Unknown\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Number Of Dependents:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Date Of Birth:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;26-Sep-1988\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Home Ownership:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Gender:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Male\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Car Ownership:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;\r\n  &lt;/tr&gt;\r\n  &lt;tr&gt;\r\n    &lt;td style=&quot;height:16px;&quot;&gt;\r\n    &lt;/td&gt;\r\n  &lt;/tr&gt;&lt;tr&gt;\r\n    &lt;td&gt;\r\n      &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;2&quot; class=&quot;sectionheading&quot;&gt;\r\n                            ID Information\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot; width=&quot;26%&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;ID Number:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot; width=&quot;74%&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;3279214916246539\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot; width=&quot;26%&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;ID Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;OTHER\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                   &lt;/table&gt;&lt;/td&gt;\r\n  &lt;/tr&gt;\r\n  &lt;tr&gt;\r\n    &lt;td style=&quot;height:16px;&quot;&gt;\r\n    &lt;/td&gt;\r\n  &lt;/tr&gt;&lt;tr&gt;\r\n    &lt;td&gt;\r\n     &lt;table width=&quot;100%&quot; class=&quot;tblBorder&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;2&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Address Information\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td width=&quot;26%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Address:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piAddress&quot; width=&quot;74%&quot;&gt;\r\n                           . LA UNION STO. TOMAS UBAGAN 2505\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Zip Code:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;2505\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Residential\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Reported Via Account :\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;N\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;File Since Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Last Reported Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n             &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt; &lt;tr&gt;\r\n    &lt;td&gt;\r\n       &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;6&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Contact Information\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td width=&quot;19%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Country Code:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;8%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;63\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Area Code:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;91\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;18%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Contact Number:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;3100676\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Ext/Call:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Mobile\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Reported Via Account:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;N\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;File Since Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Last Reported Date:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;29-Nov-2024\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                \r\n        &lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n            &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;&lt;tr&gt;\r\n            &lt;td&gt;\r\n                &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;4&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Summary\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Open Account\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Alias Name\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Closed Account\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Previous Enquiry\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n             &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;&lt;tr&gt;\r\n            &lt;td&gt;\r\n                &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; class=&quot;tblBorder&quot;&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td colspan=&quot;2&quot; class=&quot;sectionheading&quot;&gt;\r\n                            Score\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt; &lt;tr&gt;\r\n                        &lt;td width=&quot;30%&quot; class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Score Type:\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;70%&quot; class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;SCR1\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Score:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;698\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Segment:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;1\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Predicted Probability:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;0.04347\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;\r\n                    &lt;tr&gt;\r\n                        &lt;td class=&quot;reportFieldTitle&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;Risk Grade:\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;piFieldValue&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;FF\r\n                        &lt;/td&gt;\r\n                    &lt;/tr&gt;&lt;/table&gt;\r\n            &lt;/td&gt;\r\n        &lt;/tr&gt;\r\n        &lt;tr&gt;\r\n            &lt;td style=&quot;height:16px;&quot; width=&quot;100%&quot;&gt;\r\n          &lt;/td&gt;\r\n        &lt;/tr&gt;&lt;/table&gt;&lt;p style=&quot;page-break-after: always;&quot;&gt;&amp;nbsp&amp;nbsp;&lt;/p&gt;&lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;\r\n&lt;tr&gt;\r\n    &lt;td&gt;\r\n    &lt;table width=&quot;100%&quot; class=&quot;tblBorder&quot;&gt;\r\n    &lt;tr&gt;&lt;td colspan=&quot;3&quot; class=&quot;sectionheading_Brown&quot;&gt;\r\n            BUREAU CREDIT CHARACTERISTICS (BCC)\r\n          &lt;/td&gt;\r\n          &lt;/tr&gt;\r\n          &lt;tr&gt;\r\n           &lt;td width=&quot;10%&quot; class=&quot;reportFieldTitle&quot; align=&quot;center&quot;&gt;\r\n                           ID\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;75%&quot; class=&quot;reportFieldTitle&quot; align=&quot;center&quot;&gt;\r\n                           BCC\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;reportFieldTitle&quot; align=&quot;center&quot;&gt;\r\n                           Value\r\n                        &lt;/td&gt;\r\n        &lt;/tr&gt;  &lt;tr&gt;\r\n           &lt;td width=&quot;10%&quot; class=&quot;bccsectionheading&quot; align=&quot;left&quot;&gt;\r\n                         &amp;nbsp;&amp;nbsp;Category\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;75%&quot; class=&quot;bccsectionheading&quot; align=&quot;left&quot;&gt;\r\n                            &amp;nbsp;&amp;nbsp;\r\n                        &lt;/td&gt;\r\n                        &lt;td width=&quot;15%&quot; class=&quot;bccsectionheading&quot;&gt;                           \r\n                        &lt;/td&gt;\r\n        &lt;/tr&gt;     &lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0001&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;The inquiry address submitted is matched with the at least one being reported via account contribution for the consumer (Address Fuzzy Logic Match)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;N&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0002&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;The inquiry phone number submitted is matched with the at least one being reported via account contribution for the consumer (Phone Number Fuzzy Logic Match)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;N&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0021&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total number of Over limit Account (Revolving Account)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0044&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total Credit Limit (Restructured Loan Account)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0045&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total Outstanding Balance (Terms and Other Account)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0062&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Total Unbilled Balance (Consumer Level)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0082&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Monthly Obligation: 4% of Outstanding Balance of Revolving Account + Installment Amount of Terms and Other Account&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0118&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0149&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;PHP -5.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0249&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-5&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCC0267&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;The inquiry address submitted is matched with the at least one being reported via account contribution for the consumer which loaded at least 6 months before (Address Fuzzy Logic Match)&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;N&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCCIS01&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;Income Estimator&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BCPMTSTR&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;NOBC&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;AT103S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;CO04S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;RP04S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G310S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;DM006S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;HIGHEST_INCOME&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;LOWEST_INCOME&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;UTIL_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;UTIL_ACTIVE_L6_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;MAX_MOB_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;PAYMENTRATIO_LESSUB_L6_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-6&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;HIGHEST_LIMIT_OFF&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;AT01S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;AT02S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BC01S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;BC02S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G001B&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G002B&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G003S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G058S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G063S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;10%&#39; align=&#39;center&#39;&gt;G068S&lt;/td&gt;&lt;td class=&#39;bccFieldValue&#39; width=&#39;75%&#39;&gt;BCC Description not available&lt;/td&gt;&lt;td class=&#39;reportFieldValue&#39; width=&#39;15%&#39; align=&#39;center&#39;&gt;-4&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;\r\n&lt;/table&gt;"}}},"ServiceTypeHistory":{"ServiceTypes":[{"Name":"DSBUREAUHARDPULL","ServiceCalledDateTime":"2024-11-29T13:09:22.3320585+08:00","IsSuccess":true}]}}]},"ApplicationData_IO":{},"Decision":"Pass"}}}
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : TransUnionManagement;
+Log : TU Api Data Processing Failed; Reading of field INQUIRY_SEGMENT failed; Exception - 
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : TransUnionManagement;
+Log : TU Api Data Processing Failed; Reading of field EMPLOYMENT_SEGMENT failed; Exception - 
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : TransUnionManagement;
+Log : TU Api Data Processing Failed; Reading of field EMPLOYMENT_SEGMENT failed; Exception - 
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : TransUnionManagement;
+Log : TU Api Data Processing Failed; Reading of field ACCOUNTENQUIRY failed; Exception - 
+29-11-2024 10:39:25; Controller Name : ApiConnection/TU; Class Name : TransUnionManagement;
+Log : TU Api Data Processing Failed; Reading of field CREDIT_EXPOSURE_SEGMENT failed; Exception - 
+Unhandled exception. System.Data.SqlClient.SqlException (0x80131904): JSON text is not properly formatted. Unexpected character 'C' is found at position 0.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1156
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1184
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 815
+   at Acidaes.MayBankApp.DAL.DatabaseAdapter.ExecuteProcedure[T](String ProcedureName, DynamicParameters SQLParameters, String ConnectionStringProvider) in /home/vsts/work/r1/a/_DSG-Maybank/Maybank_CustomCode/Acidaes.MayBankApp/Acidaes.MayBankApp.DAL/Database Connection.cs:line 60
+   at Acidaes.MayBankApp.DAL.TransUnionAccess.StoreTUResponseLogs(Int32 OwnerID, Int32 UserID, TUAPIResponse Data) in /home/vsts/work/r1/a/_DSG-Maybank/Maybank_CustomCode/Acidaes.MayBankApp/Acidaes.MayBankApp.DAL/API Connection/Trans Union.cs:line 105
+   at Acidaes.MayBankApp.BLL.TransUnionManagement.ProcessTUResponse(Boolean generateLog, String ConnectionString, String ControllerName, String ResponseData, Int32 ItemTypeID, Int32 ItemID, Boolean APIResponse) in /home/vsts/work/r1/a/_DSG-Maybank/Maybank_CustomCode/Acidaes.MayBankApp/Acidaes.MayBankApp.BLL/Trans Union/Trans Union Management.cs:line 558
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_1(Object state)
+   at System.Threading.QueueUserWorkItemCallback.<>c.<.cctor>b__6_0(QueueUserWorkItemCallback quwi)
+   at System.Threading.ExecutionContext.RunForThreadPoolUnsafe[TState](ExecutionContext executionContext, Action`1 callback, TState& state)
+   at System.Threading.QueueUserWorkItemCallback.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+ClientConnectionId:e8c85a5f-5855-49b5-91dd-aef5bd166004
+Error Number:13609,State:5,Class:16
