@@ -1,0 +1,64 @@
+Select instanceid,flowid,version,* from flow.flowobject where objectid = 00124709;-- (Mention FA ID inside ObjectID)
+select t.InstanceId, s.Type, s.Label, t.TraceId, s.LaneId, s.StepId, s.UniqueId, t.Status, t.StepStartedOn, t.BookmarkedOn, t.StepCompletedOn, t.ErrorMessage, t.Bookmark, t.Data
+from flow.ScreenFlowTrace t
+inner join flow.flowsteps s
+on s.UniqueId = t.StepId
+where s.SubscriberId = 985 and s.FlowId = 4110 and s.Version = '1.0' and t.InstanceId =44077 order by TraceId desc
+ 
+select * into flowtrace_bkg from flow.ScreenFlowTrace where InstanceId = 44077 order by TraceId desc
+ 
+--delete from flow.ScreenFlowtrace where TraceId in (778032,778033,778034,778036)
+ 
+select * from flow.FlowStageTrace where InstanceId = 44077 order by ExecutionId desc
+ 
+--delete from flow.FlowStageTrace where ExecutionId = 97061
+ 
+select * from flow.FlowStateTrace where InstanceId = 44077 order by TraceId desc
+ 
+select * from flow.ScreenFlowInstance where InstanceId = 44077
+ 
+select * from flow.FlowSteps where FlowId = 4110 and UniqueId = 'A_4015c1c6-0313-cea1-d45d-be1c39c13454'
+
+update flow.ScreenFlowInstance set currentstepid='A_adbef401-6abe-3f6a-813d-c92631b9ddc9',datajson=N'{
+  "data": {
+    "parameters": {
+      "RefererUrl": "",
+      "IsStepAddedUsingAddMore": "False",
+      "JourneyId": "104066",
+      "IsFlowSwitch": "True",
+      "ParentInstanceId": "-1",
+      "ParentFlowType": "2",
+      "IsDedupeActivityResumed": "False",
+      "InstanceId": "26462",
+      "BaseRelatedToId": "0",
+      "BaseRelatedToType": "100286",
+      "UpdateSourceInfo": "False",
+      "AddJoint": "False",
+      "CurrentStep": "0",
+      "IsMarkedForTransition": "False",
+      "StateId": "A_68e9edf0-4719-1624-4d9e-a14163b7785d",
+      "requestedState": "100026",
+      "InitialStateUniqueId": "A_68e9edf0-4719-1624-4d9e-a14163b7785d",
+      "previousOutMessage": "out message",
+      "IsStateSetInternally": "False",
+      "TransactionOpen": "False",
+      "PublishSequence": "40",
+      "IsPartialSave": "False",
+      "TransactionInProgress": "False",
+      "IsFlowIntrrupted": "False",
+      "CurrentState": "100026",
+      "CurrentStage": "A_0264b313-b859-b2cb-f369-51fb5f868a5e",
+      "OutMessage": "out message",
+      "CurrentStateUniqueId": "A_68e9edf0-4719-1624-4d9e-a14163b7785d",
+      "lowProbability": "0",
+      "highProbability": "100",
+      "IsTemporaryVisited": "False",
+      "ExecutedDedupeActivities": "",
+      "IsCloseOrAbandon": "False"
+    },
+    "variables": {
+      "StateActivity": "Acidaes.CRMnext.FlowEngine.Activities.StateActivity"
+    },
+    "children": null
+  }
+}'
