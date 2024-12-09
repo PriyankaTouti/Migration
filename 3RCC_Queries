@@ -1,0 +1,45 @@
+select f5.fia_ex5_3,f5.fia_ex5_4,f5.fia_ex5_5,f5.fia_ex5_74,f5.fia_ex5_75,f5.fia_ex5_76,fa.StatusCode,fa.LastModifiedOn,
+f5.Fia_ex5_7 as DOSRIFLG,f5.Fia_ex5_67 as AUTOOB,f1.Fia_ex1_21 as amtfin,f5.Fia_ex5_66 as PDAlevel from FinancialApplicationHistory fa
+inner join fia_ex5_hs f5 on fa.ownerid = f5.ownerid and fa.customobjectid =f5.fia_ex5_id and fa.historyid=f5.historyid 
+inner join fia_ex1_hs f1 on fa.ownerid = f1.ownerid and fa.customobjectid =f1.fia_ex1_id and fa.historyid=f1.historyid
+where fa.ownerid = 985 and f5.fia_ex5_id = 129260 order by fa.historyid desc
+
+select f5.fia_ex5_3,f5.fia_ex5_4,f5.fia_ex5_5,f5.fia_ex5_74,f5.fia_ex5_75,f5.fia_ex5_76,fa.StatusCode,fa.LastModifiedOn  from FinancialApplicationHistory fa
+
+inner join fia_ex5_hs f5 on fa.ownerid = f5.ownerid and fa.customobjectid =f5.fia_ex5_id and fa.historyid=f5.historyid
+
+where fa.ownerid = 985 and f5.fia_ex5_id = 123619 order by fa.historyid desc
+ 
+faid = 123619
+ 
+sp_helptext MPI_APPROVAL_MATRIX;
+
+sp_helptext MPI_APPROVAL_HISTORY_COMPARE
+ 
+ 
+Select * from ObjectSchema where FieldName like 'FIA_EX5_3'
+
+Select * from ObjectSchema where FieldName like 'FIA_EX5_4'
+
+Select * from ObjectSchema where FieldName like 'FIA_EX5_5';
+ 
+Select * from ObjectSchema where FieldName like 'Fia_ex5_74'
+
+Select * from ObjectSchema where FieldName like 'Fia_ex5_75'
+
+Select * from ObjectSchema where FieldName like 'Fia_ex5_76'
+ 
+Select * from ObjectSchema where FieldName in ('FIA_EX5_3','FIA_EX5_4','FIA_EX5_5',
+
+'FIA_EX5_74','FIA_EX5_75','FIA_EX5_76','FIA_EX5_76');
+ 
+Select * from CustomFieldLookup where FieldId in 
+
+(6714,
+
+6715,
+
+6716)
+ 
+select * from ExternalSourceLog with(nolock) where OwnerId = 985 and DataSourceId = 213 and InputParam1 = 123619 and order by loggedon desc
+ 
