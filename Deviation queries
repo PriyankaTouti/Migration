@@ -1,0 +1,7 @@
+select * from MashupDataSource where ownerid = 985 and name like'%CB%'
+
+select e.ExceptionSubjectiveCondition,e.ExceptionTypeId,e1.exc_ex1_46,e1.exc_ex1_47,e1.exc_ex1_48,e1.exc_ex1_49, * from Exception e
+inner join exc_ex1 e1 on e.OwnerId = e1.OwnerId and e.CustomObjectId = e1.exc_ex1_id
+where e.ownerid = 985 and e.RelatedToID = 78855
+
+select * from ExternalSourceLog where ownerid = 985 and DataSourceId = 159 and inputparam3='77213' order by loggedon desc
