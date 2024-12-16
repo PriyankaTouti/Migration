@@ -1,0 +1,8 @@
+/*Salesman Count*/
+select count(1) where accounts where ownerid = 985 and layoutid = 10204035     --779
+
+/*Sub-Salesman   Count*/
+select count(1) where accounts where ownerid = 985 and layoutid = 10204049     --0
+
+/*Dealer  Count*/
+select count(1) where accounts where ownerid = 985 and layoutid = 10204025 	   
