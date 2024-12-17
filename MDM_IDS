@@ -1,0 +1,2 @@
+Select * from idlist where OwnerID = 985 and ItemID in (100010);-- MappingID
+Select 'SELECT MAX(MappingID) FROM ' + MasterTableName ,ROW_NUMBER () OVER (ORDER BY CustomObjectId) from CorporateMaster Where OwnerId=985
