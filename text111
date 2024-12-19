@@ -1,4 +1,48 @@
 A_ee21be49-00b7-dcad-e2dd-f05c6c33abe9
 
 A_b2ca48e7-2445-2f34-ac20-adaab9bf2db0
+
+{
+  "data": {
+    "parameters": {
+      "RefererUrl": "",
+      "IsStepAddedUsingAddMore": "False",
+      "JourneyId": "-1",
+      "IsFlowSwitch": "False",
+      "ParentInstanceId": "-1",
+      "ParentFlowType": "-1",
+      "IsDedupeActivityResumed": "False",
+      "InstanceId": "26524",
+      "BaseRelatedToId": "-1",
+      "BaseRelatedToType": "-1",
+      "UpdateSourceInfo": "False",
+      "AddJoint": "False",
+      "CurrentStep": "0",
+      "IsFlowIntrrupted": "False",
+      "IsTemporaryVisited": "False",
+      "ExecutedDedupeActivities": "",
+      "IsCloseOrAbandon": "False",
+      "IsStateSetInternally": "False",
+      "IsMarkedForTransition": "False",
+      "StateId": "A_baca73cb-9c31-9f56-c515-ea889988f096",
+      "requestedState": "100027",
+      "InitialStateUniqueId": "A_baca73cb-9c31-9f56-c515-ea889988f096",
+      "previousOutMessage": "out message",
+      "TransactionOpen": "False",
+      "PublishSequence": "13",
+      "IsPartialSave": "False",
+      "TransactionInProgress": "False",
+      "CurrentState": "100027",
+      "CurrentStage": "A_0264b313-b859-b2cb-f369-51fb5f868a5e",
+      "OutMessage": "out message",
+      "CurrentStateUniqueId": "A_baca73cb-9c31-9f56-c515-ea889988f096",
+      "lowProbability": "0",
+      "highProbability": "100"
+    },
+    "variables": {
+      "StateActivity": "Acidaes.CRMnext.FlowEngine.Activities.StateActivity"
+    },
+    "children": null
+  }
+}
  
