@@ -54,6 +54,11 @@ select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'LAN'  and convert(
 /*Monthly LAN Created*/
 select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'LAN'  and convert(date,insertedon)>='2024-12-01' and convert(date,insertedon)<='2024-12-31' group by  itemid having ITEMID >1  --428
 
+/*Total Amount Disbursed*/
+select sum(fia_ex1_21) as Total_amt_Disbursed from FinancialApplication f
+inner join fia_Ex1 f1 on f.ownerid = f1.ownerid and f.CustomObjectId =f1.fia_ex1_id
+where f.ownerid =985 and f.StatusCodeId = 100036  --652004059.62
+
 /*User Login*/
 select format(dateadd(hour,08,LoginDate),'yyyy-MM-dd'),count(distinct userid)   from LoginHistory  where OwnerID = 985  and convert(date,LoginDate)>='2024-04-18' and convert(date,dateadd(hour,08,LoginDate))<='2024-12-22' 
 group by format(dateadd(hour,08,LoginDate),'yyyy-MM-dd')   order by format(dateadd(hour,08,LoginDate),'yyyy-MM-dd')
