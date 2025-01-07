@@ -1,0 +1,14 @@
+<root>
+	<ItemID>12</ItemID>
+	<ItemTypeID>12</ItemTypeID>
+	<UniqueID>41295</UniqueID>
+	<ResponseCode>200</ResponseCode>
+	<ResponseType>True</ResponseType>
+	<ResponseMessage>Post API Call</ResponseMessage>
+	<Data>
+		<cifNo>B139686</cifNo>
+		<name>JAMIL P BENOSA</name>
+		<dob>2000007</dob>
+		<mobileNo>09467446047</mobileNo>
+	</Data>
+</root>

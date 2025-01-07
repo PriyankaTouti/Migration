@@ -1,0 +1,80 @@
+<XMLAPIRequest>
+	<UniqueID>41295</UniqueID>
+	<ItemTypeID>12</ItemTypeID>
+	<ItemID>12</ItemID>
+	<RequestJson>
+		<![CDATA[  {    "FullName" : "Akash  Gupta",    "DOB" : "DOB_FIELD"  }  ]]>
+	</RequestJson>
+	<MethodType>Post</MethodType>
+	<URL>
+		<![CDATA[https://dreiiapp.maybank.com.ph/eii/Customers/GETCIFINFO]]>
+	</URL>
+	<URLType></URLType>
+	<URLValues></URLValues>
+	<ContentType>application/json</ContentType>
+	<SoapAction></SoapAction>
+	<AuthToken></AuthToken>
+	<UIDHeader></UIDHeader>
+	<CustomHeader1_Name></CustomHeader1_Name>
+	<CustomHeader1_Value></CustomHeader1_Value>
+	<CustomHeader2_Name></CustomHeader2_Name>
+	<CustomHeader2_Value></CustomHeader2_Value>
+	<CustomHeader3_Name></CustomHeader3_Name>
+	<CustomHeader3_Value></CustomHeader3_Value>
+	<CustomHeader4_Name></CustomHeader4_Name>
+	<CustomHeader4_Value></CustomHeader4_Value>
+	<CustomHeader5_Name></CustomHeader5_Name>
+	<CustomHeader5_Value></CustomHeader5_Value>
+	<returnString>true</returnString>
+	<GenerateAuthToken>true</GenerateAuthToken>
+	<AuthTokenHeaderValue></AuthTokenHeaderValue>
+	<TokenURL>
+		<![CDATA[https://dreiiapp.maybank.com.ph/eii/Token/GetInitializationToken]]>
+	</TokenURL>
+	<TokenRequestBody>
+		<![CDATA[  {      "GUID":"TELLER1",      "Origin":"COLLECTIONS",      "Private_Key": "grlyaPothdQAl2Z85OBU350ro"  }      ]]>
+	</TokenRequestBody>
+	<JulianDateFieldTag>DOB_FIELD</JulianDateFieldTag>
+	<JulianDateFieldValue>07-01-2000</JulianDateFieldValue>
+	<JulianDateFormat>dd-MM-yyyy</JulianDateFormat>
+</XMLAPIRequest>;Url :http://10.117.129.211:31560/customapi/APIConnection/mpi Data:
+<XMLAPIRequest>
+	<UniqueID>41295</UniqueID>
+	<ItemTypeID>12</ItemTypeID>
+	<ItemID>12</ItemID>
+	<RequestJson>
+		<![CDATA[  {    "FullName" : "Akash  Gupta",    "DOB" : "DOB_FIELD"  }  ]]>
+	</RequestJson>
+	<MethodType>Post</MethodType>
+	<URL>
+		<![CDATA[https://dreiiapp.maybank.com.ph/eii/Customers/GETCIFINFO]]>
+	</URL>
+	<URLType></URLType>
+	<URLValues></URLValues>
+	<ContentType>application/json</ContentType>
+	<SoapAction></SoapAction>
+	<AuthToken></AuthToken>
+	<UIDHeader></UIDHeader>
+	<CustomHeader1_Name></CustomHeader1_Name>
+	<CustomHeader1_Value></CustomHeader1_Value>
+	<CustomHeader2_Name></CustomHeader2_Name>
+	<CustomHeader2_Value></CustomHeader2_Value>
+	<CustomHeader3_Name></CustomHeader3_Name>
+	<CustomHeader3_Value></CustomHeader3_Value>
+	<CustomHeader4_Name></CustomHeader4_Name>
+	<CustomHeader4_Value></CustomHeader4_Value>
+	<CustomHeader5_Name></CustomHeader5_Name>
+	<CustomHeader5_Value></CustomHeader5_Value>
+	<returnString>true</returnString>
+	<GenerateAuthToken>true</GenerateAuthToken>
+	<AuthTokenHeaderValue></AuthTokenHeaderValue>
+	<TokenURL>
+		<![CDATA[https://dreiiapp.maybank.com.ph/eii/Token/GetInitializationToken]]>
+	</TokenURL>
+	<TokenRequestBody>
+		<![CDATA[  {      "GUID":"TELLER1",      "Origin":"COLLECTIONS",      "Private_Key": "grlyaPothdQAl2Z85OBU350ro"  }      ]]>
+	</TokenRequestBody>
+	<JulianDateFieldTag>DOB_FIELD</JulianDateFieldTag>
+	<JulianDateFieldValue>07-01-2000</JulianDateFieldValue>
+	<JulianDateFormat>dd-MM-yyyy</JulianDateFormat>
+</XMLAPIRequest>
