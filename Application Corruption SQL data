@@ -1,0 +1,45 @@
+--pick impacted and non-impacted FA
+select * from FinancialApplication where ownerid=985 order by LastModifiedOn desc;
+
+--Paste the FA id from above query into customobjectid
+select * from FinancialApplicationHistory where ownerid=985 and customobjectid=102264 order by HistoryId desc;
+
+select * from Fia_ex1 where Fia_ex1_Id=; -- pick FA id from above
+
+select * from Fia_ex1_Hs where Fia_ex1_Id= order by HistoryId ;-- pick FA id from above
+
+
+--Paste the FA id from above query 
+select * from Application where RelatedToID=102264;
+
+select * from Apl_ex1 where apl_ex1_id=; -- pick applicant id from above query 
+
+select * from Apl_ex1_Hs where apl_ex1_id= order by HistoryId; -- pick applicant id from above query 
+
+--Paste the FA id from above query 
+select * from ApplicationHistory  where RelatedToID=102264;
+
+
+--pick details from below query by putting impacted/non-impacted FA ID in below . Below is just an example:
+select * from flow.FlowObject where ObjectId=102264 and SubscriberId=985;
+--SubscriberId	FlowId	Version	ObjectType	ObjectId	InstanceId
+--985	         4110	  1.0   	100286	  102264    	9513
+
+select * from flow.FlowDefinition where InstanceId=9513 ;--- pick instanceid from above query 
+
+select * from flow.ScreenFlowInstance where InstanceId=9513 ;-- pick instanceid from above query 
+
+select * from flow.FlowStageTrace where InstanceId=9513;-- pick instanceid from above query 
+
+select * from flow.FlowStateTrace where InstanceId=9513;-- pick instanceid from above query 
+
+select * from flow.ScreenFlowTrace where InstanceId=9513 ;-- pick instanceid from above query 
+
+select t.traceid , t.instanceid,s.type,s.label,t.stepid,s.laneid,s.stepid,t.status,t.stepcompletedon,t.errormessage,t.stepstartedon,
+t.bookmark,t.bookmarkedon,t.data
+from flow.ScreenFlowTrace t
+inner join flow.FlowSteps s
+on s.UniqueId=t.StepId
+where s.SubscriberId=985 and s.flowid=4110 and s.Version='1.0' and t.InstanceId=9513 order by TraceId;
+
+
