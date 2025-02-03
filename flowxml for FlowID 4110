@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="utf-16"?>
+<autoFlow>
+	<sequence>
+		<start id="A_535eaee3-4e79-fe1b-a730-3c88606fda59">
+			<isSingleton></isSingleton>
+		</start>
+		<screen id="A_8040ce9b-4239-9c45-e2d1-7a64e02d567a" name="Screen">
+			<ui>
+				<layoutRef ref="" state="0" objectType="100286" objectId="-1" layoutType="1" layoutId="10204014" step="" stepLabel="" navigationOptions="" reloadOnPrevious="" isScreenSkip="true" />
+			</ui>
+			<assignments />
+		</screen>
+		<state id="A_58357246-e808-f334-a924-81781230996f" name="Initial Data Entry" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_97175eb0-b6f8-ea0f-d912-b659560d3554</stageRef>
+			<stateMappings>
+				<mapping stateName="Initial Data Entry" stateId="100002" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_e850f325-cd53-a714-871e-5814a2a48280" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_a6948657-0da1-a2dd-47b8-7343bc0c4304" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_2d5f489f-f70c-8ab9-7a0b-a6aa8b2a33ae" name="XOR" />
+		<state id="A_e5245dc0-a2f0-68e7-5daf-399cfb26c290" name="Proceed to QDE" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</stageRef>
+			<stateMappings>
+				<mapping stateName="Proceed to QDE" stateId="100003" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_eb83935e-8b0d-5c87-ec19-ac541f1a2f3a" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_801c0035-292e-953e-1530-2b5221001d2b" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>false</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_490d86a5-af98-7876-c600-adc611592ef5" name="XOR" />
+		<state id="A_fdfcb1cf-8603-2c35-fb37-24798be3d51a" name="Rejected" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</stageRef>
+			<stateMappings>
+				<mapping stateName="Rejected" stateId="6467" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="16199646" mandatory="true" />
+				<field fieldId="16199652" mandatory="true" />
+				<field fieldId="16199653" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_d9dcb285-1966-d2b5-25ce-70e66ed6138e" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_ff6fb8a5-9a82-12da-f970-13b9a4ddf8df" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<end id="A_2ceac1e5-c1eb-301f-9144-478bfcf8d567">
+			<ui hasMessage="" message="" redirectionType="" />
+		</end>
+		<state id="A_6d1c30c7-0c5d-c009-4970-ea32db637de2" name="Quick Data Entry Done" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</stageRef>
+			<stateMappings>
+				<mapping stateName="Quick Data Entry Done" stateId="100005" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_2d8ef7e6-d63e-846c-823c-fc5f5a3cf6c5" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_0aee97ba-2d51-4d2a-f9f9-599d4bb796aa" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_1999d0d4-739a-77b6-8db1-24ea0d73fc77" name="XOR" />
+		<state id="A_be4a3671-aeb7-55c8-5b6c-99231601ed02" name="Proceed to FDE" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</stageRef>
+			<stateMappings>
+				<mapping stateName="Proceed to FDE" stateId="100006" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<enforcementrule id="A_45a132de-4ae8-3073-b00e-d0b27ef73a9f" name="Business Enforcement Rule">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<ruleMappings>
+				<ruleMapping ruleName="Update Approvals to Sent for Rework Status" ruleId="4310" />
+			</ruleMappings>
+			<applyTrigger>false</applyTrigger>
+		</enforcementrule>
+		<recordUpdate id="A_99977cd2-e48b-88f3-9525-c582b42e1222" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_f7d94abc-94f6-ce20-1824-895ef9347ab2" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_41ac6b45-3aaf-4a10-32e3-cdf14d189f23" name="XOR" />
+		<state id="A_1a3ec1e5-be16-836e-0fb7-8c69f4fd2375" name="Rejected" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</stageRef>
+			<stateMappings>
+				<mapping stateName="Rejected" stateId="6467" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_c0581d40-c141-b1bf-79c8-c91e21999d10" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_7cbf80ff-d2b5-3551-1bc0-335ddf1f8bab" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<end id="A_9d1a5dbb-cb83-c98b-129a-ec586b9d804e">
+			<ui hasMessage="" message="" redirectionType="" />
+		</end>
+		<state id="A_092e66db-0e89-00b5-791d-1ce02de3073f" name="Full Data Entry Done" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</stageRef>
+			<stateMappings>
+				<mapping stateName="Full Data Entry Done" stateId="100008" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_c97f37fd-9013-75f5-69d2-d4d4c20953e7" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_e093373b-fb15-866f-4ecb-d7e51d16e17e" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_f039503e-8078-6890-c6fd-19e7dafd5a3d" name="XOR" />
+		<state id="A_8f8b5633-b6e4-7cb3-1be7-e7ef5deadb2b" name="Closed" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_c8d7ad8c-c951-2362-4b41-321f2e239a46</stageRef>
+			<stateMappings>
+				<mapping stateName="Closed" stateId="6468" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_4c88b01f-d6cd-da19-6735-d1655be5c91b" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_306d612f-e472-f004-9d78-90c3acfae3e7" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>false</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<end id="A_b27ecf4a-810f-0940-2b49-f9fc70292abb">
+			<ui hasMessage="" message="" redirectionType="" />
+		</end>
+		<state id="A_d5d277c8-e0a9-1bbb-7d52-486efc24571e" name="Rejected" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_c8d7ad8c-c951-2362-4b41-321f2e239a46</stageRef>
+			<stateMappings>
+				<mapping stateName="Rejected" stateId="6467" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="16199646" mandatory="true" />
+				<field fieldId="16199652" mandatory="true" />
+				<field fieldId="16199653" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_b5a24bbf-7306-c184-fe29-5671f911dae4" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_191c0927-163c-d57e-df26-6f667dc8bf91" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>false</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<end id="A_b27ecf4a-810f-0940-2b49-f9fc70292abb">
+			<ui hasMessage="" message="" redirectionType="" />
+		</end>
+		<state id="A_ba116ade-55bc-2af4-7411-ef8fcf753396" name="Initiate Verification" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_c8d7ad8c-c951-2362-4b41-321f2e239a46</stageRef>
+			<stateMappings>
+				<mapping stateName="Initiate Verification" stateId="100025" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<enforcementrule id="A_a80a261c-0aa0-5b75-bb86-36007a1b6e37" name="Business Enforcement Rule">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<ruleMappings>
+				<ruleMapping ruleName="Update Approvals to Sent for Rework Status" ruleId="4310" />
+			</ruleMappings>
+			<applyTrigger>false</applyTrigger>
+		</enforcementrule>
+		<recordUpdate id="A_3a8db3cb-f3bb-fe44-c88a-1c702c37510c" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_a8b12088-9272-5241-9abc-a7d7729bc8f4" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>false</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_4466f754-960b-4273-83a5-c65548358527" name="XOR" />
+		<state id="A_1ca5a02d-82c1-ec8b-a140-042de9eebba1" name="Initiate Underwriting" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Initiate Underwriting" stateId="100078" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_407f58be-1f88-74ab-a0cb-b8d11387c962" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_a923e921-6542-782c-21ee-a5cb4e96e9ef" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_6ef5fbc0-4cd0-813b-5376-503d3ae5ebc1" name="XOR" />
+		<state id="A_b3a40579-65b6-0d50-4878-cd441e63d6ea" name="Underwriting Done" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Underwriting Done" stateId="100101" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_ed76f7e3-530f-4a24-9e21-7e997e9df59d" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_4015c1c6-0313-cea1-d45d-be1c39c13454" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<decision id="A_f3982b32-34a1-55b4-07be-6b6962dc37fd" name="Is Green lane?">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex5_174" rightSource="DataModel" right="1" rightId="1" />
+				</and>
+			</condition>
+		</decision>
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_5b370d99-256f-b2a2-6dee-c936c9e2cc83" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_4894a35e-cdfb-1d9f-211a-eafdb3214d21" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_2b9fbab9-b9db-1cc0-9b95-5d960cb7019a" name="XOR" />
+		<state id="A_6ad15242-807b-5169-1e3a-07641f8660be" name="Rework" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Rework" stateId="100122" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7137" mandatory="true" />
+				<field fieldId="7176" mandatory="true" />
+				<field fieldId="7564" mandatory="false" />
+				<field fieldId="7157" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_5b9c3cdc-7ca7-dded-85a2-8435e4238388" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<decision id="A_5be975d7-60de-104c-c0ec-4f7571e4787c" name="Send to Stage?">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex5_121" rightSource="DataModel" right="100008" rightId="100008" />
+				</and>
+			</condition>
+		</decision>
+		<state id="A_be4a3671-aeb7-55c8-5b6c-99231601ed02" name="Proceed to FDE" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</stageRef>
+			<stateMappings>
+				<mapping stateName="Proceed to FDE" stateId="100006" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_ba116ade-55bc-2af4-7411-ef8fcf753396" name="Initiate Verification" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_c8d7ad8c-c951-2362-4b41-321f2e239a46</stageRef>
+			<stateMappings>
+				<mapping stateName="Initiate Verification" stateId="100025" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_68e9edf0-4719-1624-4d9e-a14163b7785d" name="Sent for Pre-booking" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Pre-booking" stateId="100026" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="6184" mandatory="true" />
+				<field fieldId="6185" mandatory="true" />
+				<field fieldId="6189" mandatory="true" />
+				<field fieldId="6190" mandatory="true" />
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<decision id="A_7dd470fa-e3f6-34c0-0eff-bc5960b7334f" name="Score Deteriorated">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex3_30" rightSource="DataModel" right="0" rightId="0" />
+				</and>
+			</condition>
+		</decision>
+		<decision id="A_aa0b4945-0541-9b24-4c9a-fd097e2efef5" name="PDA Level Deteriorated">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex3_53" rightSource="DataModel" right="0" rightId="0" />
+				</and>
+			</condition>
+		</decision>
+		<decision id="A_df3361b0-fed5-6f07-731a-81fefc8b849d" name="Loan Packaging Change">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex4_1" rightSource="DataModel" right="0" rightId="0" />
+				</and>
+			</condition>
+		</decision>
+		<decision id="A_9fe8bdc3-7539-366e-db8b-95a010a667dc" name="PO or ATD Issuance">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex4_2" rightSource="DataModel" right="0" rightId="0" />
+				</and>
+			</condition>
+		</decision>
+		<recordUpdate id="A_96a84b0b-dba8-30d0-580d-8c345893e914" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_adbef401-6abe-3f6a-813d-c92631b9ddc9" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>false</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_9ba9cb22-f7e6-ac41-d06f-c9f404911d92" name="XOR" />
+		<state id="A_7a1346f1-dd5e-1fb4-590b-bd47f05ffafe" name="Rework" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_a34e01f9-5ab8-c16e-f3e8-c0c62027f7b2</stageRef>
+			<stateMappings>
+				<mapping stateName="Rework" stateId="100122" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7137" mandatory="true" />
+				<field fieldId="7176" mandatory="true" />
+				<field fieldId="7564" mandatory="false" />
+				<field fieldId="7157" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_7248c6f5-418a-eea0-ee28-50253231ccce" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<decision id="A_1506005f-de19-9a51-730c-8feaf42786c9" name="Send to Stage?">
+			<condition>
+				<and>
+					<in leftSource="DataModel" leftId="Fia_ex5_121" rightSource="DataModel" right="100008,100025" rightId="100008,100025" />
+				</and>
+			</condition>
+		</decision>
+		<decision id="A_fc1daf4a-c82a-d468-236b-ae56098fb66c" name="Send to Stage?">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex5_121" rightSource="DataModel" right="100025" rightId="100025" />
+				</and>
+			</condition>
+		</decision>
+		<state id="A_be4a3671-aeb7-55c8-5b6c-99231601ed02" name="Proceed to FDE" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</stageRef>
+			<stateMappings>
+				<mapping stateName="Proceed to FDE" stateId="100006" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_ba116ade-55bc-2af4-7411-ef8fcf753396" name="Initiate Verification" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_c8d7ad8c-c951-2362-4b41-321f2e239a46</stageRef>
+			<stateMappings>
+				<mapping stateName="Initiate Verification" stateId="100025" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_c87e74e8-c376-d8e0-c53a-a03e68b218ac" name="Sent for Loan Booking" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_a34e01f9-5ab8-c16e-f3e8-c0c62027f7b2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Loan Booking" stateId="100032" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_5a5955f2-e309-fe34-87b0-3f85a5695ba2" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_88ecb3eb-0289-cba8-b008-162f04b90cf4" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>false</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_ebf9c477-fe36-ae4e-a79c-662253b2dfaa" name="XOR" />
+		<state id="A_10f8ef90-7a81-347a-1895-dfb26d08ea1b" name="Booked" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_3cc15166-9a4d-d658-fc81-6b2be09e854e</stageRef>
+			<stateMappings>
+				<mapping stateName="Booked" stateId="100117" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<enforcementrule id="A_099ad487-fcf8-3534-e596-a801dded5015" name="Business Enforcement Rule">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<ruleMappings>
+				<ruleMapping ruleName="LAN Generation" ruleId="4313" />
+			</ruleMappings>
+			<applyTrigger>true</applyTrigger>
+		</enforcementrule>
+		<enforcementrule id="A_52bf39d6-4414-08c6-ee2b-4b9151c8b758" name="Business Enforcement Rule">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<ruleMappings>
+				<ruleMapping ruleName="MQ: Call LAN MQ API" ruleId="4280" />
+			</ruleMappings>
+			<applyTrigger>true</applyTrigger>
+		</enforcementrule>
+		<decision id="A_f9f50b3b-6cd8-6c1b-b80b-9bcd1393d67b" name="LAN and PN">
+			<condition>
+				<and>
+					<isspecified leftSource="DataModel" leftId="Fia_ex5_81" rightSource="Constant" right="" rightId="" />
+				</and>
+			</condition>
+		</decision>
+		<recordUpdate id="A_4025a8cd-9890-c018-5b80-ab69e0acbb82" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_2cb5da8e-d8a7-a8c4-f370-d61ab95d3c78" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>false</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_541bac11-4fb8-1ee9-c478-164c00cf36f0" name="XOR" />
+		<state id="A_51848267-6beb-fb8f-f449-f008099217aa" name="Sent for Disbursement" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_3cc15166-9a4d-d658-fc81-6b2be09e854e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Disbursement" stateId="100033" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_2b296955-8830-6e90-e017-77a4f158115b" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_7d50283c-eb27-1dfc-3568-ecb8e75f1cf4" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<decision id="A_7a2169bb-60a2-c9b9-fc73-0fc9204d9308" name="Approval Flag">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex5_88" rightSource="DataModel" right="Y" rightId="Y" />
+				</and>
+			</condition>
+		</decision>
+		<state id="A_51848267-6beb-fb8f-f449-f008099217aa" name="Sent for Disbursement" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_3cc15166-9a4d-d658-fc81-6b2be09e854e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Disbursement" stateId="100033" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_88fb72dc-51fd-772a-514a-5675122b53fd" name="Loan Disbursed" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_4eece39d-129c-e335-d06f-2f09fcc42a4f</stageRef>
+			<stateMappings>
+				<mapping stateName="Loan Disbursed" stateId="100036" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_d76d5073-ad91-3aa2-b240-8b702862e47a" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_85ab1e66-f8f3-45ac-448c-e9c419bebc42" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<end id="A_54811820-e153-07ae-22bb-6030ea72b550">
+			<ui hasMessage="" message="" redirectionType="" />
+		</end>
+		<state id="A_c87e74e8-c376-d8e0-c53a-a03e68b218ac" name="Sent for Loan Booking" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_a34e01f9-5ab8-c16e-f3e8-c0c62027f7b2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Loan Booking" stateId="100032" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_afe952f3-2ca1-cca3-82ce-eded2a549475" name="Rework" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_3cc15166-9a4d-d658-fc81-6b2be09e854e</stageRef>
+			<stateMappings>
+				<mapping stateName="Rework" stateId="100122" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7176" mandatory="true" />
+				<field fieldId="7137" mandatory="true" />
+				<field fieldId="7564" mandatory="false" />
+				<field fieldId="7157" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_5f1cc310-0995-8836-63be-d85ca7305d5b" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<state id="A_68e9edf0-4719-1624-4d9e-a14163b7785d" name="Sent for Pre-booking" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Pre-booking" stateId="100026" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="6184" mandatory="true" />
+				<field fieldId="6185" mandatory="true" />
+				<field fieldId="6189" mandatory="true" />
+				<field fieldId="6190" mandatory="true" />
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_baca73cb-9c31-9f56-c515-ea889988f096" name="Sent to Lending Centre" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent to Lending Centre" stateId="100027" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_910fd7ad-8028-1275-71ca-b8e8e24c30e4" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_b2ca48e7-2445-2f34-ac20-adaab9bf2db0" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_e800f7a4-4e4f-318c-a667-918ca4a34289" name="XOR" />
+		<state id="A_bab878ca-c8bd-c555-556c-bfea4bdabd99" name="Rework for LCH" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Rework for LCH" stateId="100124" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7137" mandatory="true" />
+				<field fieldId="7157" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_0d26a8f4-6f11-e7de-f787-ffc9a1799cbb" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_411907ee-b0c1-61e4-11c3-389ece20d991" name="Sent to Product Officer/Sales Support Officer" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent to Product Officer/Sales Support Officer" stateId="100130" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="6192" mandatory="true" />
+				<field fieldId="6193" mandatory="true" />
+				<field fieldId="6194" mandatory="true" />
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<decision id="A_dabc2509-3c61-20be-51a7-0d38a61c1c08" name="Non Material Changes">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex4_4" rightSource="DataModel" right="0" rightId="0" />
+				</and>
+			</condition>
+		</decision>
+		<decision id="A_03413b76-95a4-1372-6b04-b16b497ade0c" name="Loan Packaging Review">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex4_5" rightSource="DataModel" right="0" rightId="0" />
+				</and>
+			</condition>
+		</decision>
+		<decision id="A_d6cd0b04-ccf9-7aec-252b-783d398063bc" name="PO or ATD Review">
+			<condition>
+				<and>
+					<equals leftSource="DataModel" leftId="Fia_ex4_6" rightSource="DataModel" right="0" rightId="0" />
+				</and>
+			</condition>
+		</decision>
+		<state id="A_5cc07b06-7e94-419e-4cad-109731522d1c" name="Assign to Approver" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent to Approver" stateId="100030" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields />
+		</state>
+		<recordUpdate id="A_99d9a364-d3ec-e985-cdf6-429c29b8d80e" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_840b747a-f88d-6f84-62b3-498c2196a5a0" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_e7e31a90-7d53-37b9-b1b2-ad515e28abb5" name="XOR" />
+		<state id="A_62475ca4-c454-2ab8-e9b7-e9c647ac2182" name="Rejected" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Rejected" stateId="6467" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_c53ea97f-b385-b04d-ccf6-f8d880be96ae" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_69bfb7dc-34df-6cda-a617-f9e548ba1ec6" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<end id="A_8466b7ce-430d-898d-5cd8-cd2090cb204a">
+			<ui hasMessage="" message="" redirectionType="" />
+		</end>
+		<state id="A_40ced085-9d54-6bd4-8a51-9b7e401b3c62" name="Approved" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Approved" stateId="6465" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7414" mandatory="false" />
+				<field fieldId="7415" mandatory="false" />
+				<field fieldId="7412" mandatory="false" />
+				<field fieldId="7413" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_508ac295-c98e-9f15-5696-c1edf9061532" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_e13942b4-ffcd-16f7-2388-0ebc0877cb2f" name="Rework for Approvers" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Rework for Approvers" stateId="100125" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7137" mandatory="true" />
+				<field fieldId="7157" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_d54a955e-3e8a-798a-e9d8-65a856ec25f9" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_230a5e81-f6b3-64e7-2f37-90f50b1753eb" name="Sent to Sales Support" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent to Sales Support" stateId="100029" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_05d0424b-25b3-3150-bb02-b8fa8109a1a3" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_ee21be49-00b7-dcad-e2dd-f05c6c33abe9" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_c2c63e19-be8c-378c-8372-9640077cba65" name="XOR" />
+		<state id="A_5cc07b06-7e94-419e-4cad-109731522d1c" name="Assign to Approver" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent to Approver" stateId="100030" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields />
+		</state>
+		<state id="A_e887af6b-fdfc-c0e4-bc5c-8e826c2d3963" name="Rework for SSO and PO" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Rework for SSO and PO" stateId="100126" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7137" mandatory="true" />
+				<field fieldId="7157" mandatory="true" />
+			</fields>
+		</state>
+		<recordUpdate id="A_20e90946-5b3f-fce3-be3e-780d15c17c50" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_c9961a09-c72f-c49c-52db-ebadcb9bf33b" name="Sent to Product Officer" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent to Product Officer" stateId="100028" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_05ce0146-b81e-afc6-d337-145399d5fa0c" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_6bec7d5f-4c4a-73dd-f828-27216caf889e" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_c2c63e19-be8c-378c-8372-9640077cba65" name="XOR" />
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_baca73cb-9c31-9f56-c515-ea889988f096" name="Sent to Lending Centre" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_0264b313-b859-b2cb-f369-51fb5f868a5e</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent to Lending Centre" stateId="100027" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_ba116ade-55bc-2af4-7411-ef8fcf753396" name="Initiate Verification" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_c8d7ad8c-c951-2362-4b41-321f2e239a46</stageRef>
+			<stateMappings>
+				<mapping stateName="Initiate Verification" stateId="100025" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_ba116ade-55bc-2af4-7411-ef8fcf753396" name="Initiate Verification" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_c8d7ad8c-c951-2362-4b41-321f2e239a46</stageRef>
+			<stateMappings>
+				<mapping stateName="Initiate Verification" stateId="100025" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<event_xor id="A_39843ba9-e074-f64b-be51-fe79349ac3d4" name="XOR" />
+		<state id="A_26a0790b-0731-937b-a5e0-bf64aeb70fba" name="Sent for Underwriting Approval" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Underwriting Approval" stateId="100102" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<recordUpdate id="A_0ac2c729-7c10-b39b-67c6-2a4ec18346e8" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" isFix="false"></field>
+					</fields>
+				</set>
+				<where>
+					<or />
+				</where>
+				<out>
+					<mapping sourceType="WebForm" source="" targetType="Variable" target="" />
+				</out>
+			</mappings>
+		</recordUpdate>
+		<wait id="A_5df62052-ddb1-fd9c-6300-a93a033152a6" name="Wait">
+			<waitType>EventBased</waitType>
+			<isGuarded>true</isGuarded>
+			<sleepTime></sleepTime>
+			<condition>
+				<and />
+			</condition>
+			<redirectTo>0</redirectTo>
+			<beforeMessage></beforeMessage>
+		</wait>
+		<event_xor id="A_cd3ef44b-0438-e4fe-12e1-af1f0fc51928" name="XOR" />
+		<state id="A_44be2d85-5de8-249a-4224-a96044f8b1cc" name="Sent for Post Approval Finalization" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Sent for Post Approval Finalization" stateId="100024" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+			<fields>
+				<field fieldId="7157" mandatory="false" />
+			</fields>
+		</state>
+		<state id="A_e18b075e-ec2b-3132-bff7-f35b1dacfc62" name="Closed" inMessage="in message" objectType="100286" outMessage="out message">
+			<properties>
+				<property name="statuscode" type="Xml"></property>
+			</properties>
+			<stageRef>A_265ac377-0d81-e331-4001-05d4d9081fa2</stageRef>
+			<stateMappings>
+				<mapping stateName="Closed" stateId="6468" LowProbability="0" HighProbability="100" SLA="" StageResult="" />
+			</stateMappings>
+			<sourceStates />
+		</state>
+		<recordUpdate id="A_64cd0992-3937-1a8c-8b8b-15e5661fc696" name="Record Update">
+			<properties>
+				<property name="objectType" type="Integer">100286</property>
+			</properties>
+			<isBookmark></isBookmark>
+			<mappings>
+				<set>
+					<fields>
+						<field name="" sourceType="WebForm" value="" 
