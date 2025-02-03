@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Designer ItemType="ProcessDesigner" Name="Diagram 1"
+	xmlns:p="http://www.businessnext.com/2009/designer/property.xsd"
+	xmlns="http://www.businessnext.com/2009/designer.xsd">
+	<Views>
+		<View ItemType="View" Name="View">
+			<Layers>
+				<Layer Name="Layer">
+					<Nodes>
+						<Node Id="processDesigner" ItemType="processDesignerRoot" Name="processDesignerRoot">
+							<Nodes>
+								<Node Id="A_f10f05da-6d14-4bd4-b032-b32e2d178895" ItemType="pool" Name="Pool">
+									<Nodes>
+										<Node Id="A_683181f2-d443-71d8-b01a-c4bc566bd9f9" ItemType="milestones" Name="Milestones">
+											<Nodes>
+												<Node Id="A_97175eb0-b6f8-ea0f-d912-b659560d3554" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="1000px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="0" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Initial Data Entry (IDE)</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">A_8040ce9b-4239-9c45-e2d1-7a64e02d567a,A_58357246-e808-f334-a924-81781230996f,A_a6948657-0da1-a2dd-47b8-7343bc0c4304,A_e850f325-cd53-a714-871e-5814a2a48280,A_535eaee3-4e79-fe1b-a730-3c88606fda59</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int"></p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="963px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="1000" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Quick Data Entry (QDE)</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">,A_2d5f489f-f70c-8ab9-7a0b-a6aa8b2a33ae,A_e5245dc0-a2f0-68e7-5daf-399cfb26c290,A_eb83935e-8b0d-5c87-ec19-ac541f1a2f3a,A_801c0035-292e-953e-1530-2b5221001d2b,A_9053b688-90e5-9875-6164-a5e9e95324c2,A_d24f75a3-2ad7-421f-d2cb-7cfb31ffd933,A_b6fe8150-f34f-383c-2001-1efc392681b6,A_a959f431-b889-411b-e549-dcf32abee15d,A_16090910-f7da-268a-7566-81e11dd2899d,A_1cfa16c2-2711-a487-d3cd-526104e1cbfc,A_2ceac1e5-c1eb-301f-9144-478bfcf8d567,A_490d86a5-af98-7876-c600-adc611592ef5,A_ff6fb8a5-9a82-12da-f970-13b9a4ddf8df,A_fdfcb1cf-8603-2c35-fb37-24798be3d51a,A_d9dcb285-1966-d2b5-25ce-70e66ed6138e,A_65216408-2f2c-a605-f7f9-d8c6c5b9ed8d,A_0aee97ba-2d51-4d2a-f9f9-599d4bb796aa,A_2d8ef7e6-d63e-846c-823c-fc5f5a3cf6c5,A_6d1c30c7-0c5d-c009-4970-ea32db637de2,A_77793fdf-202d-801a-6a5e-5859e0719bcc,A_d0cac406-c6c4-3d96-08c4-a7530bf1df6c</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">1</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="814px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="1963" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Full Data Entry (FDE)</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">,A_be4a3671-aeb7-55c8-5b6c-99231601ed02,A_48e03576-0a00-9d25-db80-08973d3a8d21,A_1efa14b9-2c89-1b80-55a5-b9aa1d14d534,A_c964e0ae-997e-a901-2050-25086b1db2f3,A_1999d0d4-739a-77b6-8db1-24ea0d73fc77,A_50141161-ad87-56fd-106a-eff44c53d048,A_bc0d65e5-4308-9967-5e6b-677df07349e9,A_78a8bf58-732a-ac66-0feb-c6e0e7d18380,A_9d1a5dbb-cb83-c98b-129a-ec586b9d804e,A_1a3ec1e5-be16-836e-0fb7-8c69f4fd2375,A_7cbf80ff-d2b5-3551-1bc0-335ddf1f8bab,A_2e55cea8-ed66-69b0-d5d0-7b79f18cb482,A_c0581d40-c141-b1bf-79c8-c91e21999d10,A_41ac6b45-3aaf-4a10-32e3-cdf14d189f23,A_e093373b-fb15-866f-4ecb-d7e51d16e17e,A_c97f37fd-9013-75f5-69d2-d4d4c20953e7,A_092e66db-0e89-00b5-791d-1ce02de3073f,A_aa45e108-57b7-c4a1-5801-fe305b6d14f2,A_a9655f71-aff9-437f-cc49-c3592b5bcdd4,A_f7d94abc-94f6-ce20-1824-895ef9347ab2,A_99977cd2-e48b-88f3-9525-c582b42e1222,A_45a132de-4ae8-3073-b00e-d0b27ef73a9f</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">2</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_c8d7ad8c-c951-2362-4b41-321f2e239a46" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="1014px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="2777" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Verification</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">A_f039503e-8078-6890-c6fd-19e7dafd5a3d,A_8f8b5633-b6e4-7cb3-1be7-e7ef5deadb2b,A_d5d277c8-e0a9-1bbb-7d52-486efc24571e,A_ba116ade-55bc-2af4-7411-ef8fcf753396,A_4c88b01f-d6cd-da19-6735-d1655be5c91b,A_306d612f-e472-f004-9d78-90c3acfae3e7,A_b5a24bbf-7306-c184-fe29-5671f911dae4,A_191c0927-163c-d57e-df26-6f667dc8bf91,A_b27ecf4a-810f-0940-2b49-f9fc70292abb,A_a8b12088-9272-5241-9abc-a7d7729bc8f4,A_3a8db3cb-f3bb-fe44-c88a-1c702c37510c,A_a80a261c-0aa0-5b75-bb86-36007a1b6e37</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">3</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_265ac377-0d81-e331-4001-05d4d9081fa2" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="1766px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="3791" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Underwriting</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">A_1ca5a02d-82c1-ec8b-a140-042de9eebba1,A_9bf773c0-8cd3-0952-89c8-869096aa1016,A_7c7596b7-d7a4-e4db-9430-fa4b5bd51a30,A_407f58be-1f88-74ab-a0cb-b8d11387c962,A_dda800b1-5e94-0843-a088-1bfda789044f,A_8102403c-915b-c129-f33d-928a15c96a4f,A_a923e921-6542-782c-21ee-a5cb4e96e9ef,A_4466f754-960b-4273-83a5-c65548358527,A_df8f09b3-b9ee-00d4-5fdb-a5dfd5c48690,A_88a2ffe2-9eed-54f9-dcb2-b60e89dc91a7,A_5c2ad18a-0728-757a-42df-0e48783bb101,A_b3a40579-65b6-0d50-4878-cd441e63d6ea,A_ed76f7e3-530f-4a24-9e21-7e997e9df59d,A_4015c1c6-0313-cea1-d45d-be1c39c13454,A_6ef5fbc0-4cd0-813b-5376-503d3ae5ebc1,A_5f34bc30-a033-9d30-91db-c36af89d6a9c,A_de60d9d2-03ea-82ee-051a-6e49e163de3c,A_b32d39f4-52c5-06c5-5039-8d30147b89c6,A_b14d7b5f-fb35-a7c7-de69-a7d0006d6cba,A_d5d4934e-7503-12fc-52e1-2dd68a5f1e33,A_735a4552-14f2-7864-a642-9ce87d61b13d,A_26a0790b-0731-937b-a5e0-bf64aeb70fba,A_5df62052-ddb1-fd9c-6300-a93a033152a6,A_0ac2c729-7c10-b39b-67c6-2a4ec18346e8,A_d4faea98-6db8-e69f-11fd-c25a5e23cb46,A_c4f406bb-fea6-f09f-5770-5c70aaa8dc05,A_da0ca2c7-ff05-f522-de4f-ad2b6f0220c0,A_cb8f6d36-8782-e161-2141-a11144f1e74a,A_d25884e6-e898-5560-db97-9eb7cc1b32e7,A_39843ba9-e074-f64b-be51-fe79349ac3d4,A_a31bec60-987f-f124-b189-c2d74b8cab31,A_99ec3a6e-3984-b22d-70c1-7296acb7266e,A_4d88b07c-312c-5561-8cf6-6ba9685b4a79,A_cd3ef44b-0438-e4fe-12e1-af1f0fc51928,A_4894a35e-cdfb-1d9f-211a-eafdb3214d21,A_5b370d99-256f-b2a2-6dee-c936c9e2cc83,A_44be2d85-5de8-249a-4224-a96044f8b1cc,A_e18b075e-ec2b-3132-bff7-f35b1dacfc62,A_d85370f5-2030-5215-3b62-9774f8852842,A_94cedca6-4262-04c6-5911-799ac284d702,A_61bc2006-349d-1587-a8f3-4d37dbc8629e,A_64cd0992-3937-1a8c-8b8b-15e5661fc696,A_1d818fb5-4e4a-bb85-1092-5270c1bc1e72,A_5129a8eb-d830-90d5-7041-a60a48ac0f42,A_d922020d-8625-6490-7e53-ab64992dd9f4,A_a9a6cba3-94ea-e4b2-c1cd-fde5a7bdd7fc,A_cf65db0d-99b1-959d-c8b3-b3d8925ff524,A_e4cf0f56-4963-6c63-1dbb-9fb78069bd6b,A_bca7ead7-09a7-2022-1bc0-a2ea922f67f6,A_6523cdb4-c916-148d-4ef1-9b2739be891e,A_a4582815-0363-1398-8ac1-230238be3d24,A_da44c8db-1992-4672-0c81-be975bb13ee4,A_f3982b32-34a1-55b4-07be-6b6962dc37fd</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">4</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_0264b313-b859-b2cb-f369-51fb5f868a5e" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="1135px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="5557" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Post Approval</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">,A_b2ca48e7-2445-2f34-ac20-adaab9bf2db0,A_910fd7ad-8028-1275-71ca-b8e8e24c30e4,A_baca73cb-9c31-9f56-c515-ea889988f096,A_adbef401-6abe-3f6a-813d-c92631b9ddc9,A_2b9fbab9-b9db-1cc0-9b95-5d960cb7019a,A_6ad15242-807b-5169-1e3a-07641f8660be,A_5b9c3cdc-7ca7-dded-85a2-8435e4238388,A_5be975d7-60de-104c-c0ec-4f7571e4787c,A_8466b7ce-430d-898d-5cd8-cd2090cb204a,A_69bfb7dc-34df-6cda-a617-f9e548ba1ec6,A_c53ea97f-b385-b04d-ccf6-f8d880be96ae,A_62475ca4-c454-2ab8-e9b7-e9c647ac2182,A_e7e31a90-7d53-37b9-b1b2-ad515e28abb5,A_840b747a-f88d-6f84-62b3-498c2196a5a0,A_99d9a364-d3ec-e985-cdf6-429c29b8d80e,A_5cc07b06-7e94-419e-4cad-109731522d1c,A_03413b76-95a4-1372-6b04-b16b497ade0c,A_d6cd0b04-ccf9-7aec-252b-783d398063bc,A_68e9edf0-4719-1624-4d9e-a14163b7785d,A_7dd470fa-e3f6-34c0-0eff-bc5960b7334f,A_aa0b4945-0541-9b24-4c9a-fd097e2efef5,A_df3361b0-fed5-6f07-731a-81fefc8b849d,A_9fe8bdc3-7539-366e-db8b-95a010a667dc,A_96a84b0b-dba8-30d0-580d-8c345893e914,A_c2c63e19-be8c-378c-8372-9640077cba65,A_20e90946-5b3f-fce3-be3e-780d15c17c50,A_40ced085-9d54-6bd4-8a51-9b7e401b3c62,A_508ac295-c98e-9f15-5696-c1edf9061532,A_0d26a8f4-6f11-e7de-f787-ffc9a1799cbb,A_e13942b4-ffcd-16f7-2388-0ebc0877cb2f,A_d54a955e-3e8a-798a-e9d8-65a856ec25f9,A_e887af6b-fdfc-c0e4-bc5c-8e826c2d3963,A_bab878ca-c8bd-c555-556c-bfea4bdabd99,A_dabc2509-3c61-20be-51a7-0d38a61c1c08,A_411907ee-b0c1-61e4-11c3-389ece20d991,A_e800f7a4-4e4f-318c-a667-918ca4a34289,A_c9961a09-c72f-c49c-52db-ebadcb9bf33b,A_05d0424b-25b3-3150-bb02-b8fa8109a1a3,A_ee21be49-00b7-dcad-e2dd-f05c6c33abe9,A_05ce0146-b81e-afc6-d337-145399d5fa0c,A_6bec7d5f-4c4a-73dd-f828-27216caf889e,A_230a5e81-f6b3-64e7-2f37-90f50b1753eb</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">5</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_a34e01f9-5ab8-c16e-f3e8-c0c62027f7b2" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="821px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="6692" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Pre-Booking</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">,A_9ba9cb22-f7e6-ac41-d06f-c9f404911d92,A_7a1346f1-dd5e-1fb4-590b-bd47f05ffafe,A_7248c6f5-418a-eea0-ee28-50253231ccce,A_1506005f-de19-9a51-730c-8feaf42786c9,A_fc1daf4a-c82a-d468-236b-ae56098fb66c,A_5a5955f2-e309-fe34-87b0-3f85a5695ba2,A_88ecb3eb-0289-cba8-b008-162f04b90cf4,A_c87e74e8-c376-d8e0-c53a-a03e68b218ac</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">6</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_3cc15166-9a4d-d658-fc81-6b2be09e854e" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="889px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="7513" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Loan Booking</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">,A_ebf9c477-fe36-ae4e-a79c-662253b2dfaa,A_10f8ef90-7a81-347a-1895-dfb26d08ea1b,A_afe952f3-2ca1-cca3-82ce-eded2a549475,A_5f1cc310-0995-8836-63be-d85ca7305d5b,A_51848267-6beb-fb8f-f449-f008099217aa,A_7d50283c-eb27-1dfc-3568-ecb8e75f1cf4,A_2b296955-8830-6e90-e017-77a4f158115b,A_541bac11-4fb8-1ee9-c478-164c00cf36f0,A_099ad487-fcf8-3534-e596-a801dded5015,A_52bf39d6-4414-08c6-ee2b-4b9151c8b758,A_f9f50b3b-6cd8-6c1b-b80b-9bcd1393d67b,A_4025a8cd-9890-c018-5b80-ab69e0acbb82,A_2cb5da8e-d8a7-a8c4-f370-d61ab95d3c78</p:String>
+														<p:String Name="MilestoneRef" Type="String">A_a34e01f9-5ab8-c16e-f3e8-c0c62027f7b2</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">7</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+												<Node Id="A_4eece39d-129c-e335-d06f-2f09fcc42a4f" ItemType="milestone" Name="milestone">
+													<Nodes></Nodes>
+													<Properties>
+														<p:Color Name="Background" Type="Color">grey</p:Color>
+														<p:Color Name="StrokeColor" Type="Color">black</p:Color>
+														<p:Color Name="TextColor" Type="Color">#000000</p:Color>
+														<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="745px"></p:Size>
+														<p:Position Name="Position" Type="Position" Unit="px" Left="8402" Top="0"></p:Position>
+														<p:String Name="Label" Type="String">milestone</p:String>
+														<p:String Name="MasterStageName" Type="String"></p:String>
+														<p:String Name="Name" Type="String">Disbursement</p:String>
+														<p:String Name="InMessage" Type="String">in message</p:String>
+														<p:String Name="OutMessage" Type="String">out message</p:String>
+														<p:String Name="ChildRef" Type="String">,A_88fb72dc-51fd-772a-514a-5675122b53fd,A_85ab1e66-f8f3-45ac-448c-e9c419bebc42,A_d76d5073-ad91-3aa2-b240-8b702862e47a,A_54811820-e153-07ae-22bb-6030ea72b550,A_7a2169bb-60a2-c9b9-fc73-0fc9204d9308</p:String>
+														<p:String Name="MilestoneRef" Type="String">A_ced694f9-b5a9-f89f-8444-ff22eddddb92</p:String>
+														<p:Behavior Name="Panel" PanelType="CanvasPanel" Type="Behavior"></p:Behavior>
+														<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+														<p:Int Name="Sequence" Type="Int">8</p:Int>
+														<p:Xml Name="Expression" Type="Xml"></p:Xml>
+													</Properties>
+												</Node>
+											</Nodes>
+											<Properties>
+												<p:Size Name="Size" Type="Size" Unit="px" Height="100%" Width="auto"></p:Size>
+												<p:Position Name="Position" Type="Position" Unit="px" Left="30" Top="0"></p:Position>
+												<p:Behavior Name="Panel" PanelType="HStack" Type="Behavior"></p:Behavior>
+											</Properties>
+										</Node>
+										<Node Id="A_14186621-df1b-22b4-5069-a0769d21dd3e" ItemType="swimlanes" Name="Swimlanes">
+											<Nodes>
+												<Node Id="A_324da7dd-f3c3-a0b0-f6a7-f314eb591f7f" ItemType="swimlane" Name="Swimlane">
+													<Nodes>
+														<Node Id="A_69becbc6-3d81-4db2-df98-f64193f81da1" ItemType="workflowitems" Name="WorkflowItems">
+															<Nodes>
+																<Node Id="A_8040ce9b-4239-9c45-e2d1-7a64e02d567a" ItemType="screen" Name="Screen">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="199" Top="63"></p:Position>
+																		<p:String Name="Name" Type="String">Screen</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_97175eb0-b6f8-ea0f-d912-b659560d3554</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type='screen'><id>A_8040ce9b-4239-9c45-e2d1-7a64e02d567a</id><parameters><parameter name='layoutType' sourceType='Constant'>1</parameter><parameter name='state' sourceType='Constant'>0</parameter><parameter name='objectType' sourceType='Constant'>100286</parameter><parameter name='journeyobjectType' sourceType='Constant'>100286</parameter><parameter name='journeylayoutType' sourceType='Constant'></parameter><parameter name='journeylayout' sourceType='Constant'></parameter><parameter name='journeystate' sourceType='Constant'></parameter><parameter name='layout' sourceType='Constant'>10204014</parameter><parameter name='objectId' sourceType='Constant'>-1</parameter><parameter name='layoutViewType' sourceType='Constant'>0</parameter><parameter name='isScreenSkip' sourceType='Constant'>true</parameter></parameters><assignments></assignments><checklistassignments></checklistassignments></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_2d5f489f-f70c-8ab9-7a0b-a6aa8b2a33ae" ItemType="event_xor" Name="Event_xor">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="70px" Width="70px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1371" Top="126"></p:Position>
+																		<p:String Name="Label" Type="String">event xor</p:String>
+																		<p:String Name="Name" Type="String">XOR</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Xml Name="Expression" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_e5245dc0-a2f0-68e7-5daf-399cfb26c290" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1609" Top="250"></p:Position>
+																		<p:String Name="Name" Type="String">Proceed to QDE</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_e5245dc0-a2f0-68e7-5daf-399cfb26c290</id><objectType name='objectType'>100286</objectType><stateMappings><stateMapping stateName='Proceed to QDE'           stateId='100003'           inMessage='in message'           outMessage='out message'           pow_min='0'          pow_max='100'/></stateMappings><sourceStates></sourceStates></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml">
+																			<![CDATA[<expression><fields><field fieldId='7157' name='Additional Remark' mandatory='false' /></fields></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_eb83935e-8b0d-5c87-ec19-ac541f1a2f3a" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1612" Top="344"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type='Record Update'><id>A_eb83935e-8b0d-5c87-ec19-ac541f1a2f3a</id><objectType name='objectType' sourceType='Constant'>100286</objectType><mappings><set><fields><field  type = '' name = '' sourceType = 'WebForm' value = '' isFix = 'false' isDateType = 'false' externalField = ' ' /></fields></set><where><or><filter leftSource='DataModel' left = '' operator = '' right = '' isFix = 'false' isDateType = 'false' rightSource='WebForm' /></or></where><output><mapping  targetType = 'Variable' target = '' sourceType = 'WebForm' source = '' isFix = 'false' /></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping  targetType = 'DataModel' target = '' sourceType = 'DataModel' source = '' isFix = 'false' /></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_801c0035-292e-953e-1530-2b5221001d2b" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1614" Top="441"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_801c0035-292e-953e-1530-2b5221001d2b" waittype="EventBased" time="" isguarded="false" redirectto="0" beforemessage=""><andorexpression value=""></andorexpression></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_9053b688-90e5-9875-6164-a5e9e95324c2" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1335" Top="352"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type='Record Update'><id>A_9053b688-90e5-9875-6164-a5e9e95324c2</id><objectType name='objectType' sourceType='Constant'>100286</objectType><mappings><set><fields><field  type = '' name = '' sourceType = 'WebForm' value = '' isFix = 'false' isDateType = 'false' externalField = ' ' /></fields></set><where><or><filter leftSource='DataModel' left = '' operator = '' right = '' isFix = 'false' isDateType = 'false' rightSource='WebForm' /></or></where><output><mapping  targetType = 'Variable' target = '' sourceType = 'WebForm' source = '' isFix = 'false' /></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping  targetType = 'DataModel' target = '' sourceType = 'DataModel' source = '' isFix = 'false' /></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_d24f75a3-2ad7-421f-d2cb-7cfb31ffd933" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1337" Top="456"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_d24f75a3-2ad7-421f-d2cb-7cfb31ffd933" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""></andorexpression></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_b6fe8150-f34f-383c-2001-1efc392681b6" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1329" Top="249"></p:Position>
+																		<p:String Name="Name" Type="String">Rejected</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_b6fe8150-f34f-383c-2001-1efc392681b6</id><objectType name='objectType'>100286</objectType><stateMappings><stateMapping stateName='Rejected'           stateId='6467'           inMessage='in message'           outMessage='out message'           pow_min='0'          pow_max='100'/></stateMappings><sourceStates></sourceStates></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml">
+																			<![CDATA[<expression><fields><field fieldId='16199646' name='SN_RejectionDate' mandatory='true' /><field fieldId='16199652' name='SN_RejectionReason' mandatory='true' /><field fieldId='16199653' name='SN_RejectionComments' mandatory='true' /></fields></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_a959f431-b889-411b-e549-dcf32abee15d" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1115" Top="250"></p:Position>
+																		<p:String Name="Name" Type="String">Closed</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_a959f431-b889-411b-e549-dcf32abee15d</id><objectType name='objectType'>100286</objectType><stateMappings><stateMapping stateName='Closed'           stateId='6468'           inMessage='in message'           outMessage='out message'           pow_min='0'          pow_max='100'/></stateMappings><sourceStates></sourceStates></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_16090910-f7da-268a-7566-81e11dd2899d" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1114" Top="351"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type='Record Update'><id>A_16090910-f7da-268a-7566-81e11dd2899d</id><objectType name='objectType' sourceType='Constant'>100286</objectType><mappings><set><fields><field  type = '' name = '' sourceType = 'WebForm' value = '' isFix = 'false' isDateType = 'false' externalField = ' ' /></fields></set><where><or><filter leftSource='DataModel' left = '' operator = '' right = '' isFix = 'false' isDateType = 'false' rightSource='WebForm' /></or></where><output><mapping  targetType = 'Variable' target = '' sourceType = 'WebForm' source = '' isFix = 'false' /></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping  targetType = 'DataModel' target = '' sourceType = 'DataModel' source = '' isFix = 'false' /></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_1cfa16c2-2711-a487-d3cd-526104e1cbfc" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1105" Top="458"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_1cfa16c2-2711-a487-d3cd-526104e1cbfc" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""></andorexpression></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_2ceac1e5-c1eb-301f-9144-478bfcf8d567" ItemType="endEvent" Name="End">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#E30001</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#E30001</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="35px" Width="35px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="1285" Top="570"></p:Position>
+																		<p:String Name="Name" Type="String">End</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_9f26fe54-3bd5-6f3c-b5eb-e10ed8ba2ff4</p:String>
+																		<p:Xml Name="Expression" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_be4a3671-aeb7-55c8-5b6c-99231601ed02" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2490" Top="171"></p:Position>
+																		<p:String Name="Name" Type="String">Proceed to FDE</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_be4a3671-aeb7-55c8-5b6c-99231601ed02</id><objectType name='objectType'>100286</objectType><stateMappings><stateMapping stateName='Proceed to FDE'           stateId='100006'           inMessage='in message'           outMessage='out message'           pow_min='0'          pow_max='100'/></stateMappings><sourceStates></sourceStates></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml">
+																			<![CDATA[<expression><fields><field fieldId='7157' name='Additional Remark' mandatory='false' /></fields></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_48e03576-0a00-9d25-db80-08973d3a8d21" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2265" Top="167"></p:Position>
+																		<p:String Name="Name" Type="String">Rejected</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_48e03576-0a00-9d25-db80-08973d3a8d21</id><objectType name="objectType">100286</objectType><stateMappings><stateMapping stateName="Rejected" stateId="6467" inMessage="in message" outMessage="out message" pow_min="0" pow_max="100"/></stateMappings><sourceStates/></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml">
+																			<![CDATA[<expression><fields><field fieldId='16199646' name='SN_RejectionDate' mandatory='true' /><field fieldId='16199652' name='SN_RejectionReason' mandatory='true' /><field fieldId='16199653' name='SN_RejectionComments' mandatory='true' /></fields></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_1efa14b9-2c89-1b80-55a5-b9aa1d14d534" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2265" Top="272"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="Record Update"><id>A_1efa14b9-2c89-1b80-55a5-b9aa1d14d534</id><objectType name="objectType" sourceType="Constant">100286</objectType><mappings><set><fields><field type="" name="" sourceType="WebForm" value="" isFix="false" isDateType="false" externalField=" "/></fields></set><where><or><filter leftSource="DataModel" left="" operator="" right="" isFix="false" isDateType="false" rightSource="WebForm"/></or></where><output><mapping targetType="Variable" target="" sourceType="WebForm" source="" isFix="false"/></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping targetType="DataModel" target="" sourceType="DataModel" source="" isFix="false"/></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_c964e0ae-997e-a901-2050-25086b1db2f3" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2265" Top="382"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_c964e0ae-997e-a901-2050-25086b1db2f3" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""/></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_1999d0d4-739a-77b6-8db1-24ea0d73fc77" ItemType="event_xor" Name="Event_xor">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="70px" Width="70px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2290" Top="34"></p:Position>
+																		<p:String Name="Label" Type="String">event xor</p:String>
+																		<p:String Name="Name" Type="String">XOR</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Xml Name="Expression" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_50141161-ad87-56fd-106a-eff44c53d048" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2071" Top="168"></p:Position>
+																		<p:String Name="Name" Type="String">Closed</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_50141161-ad87-56fd-106a-eff44c53d048</id><objectType name="objectType">100286</objectType><stateMappings><stateMapping stateName="Closed" stateId="6468" inMessage="in message" outMessage="out message" pow_min="0" pow_max="100"/></stateMappings><sourceStates/></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_bc0d65e5-4308-9967-5e6b-677df07349e9" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2067" Top="381"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_bc0d65e5-4308-9967-5e6b-677df07349e9" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""/></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_78a8bf58-732a-ac66-0feb-c6e0e7d18380" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2075" Top="274"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="Record Update"><id>A_78a8bf58-732a-ac66-0feb-c6e0e7d18380</id><objectType name="objectType" sourceType="Constant">100286</objectType><mappings><set><fields><field type="" name="" sourceType="WebForm" value="" isFix="false" isDateType="false" externalField=" "/></fields></set><where><or><filter leftSource="DataModel" left="" operator="" right="" isFix="false" isDateType="false" rightSource="WebForm"/></or></where><output><mapping targetType="Variable" target="" sourceType="WebForm" source="" isFix="false"/></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping targetType="DataModel" target="" sourceType="DataModel" source="" isFix="false"/></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_f039503e-8078-6890-c6fd-19e7dafd5a3d" ItemType="event_xor" Name="Event_xor">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="70px" Width="70px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="3179" Top="45"></p:Position>
+																		<p:String Name="Label" Type="String">event xor</p:String>
+																		<p:String Name="Name" Type="String">XOR</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_c8d7ad8c-c951-2362-4b41-321f2e239a46</p:String>
+																		<p:Xml Name="Expression" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_9d1a5dbb-cb83-c98b-129a-ec586b9d804e" ItemType="endEvent" Name="End">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#E30001</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#E30001</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="35px" Width="35px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="2285" Top="500"></p:Position>
+																		<p:String Name="Name" Type="String">End</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_10e9ba5d-11de-8d4e-6df4-a2d5cfb592a3</p:String>
+																		<p:Xml Name="Expression" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_1ca5a02d-82c1-ec8b-a140-042de9eebba1" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="3888" Top="205"></p:Position>
+																		<p:String Name="Name" Type="String">Initiate Underwriting</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_1ca5a02d-82c1-ec8b-a140-042de9eebba1</id><objectType name="objectType">100286</objectType><stateMappings><stateMapping stateName="Initiate Underwriting" stateId="100078" inMessage="in message" outMessage="out message" pow_min="0" pow_max="100"/></stateMappings><sourceStates/></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml">
+																			<![CDATA[<expression><fields><field fieldId='7157' name='Additional Remark' mandatory='false' /></fields></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_9bf773c0-8cd3-0952-89c8-869096aa1016" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4116" Top="203"></p:Position>
+																		<p:String Name="Name" Type="String">Rejected</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_9bf773c0-8cd3-0952-89c8-869096aa1016</id><objectType name="objectType">100286</objectType><stateMappings><stateMapping stateName="Rejected" stateId="6467" inMessage="in message" outMessage="out message" pow_min="0" pow_max="100"/></stateMappings><sourceStates/></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml">
+																			<![CDATA[<expression><fields><field fieldId='16199646' name='SN_RejectionDate' mandatory='true' /><field fieldId='16199652' name='SN_RejectionReason' mandatory='true' /><field fieldId='16199653' name='SN_RejectionComments' mandatory='true' /></fields></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_7c7596b7-d7a4-e4db-9430-fa4b5bd51a30" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4330" Top="204"></p:Position>
+																		<p:String Name="Name" Type="String">Closed</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_7c7596b7-d7a4-e4db-9430-fa4b5bd51a30</id><objectType name="objectType">100286</objectType><stateMappings><stateMapping stateName="Closed" stateId="6468" inMessage="in message" outMessage="out message" pow_min="0" pow_max="100"/></stateMappings><sourceStates/></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_407f58be-1f88-74ab-a0cb-b8d11387c962" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="3888" Top="331"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="Record Update"><id>A_407f58be-1f88-74ab-a0cb-b8d11387c962</id><objectType name="objectType" sourceType="Constant">100286</objectType><mappings><set><fields><field type="" name="" sourceType="WebForm" value="" isFix="false" isDateType="false" externalField=" "/></fields></set><where><or><filter leftSource="DataModel" left="" operator="" right="" isFix="false" isDateType="false" rightSource="WebForm"/></or></where><output><mapping targetType="Variable" target="" sourceType="WebForm" source="" isFix="false"/></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping targetType="DataModel" target="" sourceType="DataModel" source="" isFix="false"/></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_dda800b1-5e94-0843-a088-1bfda789044f" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4118" Top="333"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="Record Update"><id>A_dda800b1-5e94-0843-a088-1bfda789044f</id><objectType name="objectType" sourceType="Constant">100286</objectType><mappings><set><fields><field type="" name="" sourceType="WebForm" value="" isFix="false" isDateType="false" externalField=" "/></fields></set><where><or><filter leftSource="DataModel" left="" operator="" right="" isFix="false" isDateType="false" rightSource="WebForm"/></or></where><output><mapping targetType="Variable" target="" sourceType="WebForm" source="" isFix="false"/></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping targetType="DataModel" target="" sourceType="DataModel" source="" isFix="false"/></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_8102403c-915b-c129-f33d-928a15c96a4f" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4331" Top="328"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="Record Update"><id>A_8102403c-915b-c129-f33d-928a15c96a4f</id><objectType name="objectType" sourceType="Constant">100286</objectType><mappings><set><fields><field type="" name="" sourceType="WebForm" value="" isFix="false" isDateType="false" externalField=" "/></fields></set><where><or><filter leftSource="DataModel" left="" operator="" right="" isFix="false" isDateType="false" rightSource="WebForm"/></or></where><output><mapping targetType="Variable" target="" sourceType="WebForm" source="" isFix="false"/></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping targetType="DataModel" target="" sourceType="DataModel" source="" isFix="false"/></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_a923e921-6542-782c-21ee-a5cb4e96e9ef" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="3888" Top="444"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_a923e921-6542-782c-21ee-a5cb4e96e9ef" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""/></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_4466f754-960b-4273-83a5-c65548358527" ItemType="event_xor" Name="Event_xor">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="70px" Width="70px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4132" Top="47"></p:Position>
+																		<p:String Name="Label" Type="String">event xor</p:String>
+																		<p:String Name="Name" Type="String">XOR</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Xml Name="Expression" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_df8f09b3-b9ee-00d4-5fdb-a5dfd5c48690" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4477" Top="451"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_df8f09b3-b9ee-00d4-5fdb-a5dfd5c48690" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""/></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_88a2ffe2-9eed-54f9-dcb2-b60e89dc91a7" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4195" Top="434"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_88a2ffe2-9eed-54f9-dcb2-b60e89dc91a7" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""/></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_5c2ad18a-0728-757a-42df-0e48783bb101" ItemType="endEvent" Name="End">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#E30001</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#E30001</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="35px" Width="35px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4402" Top="519"></p:Position>
+																		<p:String Name="Name" Type="String">End</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="EndEvent"><id>A_5c2ad18a-0728-757a-42df-0e48783bb101</id><title/><hasMessage>false</hasMessage><message/><resolvedMessage/><redirectionType>1</redirectionType><messageType>1</messageType></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_b3a40579-65b6-0d50-4878-cd441e63d6ea" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="3900" Top="736"></p:Position>
+																		<p:String Name="Name" Type="String">Underwriting Done</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_b3a40579-65b6-0d50-4878-cd441e63d6ea</id><objectType name="objectType">100286</objectType><stateMappings><stateMapping stateName="Underwriting Done" stateId="100101" inMessage="in message" outMessage="out message" pow_min="0" pow_max="100"/></stateMappings><sourceStates/></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml">
+																			<![CDATA[<expression><fields><field fieldId='7157' name='Additional Remark' mandatory='false' /></fields></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_ed76f7e3-530f-4a24-9e21-7e997e9df59d" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="3902" Top="857"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="Record Update"><id>A_ed76f7e3-530f-4a24-9e21-7e997e9df59d</id><objectType name="objectType" sourceType="Constant">100286</objectType><mappings><set><fields><field type="" name="" sourceType="WebForm" value="" isFix="false" isDateType="false" externalField=" "/></fields></set><where><or><filter leftSource="DataModel" left="" operator="" right="" isFix="false" isDateType="false" rightSource="WebForm"/></or></where><output><mapping targetType="Variable" target="" sourceType="WebForm" source="" isFix="false"/></output></mappings><isResumeRelatedFlow>false</isResumeRelatedFlow><showExternalField>false</showExternalField><journeyExecutionMappings><mapping targetType="DataModel" target="" sourceType="DataModel" source="" isFix="false"/></journeyExecutionMappings></expression>]]>
+																		</p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_4015c1c6-0313-cea1-d45d-be1c39c13454" ItemType="wait" Name="Wait">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="3900" Top="976"></p:Position>
+																		<p:String Name="Name" Type="String">Wait</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="BeforeMessage" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expressions id="A_4015c1c6-0313-cea1-d45d-be1c39c13454" waittype="EventBased" time="" isguarded="true" redirectto="0" beforemessage=""><andorexpression value=""/></expressions>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_6ef5fbc0-4cd0-813b-5376-503d3ae5ebc1" ItemType="event_xor" Name="Event_xor">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="70px" Width="70px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4274" Top="596"></p:Position>
+																		<p:String Name="Label" Type="String">event xor</p:String>
+																		<p:String Name="Name" Type="String">XOR</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Xml Name="Expression" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_5f34bc30-a033-9d30-91db-c36af89d6a9c" ItemType="state" Name="State">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4217" Top="754"></p:Position>
+																		<p:String Name="Name" Type="String">Rejected</p:String>
+																		<p:String Name="InMessage" Type="String">in message</p:String>
+																		<p:String Name="OutMessage" Type="String">out message</p:String>
+																		<p:String Name="CoachText" Type="String"></p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression><id>A_5f34bc30-a033-9d30-91db-c36af89d6a9c</id><objectType name="objectType">100286</objectType><stateMappings><stateMapping stateName="Rejected" stateId="6467" inMessage="in message" outMessage="out message" pow_min="0" pow_max="100"/></stateMappings><sourceStates/></expression>]]>
+																		</p:Xml>
+																		<p:Xml Name="Fields" Type="Xml"></p:Xml>
+																		<p:Xml Name="AttachmentIds" Type="Xml"></p:Xml>
+																	</Properties>
+																</Node>
+																<Node Id="A_de60d9d2-03ea-82ee-051a-6e49e163de3c" ItemType="recordUpdate" Name="RecordUpdate">
+																	<Nodes></Nodes>
+																	<Properties>
+																		<p:Color Name="TextColor" Type="Color">#118fff</p:Color>
+																		<p:Color Name="StrokeColor" Type="Color">#AFAEAC</p:Color>
+																		<p:Color Name="Background" Type="Color">#FFFFFF</p:Color>
+																		<p:Size Name="Size" Type="Size" Unit="px" Height="50px" Width="130px"></p:Size>
+																		<p:Position Name="Position" Type="Position" Unit="px" Left="4217" Top="864"></p:Position>
+																		<p:String Name="Name" Type="String">Record Update</p:String>
+																		<p:String Name="MilestoneRef" Type="String">A_265ac377-0d81-e331-4001-05d4d9081fa2</p:String>
+																		<p:Boolean Name="Active" Type="Boolean">true</p:Boolean>
+																		<p:Xml Name="Expression" Type="Xml">
+																			<![CDATA[<expression type="Record Update"><id>A_de60d9d2-03ea-82ee-051a-6e49e163de3c</id><objectType name="objectType" sourceType="Constant">100286</objectType><m
