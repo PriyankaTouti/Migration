@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xmlns:local="urn:local" extension-element-prefixes="msxsl">
+	<msxsl:script language="CSharp" implements-prefix="local">
+		<msxsl:assembly name="System.Core" />
+		<msxsl:using namespace="System.Linq" />
+		<msxsl:using namespace="System.Collections.Generic" />
+		<![CDATA[
+       public static string FetchMasterValue(string masterValue, string masterName)
+        {
+            if (!string.IsNullOrEmpty(masterValue) && masterName.Equals("ERRORCODE"))
+            {
+                Dictionary<string, string> writtenoffAndSettledStatus = new Dictionary<string, string>();
+                if (writtenoffAndSettledStatus.Count.Equals(0))
+                {
+                    writtenoffAndSettledStatus.Add("M1M1001", "Invalid CIF");
+                    writtenoffAndSettledStatus.Add("M1M1002", "Invalid Collateral");
+                    writtenoffAndSettledStatus.Add("M1M1003", "Invalid A/A");
+                    writtenoffAndSettledStatus.Add("M1M1004", "Invalid Facility");
+                    writtenoffAndSettledStatus.Add("M1M1005", "Invalid Loan");
+                    writtenoffAndSettledStatus.Add("M1M1006", "Invalid Branch No.");
+					writtenoffAndSettledStatus.Add("M1M1007", "Invalid Date Format (Should be MMDDYY)");
+                    writtenoffAndSettledStatus.Add("M1M1013", "Invalid Late Charge Code");
+                    writtenoffAndSettledStatus.Add("M1M1014", "Invalid Payment Frequency Code");
+                    writtenoffAndSettledStatus.Add("M1M1015", "Invalid Dealer Number");
+                    writtenoffAndSettledStatus.Add("M1M1016", "Invalid Department Code");
+					writtenoffAndSettledStatus.Add("M1M1018", "Invalid Purpose Code");
+                    writtenoffAndSettledStatus.Add("M1M1029", "Invalid LOS Trace Number.");
+                    writtenoffAndSettledStatus.Add("M1M1030", "Invalid LOS User.");
+                    writtenoffAndSettledStatus.Add("M1M1031", "Invalid Functionality");
+                    writtenoffAndSettledStatus.Add("M1M1032", "No Access to Functionality.");
+                    writtenoffAndSettledStatus.Add("M1M1033", "Not allowed to access reporting branch.");
+                    writtenoffAndSettledStatus.Add("M1M1034", "User not allowed at branch.");
+					writtenoffAndSettledStatus.Add("M1M1035", "AFT CA/SA account does not exist");
+                    writtenoffAndSettledStatus.Add("M1M1036", "Invalid Account Relationship code");
+                    writtenoffAndSettledStatus.Add("M1M1037", "Invalid Document Status");
+                    writtenoffAndSettledStatus.Add("M1M1038", "Invalid Frequency Code");
+                    writtenoffAndSettledStatus.Add("M1M1039", "Invalid Collateral ID");
+                    writtenoffAndSettledStatus.Add("M1M1040", "Invalid Collateral Code");
+                    writtenoffAndSettledStatus.Add("M1M1041", "Invalid Loan Type");
+                    writtenoffAndSettledStatus.Add("M1M1042", "Invalid Dealer No.");
+                    writtenoffAndSettledStatus.Add("M1M1044", "Account name 1 must not be blanks");
+                    writtenoffAndSettledStatus.Add("M1M1045", "Account name 2 must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1046", "SMC Payee Name or Amount is blank");
+                    writtenoffAndSettledStatus.Add("M1M1047", "Invalid SMC CR to CASA details");
+                    writtenoffAndSettledStatus.Add("M1M1048", "Invalid DI MC details");
+                    writtenoffAndSettledStatus.Add("M1M1049", "Invalid DI CR to CASA details");
+                    writtenoffAndSettledStatus.Add("M1M1050", "Invalid LP MC detials");
+                    writtenoffAndSettledStatus.Add("M1M1051", "Invalid LP CR to CASA detials");
+					writtenoffAndSettledStatus.Add("M1M1053", "Invalid Simple Interest Rate");
+                    writtenoffAndSettledStatus.Add("M1M1054", "Invalid Effective Yield (Greater than 100)");
+                    writtenoffAndSettledStatus.Add("M1M1055", "Invalid Net Monthly Installment");
+                    writtenoffAndSettledStatus.Add("M1M1056", "Invalid Final Payment Amount");
+                    writtenoffAndSettledStatus.Add("M1M1057", "Invalid Sub Loan Type");
+                    writtenoffAndSettledStatus.Add("M1M1058", "Invalid Amount Financed");
+					writtenoffAndSettledStatus.Add("M1M1101", "PDC has no check number");
+					writtenoffAndSettledStatus.Add("M1M1102", "Duplicate record exist for PDC");
+                    writtenoffAndSettledStatus.Add("M1M1103", "PDC is a stale check");
+                    writtenoffAndSettledStatus.Add("M1M1104", "PDC # has no check date");
+                    writtenoffAndSettledStatus.Add("M1M1105", "PDC has invalid date");
+                    writtenoffAndSettledStatus.Add("M1M1106", "PDC is greater than maturity date");
+					writtenoffAndSettledStatus.Add("M1M1107", "PDC has no check amount");
+                    writtenoffAndSettledStatus.Add("M1M1108", "PDC has negative value");
+                    writtenoffAndSettledStatus.Add("M1M1109", "PDC is not equal to monthly amortization");
+					writtenoffAndSettledStatus.Add("M1M1110", "Drawee bank code for PDC does not exist.");
+					writtenoffAndSettledStatus.Add("M1M1111", "Custodian bank code for PDC number does not exist.");
+					writtenoffAndSettledStatus.Add("M1M1112", "CA/SA Account is closed.");
+					writtenoffAndSettledStatus.Add("M1M1113", "CA/SA Account has a restricted status");
+                    writtenoffAndSettledStatus.Add("M1M1114", "CA/SA Account has a matured status");
+					writtenoffAndSettledStatus.Add("M1M1115", "CA/SA Account has a frozen status");
+                    writtenoffAndSettledStatus.Add("M1M1116", "CA/SA Account has dormant status");
+                    writtenoffAndSettledStatus.Add("M1M1117", "CA/SA Account is a Time Deposit");
+                    writtenoffAndSettledStatus.Add("M1M1118", "CA/SA Account is an FCDU account");
+                    writtenoffAndSettledStatus.Add("M1M1119", "CA/SA Account is already used");
+					writtenoffAndSettledStatus.Add("M1M1120", "AFT amount for CA/SA Account is negative");
+                    writtenoffAndSettledStatus.Add("M1M1121", "AFT amount for CA/SA Account is zero");
+					writtenoffAndSettledStatus.Add("M1M1122", "Total AFT amount is not equal to monthly amortization.");
+					writtenoffAndSettledStatus.Add("M1M1123", "Start of debit for CA/SA Account is less than current date.");
+					writtenoffAndSettledStatus.Add("M1M1124", "Start of debit for CA/SA Account has invalid date.");
+					writtenoffAndSettledStatus.Add("M1M1125", "SMC # amount is equal to zero.");
+					writtenoffAndSettledStatus.Add("M1M1126", "SMC # amount is negative.");
+					writtenoffAndSettledStatus.Add("M1M1127", "Account no. does not exist");
+					writtenoffAndSettledStatus.Add("M1M1128", "Branch no. must not be zero");
+					
+					writtenoffAndSettledStatus.Add("M1M1129", "Must belong to the same base branch");
+					writtenoffAndSettledStatus.Add("M1M1130", "Application date must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1131", "No future date allowed ");
+					writtenoffAndSettledStatus.Add("M1M1132", "Field must be 'Y' or 'N'");
+					writtenoffAndSettledStatus.Add("M1M1133", "Retention Year must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1134", "Loan amount must not be less than zero");
+					writtenoffAndSettledStatus.Add("M1M1135", "Loan amoun shoud be less than or equal 60M");
+					writtenoffAndSettledStatus.Add("M1M1136", "Facility status must equal to 'P'");
+					writtenoffAndSettledStatus.Add("M1M1137", "Amount applied must not be zero");
+					
+					writtenoffAndSettledStatus.Add("M1M1138","Purpose code must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1139","Loan sector code is invalid");
+					writtenoffAndSettledStatus.Add("M1M1140","Loan sector code cannot be blanks");
+					writtenoffAndSettledStatus.Add("M1M1141","Officer code must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1142","Officer code is invalid");
+					writtenoffAndSettledStatus.Add("M1M1143","Account Relationship code cannot be blanks");
+					writtenoffAndSettledStatus.Add("M1M1144","Invalid Document Code");
+					writtenoffAndSettledStatus.Add("M1M1145","Document presented is not required");
+					writtenoffAndSettledStatus.Add("M1M1146","Entry not required");
+					writtenoffAndSettledStatus.Add("M1M1147","Field cannot be blanks");
+					writtenoffAndSettledStatus.Add("M1M1148","Waived by field is invalid");
+					writtenoffAndSettledStatus.Add("M1M1149","Review Frequency code cannot be blanks");
+					writtenoffAndSettledStatus.Add("M1M1150","Review Frequency code must be blanks");
+					writtenoffAndSettledStatus.Add("M1M1151","Loan Amount is greater than the appraised value");
+					writtenoffAndSettledStatus.Add("M1M1152","Collateral Status must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1153","Branch must be equal to the CIF branch");
+					writtenoffAndSettledStatus.Add("M1M1154","Collateral Description must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1155","Type of Coverage Fire must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1156","Type of Coverage Motor must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1157","Insurance company must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1158","Independent Appraiser must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1159","Original Loan Amount must not be zero");
+
+					writtenoffAndSettledStatus.Add("M1M1160","Loan Amount cannot be greater than unutilised limit");
+					writtenoffAndSettledStatus.Add("M1M1161","Loan term cannot be less than 2 or greater than 998.");
+					writtenoffAndSettledStatus.Add("M1M1162","Loan term code must be D or M.");
+					writtenoffAndSettledStatus.Add("M1M1163","Loan term code can not be less than freq code.");
+					writtenoffAndSettledStatus.Add("M1M1164","Rate number not found.");
+					writtenoffAndSettledStatus.Add("M1M1165","Two-tier rate not equal to 0, capital repayment cannot be 0.");
+					writtenoffAndSettledStatus.Add("M1M1166","Interest base must be equal to 0,1,2,3,5,8 or 9.");
+					writtenoffAndSettledStatus.Add("M1M1167","Mode of interest must be 'M','H','Q','Y'. ");
+					writtenoffAndSettledStatus.Add("M1M1168","If IBASE=8, Mode of Interest must be 'D','M','Q','H','Y' or 'A'.");
+					writtenoffAndSettledStatus.Add("M1M1169","IBASE=9, Mode of Interest must be 'D' or blank");
+					writtenoffAndSettledStatus.Add("M1M1170","Late charge type is invalid.");
+					writtenoffAndSettledStatus.Add("M1M1171","Payment code must be 0, 1, 2, 3, 5, or 6.");
+					writtenoffAndSettledStatus.Add("M1M1172","Payment frequency is invalid.");
+					writtenoffAndSettledStatus.Add("M1M1173","Payment frequency must be M or D.");
+					writtenoffAndSettledStatus.Add("M1M1174","Loan term code can not be less than freq code.");
+					writtenoffAndSettledStatus.Add("M1M1175","Payment amount cannot be zero.");
+					writtenoffAndSettledStatus.Add("M1M1176","Day of month for payment is invalid.");
+					writtenoffAndSettledStatus.Add("M1M1177","Board rate duration must not be 0 if board rate = 'Y'"); 
+					writtenoffAndSettledStatus.Add("M1M1178","Prime rate variance code must be '+', '%'  or '-'.");
+					writtenoffAndSettledStatus.Add("M1M1179","Prime rate variance code must be blanks");
+					writtenoffAndSettledStatus.Add("M1M1180","Rate Review term must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1181","Prime Rate Number must not be 0");
+					writtenoffAndSettledStatus.Add("M1M1182","Rate Review Code must not be blank if review term <> zero");
+					writtenoffAndSettledStatus.Add("M1M1183","Final Payment amount must be zero");
+					writtenoffAndSettledStatus.Add("M1M1184","Final Payment amount must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1185","PPD Rate must not be 0");
+					writtenoffAndSettledStatus.Add("M1M1186","Effective Yield rate must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1187","Add on Rate must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1188","Monthly PPD Amount must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1189","Total PPD Amount must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1190","Total Interest Base on Add On rate must not zero");
+					writtenoffAndSettledStatus.Add("M1M1191","Pool Rate must not be zero");
+					writtenoffAndSettledStatus.Add("M1M1192","Fleet Flag must not be blanks");
+					writtenoffAndSettledStatus.Add("M1M1193","Total SMC Amount is invalid");
+					writtenoffAndSettledStatus.Add("M1M1194","Total DI Amount is invalid");
+					writtenoffAndSettledStatus.Add("M1M1195","Total LP Amount is invalid");
+					writtenoffAndSettledStatus.Add("M1M1196","PN creation error");
+					writtenoffAndSettledStatus.Add("M1M1197","Loan Disbursement to AP transaction error");
+					writtenoffAndSettledStatus.Add("M1M1198","Loan Disbursement to MC transaction error");
+					writtenoffAndSettledStatus.Add("M1M1199","Loan Disbursement to CASA transaction error"); 
+					writtenoffAndSettledStatus.Add("M1M1200","Loan Disbursement (Charges) transaction error"); 
+					writtenoffAndSettledStatus.Add("M1M1201","Credit to CASA for Loan Proceed transaction error");
+					writtenoffAndSettledStatus.Add("M1M1202","Credit to CASA for SMC transaction error ");
+					writtenoffAndSettledStatus.Add("M1M1203","Credit to CASA for Dealer's Incentive transaction error");
+					writtenoffAndSettledStatus.Add("M1M1204","Credit tot AP for Loan Proceed transaction error");
+					writtenoffAndSettledStatus.Add("M1M1205","Loan Booking Handler program execution error");
+					writtenoffAndSettledStatus.Add("M1M1206","MC Printing program execution error");
+					writtenoffAndSettledStatus.Add("M1M1207","Invalid Purpose");
+					writtenoffAndSettledStatus.Add("M1M1208","Facility Limit Must Not Be 0");
+					writtenoffAndSettledStatus.Add("M1M1209","Facility Limit Must Not Be Greater Than Amount Applied");
+					writtenoffAndSettledStatus.Add("M1M1210","Invalid Approved Date");
+					writtenoffAndSettledStatus.Add("M1M1211","Approved Date Must Not Be Greater Than Next Business Date");
+					writtenoffAndSettledStatus.Add("M1M1212","Invalid Payment Amount");
+					writtenoffAndSettledStatus.Add("M1M1213","AP account creation error.");
+					writtenoffAndSettledStatus.Add("M1M1214","Old PN does not exist");
+					writtenoffAndSettledStatus.Add("M1M1215","Cash Price amount cannot be blank");
+					writtenoffAndSettledStatus.Add("M1M1216","Downpayment amount cannot be blank");
+					writtenoffAndSettledStatus.Add("M1M1217","Facility Code is blank ");
+					writtenoffAndSettledStatus.Add("M1M1218","Invalid Faclility Code");
+					writtenoffAndSettledStatus.Add("M1M1219","Invalid approving authority code.");
+					writtenoffAndSettledStatus.Add("M1M1220","No. of installments paid in advance greater than no. of Terms."); 
+					writtenoffAndSettledStatus.Add("M1M1221","Add on Rate and Dealer subsidy must not be zero at the same time");
+					writtenoffAndSettledStatus.Add("M1M1222","DS amount is invalid");
+					writtenoffAndSettledStatus.Add("M1M1223","ALF already has an ongoing process with this trace number");
+					writtenoffAndSettledStatus.Add("M1M1224","ALF encountered system error. Please report to ISD.");
+					writtenoffAndSettledStatus.Add("M1M1225","Pledge amount is over the available pledge limit.");
+					writtenoffAndSettledStatus.Add("M1M1226","At least 1 collateral must exist");
+					writtenoffAndSettledStatus.Add("M1M1227","Invalid PDC details");
+					writtenoffAndSettledStatus.Add("M1M1228","Payoff reversal transaction error.");
+					writtenoffAndSettledStatus.Add("M1M1229","Wrong calculation of Add-on Interest");
+					writtenoffAndSettledStatus.Add("M1M1230","Transaction Timed Out");
+
+                }
+                return writtenoffAndSettledStatus.ContainsKey(masterValue) ? writtenoffAndSettledStatus[masterValue] : masterValue;
+            }
+            return masterValue;
+        }
+    ]]>
+</msxsl:script>
+  <xsl:output method="xml" omit-xml-declaration="yes" indent="yes" />
+  <xsl:template match="/">
+    
+    <xsl:variable name="recordtag" select="substring(root/result,186,1)"> </xsl:variable>  
+    
+<xsl:choose>      
+  <xsl:when test="$recordtag = 'E'">
+    <root>
+	<message><xsl:value-of select="local:FetchMasterValue(substring(root/result,202,7),'ERRORCODE')"/></message>
+	<isSuccess><xsl:value-of select="root/isSuccess"/></isSuccess>
+	<acc_num></acc_num>
+    <recordtag><xsl:value-of select="$recordtag"/></recordtag>
+    <errorcode><xsl:value-of select="concat(substring(root/result,187,10),':',substring(root/result,202,7))"/></errorcode>
+    <uniqueid><xsl:value-of select="substring(root/result,0,11)"/></uniqueid>    
+    </root>
+    </xsl:when>
+	<xsl:when test="$recordtag = 'A'">
+      <root>
+	<message>PN IS GENERATED</message>
+	<isSuccess><xsl:value-of select="root/isSuccess"/></isSuccess>
+	<acc_num><xsl:value-of select="substring(root/result,22,11)"/></acc_num>
+    <recordtag><xsl:value-of select="$recordtag"/></recordtag>
+    <errorcode></errorcode>
+    <uniqueid><xsl:value-of select="substring(root/result,0,11)"/></uniqueid>    
+    </root>
+    </xsl:when>
+    <xsl:otherwise>
+    <root>
+	<message><xsl:value-of select="root/message"/></message>
+	<isSuccess><xsl:value-of select="root/isSuccess"/></isSuccess>
+	<acc_num></acc_num>
+	<uniqueid></uniqueid>        
+	<recordtag></recordtag>
+	<errorcode><xsl:value-of select="root/message"/></errorcode>
+    </root>
+      </xsl:otherwise>
+  </xsl:choose>
+  </xsl:template>
+</xsl:stylesheet>
+
+<root><isSuccess>true</isSuccess><message /><result>FLOS104772 BTUAFG961 48380001161838-2025-0003       483800011610000000000000000139741                                                                                              022425A          00000                             </result><applicationid>0</applicationid></root>
