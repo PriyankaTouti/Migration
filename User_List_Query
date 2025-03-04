@@ -1,0 +1,4 @@
+select uz.userid,uz.UserName ,ur.roleid as RoleID, ur.Name as RoleName from az_user uz
+left outer join PersonalSettings ps on uz.AppOwnerID = ps.OwnerID and uz.UserID = ps.UserID 
+left outer join  az_role ur on ps.OwnerID = 985 and ps.CurrentRoleID = ur.RoleID 
+where uz.AppOwnerID = 985  order by uz.UserID 
