@@ -1,0 +1,67 @@
+/*Total Application*/
+select count(1) from FinancialApplication where ownerid = 985  --67224
+
+/*Weekly count for application*/
+select count(1) from FinancialApplication where ownerid = 985 and convert(date,createdon)>='2024-04-01' and convert(date,createdon)<='2025-04-29'  --67219
+
+/*Statuscode wise application count*/
+select s.StatusCode,count(*) from FinancialApplication f
+left outer join statuscodemaster s on f.OwnerId = s.OwnerID and f.StatusCodeId = s.StatusCodeID
+where f.ownerid = 985 group by s.StatusCodeID,s.StatusCode  having COUNT(s.StatusCode)>1 order by s.StatusCodeID
+
+/*Sent for Post Approval Finalization*/
+select count(1) from FinancialApplication where ownerid = 985 and statuscodeid=100024    --4749
+
+/*Sent for Pre-Booking*/
+select count(1) from FinancialApplication where ownerid = 985 and statuscodeid=100026   --172
+
+/*Salesman Count*/
+select count(1) from accounts where ownerid = 985 and layoutid = 10204035     --1643
+
+/*Sub-Salesman   Count*/
+select count(1) from Relationship where ownerid = 985 and layoutid = 10204032     --0
+
+/*Dealer  Count*/
+select count(1) from accounts where ownerid = 985 and layoutid = 10204025 	  --296
+
+/*Sub-Dealer Count*/
+select count(1) from Relationship where ownerid = 985 and layoutid = 10204050     --122
+
+/*Total MC Printing*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'MC'  group by  itemid having ITEMID >1  --2988
+
+/*Weekly MC Printing*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'MC' and convert(date,insertedon)>='2024-04-01' and convert(date,insertedon)<='2025-04-29' group by  itemid having ITEMID >1  --2988
+
+/*Monthly MC Printing*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'MC' and convert(date,insertedon)>='2024-04-01' and convert(date,insertedon)<='2025-04-30' group by  itemid having ITEMID >1  --2988
+
+/*TOTAL CIF Created*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'CIF'  group by  itemid having ITEMID >1  --11054
+
+/*Weekly CIF Created*/ 
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'CIF' and convert(date,insertedon)>='2024-04-01' and convert(date,insertedon)<='2025-04-29' group by  itemid having ITEMID >1  --11054
+
+/*Monthly CIF Created*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'CIF' and convert(date,insertedon)>='2024-04-01' and convert(date,insertedon)<='2025-04-29' group by  itemid having ITEMID >1  --11054
+
+
+/*Total LAN Created*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'LAN'   group by  itemid having ITEMID >1  --5610
+
+/*Weekly LAN Created*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'LAN'  and convert(date,insertedon)>='2024-04-01' 
+and convert(date,insertedon)<='2025-04-29' group by  itemid having ITEMID >1  --5610
+
+/*Monthly LAN Created*/
+select count(1)  from MPI_MQ_REQUEST_LOG where REQUESTTYPE = 'LAN'  and convert(date,insertedon)>='2024-04-01' 
+and convert(date,insertedon)<='2025-04-30' group by  itemid having ITEMID >1  --5610
+
+/*Total Amount Disbursed*/
+select sum(fia_ex1_21) as Total_amt_Disbursed from FinancialApplication f
+inner join fia_Ex1 f1 on f.ownerid = f1.ownerid and f.CustomObjectId =f1.fia_ex1_id
+where f.ownerid =985 and f.StatusCodeId = 100036  --958702484.42
+
+/*User Login*/
+select format(dateadd(hour,08,LoginDate),'yyyy-MM-dd'),count(distinct userid)   from LoginHistory  where OwnerID = 985  and convert(date,LoginDate)>='2025-01-01' and convert(date,dateadd(hour,08,LoginDate))<='2025-04-29' 
+group by format(dateadd(hour,08,LoginDate),'yyyy-MM-dd')   order by format(dateadd(hour,08,LoginDate),'yyyy-MM-dd')
