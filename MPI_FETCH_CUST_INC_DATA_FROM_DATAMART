@@ -1,0 +1,178 @@
+CREATE PROCEDURE [dbo].[MPI_FETCH_CUST_INC_DATA_FROM_DATAMART](@OWNERID INT)  
+AS  
+/*             
+   DESCRIPTION - FETCH CUSTOMER DATA FROM DATAMART            
+   CREATED ON - 24-01-2023 | CREATED BY - PRADYUMAN SHARMA            
+   MPI_FETCH_CUST_INC_DATA_FROM_DATAMART 985;  
+*/  
+BEGIN  
+  DECLARE @DATEKEY_CUST DATETIME,  
+          @BATCH        FLOAT,  
+    @DATEKEY      FLOAT;  
+    
+  /*BUSINESSNEXT LT*/  
+  SELECT TOP 1 @BATCH = AS_OF_DATE FROM MPI_CUST_INC_LT ORDER BY AS_OF_DATE DESC;  
+  IF(@BATCH IS NULL) BEGIN  
+   SET @BATCH = '20240301';  
+  END;  
+  
+  PRINT CAST(@BATCH AS INT);  
+  /*DATAMART LOG*/  
+  SELECT TOP 1 @DATEKEY_CUST = LAST_LOAD_DATE  
+  FROM [10.117.129.60].[MB_EDW_MART].[DBO].[LOS_LOADCHECK]   
+  WHERE TABLE_NAME = N'LOS_FILECHECK_CUST'  
+  ORDER BY LAST_LOAD_DATE DESC;  
+  SET @DATEKEY = CAST(REPLACE(CONVERT(CHAR(10), @DATEKEY_CUST, 112), N'-', N'') AS FLOAT);  
+  PRINT CAST(@DATEKEY AS INT);  
+  
+  TRUNCATE TABLE MPI_CUST_INC_LT;  
+  
+  IF(@BATCH >= @DATEKEY) BEGIN  
+    PRINT 'DO NOTHING';  
+ --;THROW 999999, N'SAME DAY DATA ALREADY PRESENT IN LT.', 1;  
+  END   
+  ELSE BEGIN  
+  PRINT 'INSERT STARTED';  
+  /*INSERT DATA IN LT*/  
+  INSERT INTO MPI_CUST_INC_LT (  
+    AS_OF_DATE,  
+    CIF,  
+    FIRST_NAME,  
+    MIDDLE_NAME,  
+    LAST_NAME,  
+    NAME_SUFFIX,  
+    DATE_OF_BIRTH,  
+    BIRTH_PLACE,  
+    GENDER,  
+    CIVIL_STATUS,  
+    NATIONALITY,  
+    NO_OF_CHILD,  
+    PEP_REL,  
+    DOSRI_CLASSICATION,  
+    RESIDENCE_FLAG,  
+    EMPLOYMENT_TYPE,  
+    PROFESSION,  
+    INCOME_SOURCE,  
+    NATURE_OF_BUSINESS,  
+    EMP_STATUS,  
+    EMP_NAME,  
+    HOME_NUMBER,  
+    MOBILE_NUMBER_1,  
+    MOBILE_NUMBER_2,  
+    OFFICE_NUMBER,  
+    RESIDENCE_ADDRESS,  
+    RESIDENCE_BARANGAY,  
+    RESIDENCE_CITY,  
+    RESIDENCE_PROVINCE,  
+    RESIDENCE_COUNTRY,  
+    BUSINESS_ADDRESS,  
+    BUSINESS_BARANGAY,  
+    BUSINESS_CITY,  
+    BUSINESS_PROVINCE,  
+    BUSINESS_COUNTRY,  
+    ALTERNATE_ADDRESS,  
+    ALTERNATE_BARANGAY,  
+    ALTERNATE_CITY,  
+    ALTERNATE_PROVINCE,  
+    ID_TYPE_1,  
+    ID_NUMBER_1,  
+    ID_TYPE_2,  
+    ID_NUMBER_2,  
+    ID_TYPE_3,  
+    ID_NUMBER_3,  
+    ID_TYPE_4,  
+    ID_NUMBER_4,  
+    ID_TYPE_5,  
+    ID_NUMBER_5,  
+    NO_OPEN_ACCOUNTS,  
+    CUST_SEGMENT,  
+    REPEAT_BORROWER_FILE_FLAG,  
+    TOTAL_TRB,  
+    REL_TYPE,  
+    TOTAL_ADB_6MO,  
+    TOTAL_ADB_12MO,  
+    TOTAL_AMD_6MO,  
+    TOTAL_AMD_12MO,  
+    DT_LAST_TXN,  
+    MAX_DEP_MOB,  
+    DT_LAST_RETURNED_CHCK,  
+    TOTAL_OB_ALL_LOANS,  
+    TOTAL_OB_ALL_AUTO,  
+    TOTAL_MO_AMORT,  
+    CIF_NPL,  
+    CIF_DPD,  
+    OVERALL_HANDLING,  
+    DT_LAST_WO,  
+    MOS_LAST_LOAN)  
+  SELECT LT.[DATE_KEY],  
+         LT.[CUST_NO],  
+         LT.[FIRST_NAME],  
+         LT.[MIDDLE_NAME],  
+         LT.[LAST_NAME],  
+         LT.[NAME_SUFFIX],  
+         LT.[DATE_BIRTH],  
+         LT.[BIRTH_PLACE_CD],  
+         LT.[GENDER],  
+         LT.[CIVIL_STATUS_CD],  
+         LT.[NATIONALITY],  
+         LT.[NO_OF_CHILD_CD],  
+         LT.[PEP_REL_CD],  
+         LT.[INSIDER_CD],  
+         LT.[RESD_FLAG],  
+         LT.[EMP_TYPE_CD],  
+         LT.[PROFESSION_CD],  
+         LT.[INCOME_SOURCE_CD],  
+         LT.[PSIC_CD],  
+         LT.[EMP_STATUS_CD],  
+         LT.[EMP_NAME],  
+         LT.[HOME_NUM],  
+         LT.[MOBILE_NUM_1],  
+         LT.[MOBILE_NUM_2],  
+         LT.[OFFICE_NUM],  
+         LT.[R_ADDR],  
+         LT.[R_BRGY_CD],  
+         LT.[R_CITY_CD],  
+         LT.[R_PROV_CD],  
+         LT.[R_COUN_CD],  
+         LT.[B_ADDR],  
+         LT.[B_BRGY_CD],  
+         LT.[B_CITY_CD],  
+         LT.[B_PROV_CD],  
+         LT.[B_COUN_CD],  
+         LT.[A_ADDR],  
+         LT.[A_BRGY_CD],  
+         LT.[A_CITY_CD],  
+         LT.[A_PROV_CD],  
+         LT.[ID_TYPE_1],  
+         LT.[ID_NUMBER_1],  
+         LT.[ID_TYPE_2],  
+         LT.[ID_NUMBER_2],  
+         LT.[ID_TYPE_3],  
+         LT.[ID_NUMBER_3],  
+         LT.[ID_TYPE_4],  
+         LT.[ID_NUMBER_4],  
+         LT.[ID_TYPE_5],  
+         LT.[ID_NUMBER_5],  
+         LT.[NO_OPEN_ACC],  
+         LT.[CUST_SEG_CD],  
+         LT.[RBP_DECISION],  
+         LT.[TOTAL_TRB],  
+         LT.[REL_TYPE],  
+         LT.[TOTAL_ADB_6MO],  
+         LT.[TOTAL_ADB_12MO],  
+         LT.[TOTAL_AMD_6MO],  
+         LT.[TOTAL_AMD_12MO],  
+         LT.[DT_LAST_TXN],  
+         LT.[MAX_DEP_MOB],  
+         LT.[DT_LAST_RETURNED_CHCK],  
+         LT.[TOTAL_OB_ALL_LOANS],  
+         LT.[TOTAL_OB_ALL_AUTO],  
+         LT.[TOTAL_MO_AMORT],  
+         LT.[CIF_NPL],  
+         LT.[CIF_DPD],  
+         LT.[OVERALL_HANDLING],  
+         LT.[DT_LAST_WO],   
+         LT.[MOS_LAST_LOAN]  
+   FROM [10.117.129.60].[MB_EDW_MART].[DBO].[LOS_FILECHECK_CUST] LT;  
+  END;  
+END;
