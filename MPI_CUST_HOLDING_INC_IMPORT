@@ -1,0 +1,180 @@
+CREATE PROCEDURE MPI_CUST_HOLDING_INC_IMPORT(@OWNERID INT)                
+AS                
+/*                              
+  -- Description: Insert holding records in CRMNEXT.                              
+  -- Created By : Pradyuman Sharma; Created on : Dec 7, 2023                        
+  -- EXEC [MPI_CUST_HOLDING_INC_IMPORT] 985                        
+*/                
+  BEGIN                
+      DECLARE @GETCURRENTDATE DATETIME = Getutcdate();                
+      DECLARE @BATCHNO      INT,                
+              @JOBID        INT,                
+              @PASSID       INT,                
+              @TASKID       INT,                
+              @SUCCESSCOUNT INT = 0,                
+              @FAILURECOUNT INT = 0,                
+              @COUNT        INT = 0,                
+              @ERRORMESSAGE NVARCHAR(256);                
+                
+      --updating count in the log table                        
+      SELECT @JOBID = JOBID                
+      FROM   CIS_JOB                
+      WHERE  OWNERID = @OWNERID                
+         AND JOBNAME = N'MPI - Customer Incremental Data Bootup';                
+                
+      SELECT @PASSID = PASSID                
+      FROM   CIS_PASS                
+      WHERE  OWNERID = @OWNERID                
+         AND PASSNAME = N'Pass 2: Incremental Customer Holding Data Bootup';                
+                
+      SELECT @TASKID = TASKID                
+      FROM   CIS_TASK                
+      WHERE  OWNERID = @OWNERID                
+         AND JOBID = @JOBID                
+         AND PASSID = @PASSID                
+         AND TASKNAME = N'Task 4: Import Valid Customer Holding Records';                
+                
+      --fetching the row count from the LT table.                         
+   SELECT * , ROW_NUMBER() OVER (ORDER BY LT.HOLDINGID) ROW_NUM                             
+   INTO   #MPI_CUST_INC_TEMP                            
+   FROM   MPI_CUST_HOLDING_INC_LT LT                            
+   WHERE  LT.ERRORCODE = 0              
+     AND  LT.FLAG = 0              
+  SET @COUNT = @@ROWCOUNT;        
+                 
+      -- variables for running data in loop                        
+      DECLARE @STARTINDEX INT = 0;                
+      DECLARE @ENDINDEX INT = 0;                
+                
+      --LOOP START --                        
+      WHILE ( @STARTINDEX < @COUNT )                
+        BEGIN                
+            --UPDATE INDEXES --                        
+            SET @STARTINDEX = @ENDINDEX + 1;                
+            SET @ENDINDEX = @ENDINDEX + 500;                
+            -- RUNNING LOOP WITH 500 RECORDS IN ONE BATCH                          
+                
+            BEGIN TRY                
+                /* 001 - Holdings */                
+                INSERT INTO HOLDING                
+                            (OWNERID,                
+                             ASSIGNEDTOID,                
+                             CREATEDBY,                
+                             CREATEDBYTYPE,                
+                             CREATEDON,                
+                             LASTMODIFIEDBY,                
+                             LASTMODIFIEDBYTYPE,                
+                             LASTMODIFIEDON,                
+                             CUSTOMOBJECTID,                
+                             HOLDINGNUMBER,                
+                             PRODUCTCATEGORYID,                
+                             PRODUCTID,                
+                             LAYOUTID,                
+                             PROCESSID,                
+                             STATUSCODEID,                
+                             STATUSID,                
+                             SUBJECT,                
+                             ACCOUNTID)                
+                SELECT @OWNERID              AS OwnerID,                
+                       1                AS AssignedToID,                
+                       1                     AS CreatedBy,                
+                       2       AS CreatedByType,                
+                       @GETCURRENTDATE       AS CreatedOn,                
+                       1                     AS LastModifiedBy,                
+                       0                     AS LastModifiedByType,                
+                       @GETCURRENTDATE       AS LastModifiedOn,           
+                       HOLDINGID             AS CustomObjectID,                
+                       ACCT_NO               AS HoldingNumber,                
+                       CRM_PRODUCTCATEGORYID AS ProductCategoryID,                
+                       CRM_PRODUCTID         AS ProductID,                
+                       0                     AS LayoutID,                
+                       0                     AS ProcessID,                
+                       5137                  AS StatusCodeID,                
+                       1                     AS StatusID,                
+                 ACCT_NO               AS Subject,                
+                       CRM_ACCOUNTID         AS AccountID                
+                FROM   #MPI_CUST_INC_TEMP LT                
+                WHERE  LT.ERRORCODE = 0                
+                   AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX                
+                
+                -- print 1                        
+                SET @SUCCESSCOUNT=@SUCCESSCOUNT + @@ROWCOUNT;                
+                
+                /* 002 - Hol_ex1 */                
+                INSERT INTO HOL_EX1                
+                            (OWNERID,                
+                             HOL_EX1_ID,                
+                             HOL_EX1_1,                
+                             HOL_EX1_2,                
+                             HOL_EX1_3,                
+                             HOL_EX1_4,                
+                             HOL_EX1_5,                
+                             HOL_EX1_6,                
+                             HOL_EX1_7,                
+                             HOL_EX1_8,                
+                             HOL_EX1_9,      
+        HOL_EX1_10,      
+                             HOL_EX1_43,                
+                             HOL_EX1_98,                
+                             HOL_EX1_99,                
+                             HOL_EX1_100)                
+                SELECT @OWNERID,                
+                       HOLDINGID,                
+                       LOAN_LIMIT,                
+                       OSB,                
+                       MONTHLY_AMORT,                
+                       LOAN_TERM,                
+                       MOB,                
+                       UTIL_RATE,                
+                       DATE_OPENED,                
+                       DATE_CLOSED,                
+                       SORT_FLAG,          
+        [STATUS],      
+                       CIF,                
+                       AS_OF_DATE,                
+                       CENTER_RM,                
+                       ACCT_HANDLING                
+                FROM   #MPI_CUST_INC_TEMP LT                
+                WHERE  LT.ERRORCODE = 0                 
+                   AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX            
+                 
+    INSERT INTO Hol_ex2(OWNERID,           
+         HOL_EX2_ID)          
+    SELECT @OWNERID,          
+        HOLDINGID          
+    FROM   #MPI_CUST_INC_TEMP LT          
+    WHERE  LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX          
+          
+    INSERT INTO Hol_ex3(OWNERID,           
+         HOL_EX3_ID)          
+    SELECT @OWNERID,          
+        HOLDINGID          
+    FROM   #MPI_CUST_INC_TEMP LT          
+    WHERE  LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX          
+          
+           END TRY                     
+   BEGIN CATCH                    
+    /*Capture Failure Reason*/                    
+    SELECT @ErrorMessage = SUBSTRING( ERROR_MESSAGE(), 0, 255);                    
+    /*Capture against LT*/                    
+    UPDATE LT                     
+    SET    LT.ERRORCODE = 1,                    
+        LT.ERRORMESSAGE = @ErrorMessage                    
+    FROM MPI_CUST_HOLDING_INC_LT LT                    
+      INNER JOIN #MPI_CUST_INC_TEMP T                    
+      ON LT.HOLDINGID = T.HOLDINGID                    
+    WHERE LT.ERRORCODE = 0                     
+    AND T.ROW_NUM BETWEEN  @STARTINDEX AND @ENDINDEX                     
+   END CATCH                    
+   END              
+                
+      SET @FAILURECOUNT = @COUNT - @SUCCESSCOUNT;                
+                
+      UPDATE CIS_LOG                
+      SET    FAILURECOUNT = @FAILURECOUNT,                
+             SUCCESSCOUNT = @SUCCESSCOUNT                
+      WHERE  OWNERID = @OWNERID                
+         AND BATCHNUMBER = @BATCHNO                
+         AND SOURCETYPEID = 3                 
+         AND SOURCEID = @TASKID;                
+  END 
