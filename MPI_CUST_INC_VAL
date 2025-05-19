@@ -1,0 +1,473 @@
+CREATE PROCEDURE MPI_CUST_INC_VAL(@OWNERID INT)            
+AS            
+/*                      
+  -- DESCRIPTION:  VALIDATE CUSTOMER DATA IN LANDING TABLE                                      
+  -- CREATED BY :  PRADYUMAN SHARMA; CREATED ON :  6-DEC-2023                          
+  -- EXEC MPI_CUST_INC_VAL 985                                    
+*/            
+BEGIN            
+      SET NOCOUNT ON;            
+            
+      UPDATE LT            
+      SET    LT.FLAG = 1,            
+             LT.ACCOUNTID = ACC.ACCOUNTID            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN ACCOUNTS ACC            
+                     ON ACC.OWNERID = @OWNERID            
+                        AND ACC.CODE = LT.CIF            
+      WHERE  LT.ERRORCODE = 0            
+            
+      UPDATE LT            
+      SET    LT.FLAG = 0            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND LT.ACCOUNTID IS NULL            
+            
+      /* ----------------PROFESSION TO BE VALIDATED-------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED PROFESSION IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND ISNULL(LT.PROFESSION, N'') != N''            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   CUSTOMFIELDLOOKUP CL            
+                             WHERE  CL.OWNERID = @OWNERID            
+                                    AND CL.FIELDID = 5238            
+                                    AND CL.VALUE = LT.PROFESSION)            
+            
+      ----------------BARANGAY TO BE VALIDATED-------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED ALTERNATE BARANGAY IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND ISNULL(LT.ALTERNATE_BARANGAY, N'') != N''            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   GEOGRAPHY            
+                             WHERE  OWNERID = @OWNERID            
+                                    AND CITYCODE = LT.ALTERNATE_BARANGAY)            
+            
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED BUSINESS BARANGAY IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND ISNULL(LT.BUSINESS_BARANGAY, N'') != N''            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   GEOGRAPHY            
+                             WHERE  OWNERID = @OWNERID            
+                                    AND CITYCODE = LT.BUSINESS_BARANGAY)            
+            
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED RESIDENCE BARANGAY IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND ISNULL(LT.RESIDENCE_BARANGAY, N'') != N''            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   GEOGRAPHY            
+                             WHERE  OWNERID = @OWNERID            
+                                    AND CITYCODE = LT.RESIDENCE_BARANGAY)        */    
+    
+    /* UPDATING ERRORCODE FOR INVALID DATES */    
+       UPDATE LT      
+    SET    LT.ERRORCODE=1,      
+     LT.ERRORMESSAGE=N'DATE OF BIRTH INVALID'      
+    FROM   MPI_CUST_INC_LT LT       
+    WHERE  DATE_OF_BIRTH<='01-01-1800'       
+      
+    UPDATE LT      
+    SET    LT.ERRORCODE=1,      
+           LT.ERRORMESSAGE=N'DATE OF CHECK RETURNED INVALID'      
+    FROM   MPI_CUST_INC_LT LT      
+    WHERE  LT.DT_LAST_RETURNED_CHCK<='01-01-1800'     
+      
+    UPDATE LT      
+    SET    LT.ERRORCODE=1,      
+     LT.ERRORMESSAGE=N'DATE OF LAST TRANSACTION INVALID'      
+    FROM   MPI_CUST_INC_LT LT      
+    WHERE  LT.DT_LAST_TXN<='01-01-1800'      
+      
+    UPDATE LT      
+    SET    LT.ERRORCODE=1,      
+     LT.ERRORMESSAGE=N'DATE OF LAST WRITE OFF'      
+    FROM   MPI_CUST_INC_LT LT      
+    WHERE  LT.DT_LAST_WO<='01-01-1800'        
+    
+      /* RESOLVING BARANGAY CODE */            
+      UPDATE LT            
+      SET    LT.ALTERNATE_BARANGAY = G.CITY            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN GEOGRAPHY G            
+                     ON G.OWNERID = @OWNERID            
+                        AND G.CITYCODE = LT.ALTERNATE_BARANGAY            
+      WHERE  LT.ERRORCODE = 0            
+            
+      UPDATE LT            
+      SET    LT.RESIDENCE_BARANGAY = G.CITY            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN GEOGRAPHY G            
+                     ON G.OWNERID = @OWNERID            
+                        AND G.CITYCODE = LT.RESIDENCE_BARANGAY            
+      WHERE  LT.ERRORCODE = 0            
+            
+      UPDATE LT            
+      SET  LT.BUSINESS_BARANGAY = G.CITY            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN GEOGRAPHY G            
+                     ON G.OWNERID = @OWNERID            
+        AND G.CITYCODE = LT.BUSINESS_BARANGAY            
+      WHERE  LT.ERRORCODE = 0            
+            
+      --------------ID NUMBERS TO BE CHECKED-----------------                              
+      UPDATE LT            
+      SET    LT.INSERT_ID1 = 1            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LEN(LT.ID_NUMBER_1) > 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   VERIFICATION VER            
+        WHERE  VER.OWNERID = @OWNERID            
+                                    AND VER.RELATEDTOID = LT.ACCOUNTID            
+                                    AND VER.STRUCTUREID = 1)            
+            
+      UPDATE LT            
+      SET    LT.INSERT_ID2 = 1            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LEN(LT.ID_NUMBER_2) > 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   VERIFICATION VER            
+                             WHERE  VER.OWNERID = @OWNERID            
+                                    AND VER.RELATEDTOID = LT.ACCOUNTID            
+                                    AND VER.STRUCTUREID = 2)            
+            
+      UPDATE LT            
+      SET    LT.INSERT_ID3 = 1            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LEN(LT.ID_NUMBER_3) > 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   VERIFICATION VER            
+                             WHERE  VER.OWNERID = @OWNERID            
+                                    AND VER.RELATEDTOID = LT.ACCOUNTID            
+                                    AND VER.STRUCTUREID = 3)            
+            
+      UPDATE LT            
+      SET    LT.INSERT_ID4 = 1            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LEN(LT.ID_NUMBER_4) > 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   VERIFICATION VER            
+                             WHERE  VER.OWNERID = @OWNERID            
+                                    AND VER.RELATEDTOID = LT.ACCOUNTID            
+                                    AND VER.STRUCTUREID = 4)            
+            
+      UPDATE LT            
+      SET    LT.INSERT_ID5 = 1            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LEN(LT.ID_NUMBER_5) > 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   VERIFICATION VER            
+                             WHERE  VER.OWNERID = @OWNERID            
+                                    AND VER.RELATEDTOID = LT.ACCOUNTID            
+                                    AND VER.STRUCTUREID = 5)            
+            
+      /* --------------GENDER TO BE VALIDATED-----------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED GENDER IS INVALID'            
+ FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND ISNULL(LT.GENDER, N'') != N''            
+             AND LT.GENDER NOT IN ( N'M', N'F' )              */    
+        
+      /* GENDER GOES IN AS 0 OR 1 IN ACCOUNTS TABLE GENDER FIELD.*/            
+      UPDATE LT            
+      SET    LT.CRM_GENDERID = CASE            
+                                 WHEN LT.GENDER = N'M' THEN 1            
+                                 WHEN LT.GENDER = N'F' THEN 2  
+         WHEN LT.GENDER = N'O' THEN 3  
+                               END            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND ISNULL(LT.GENDER, N'') != N''              
+            
+      /* --------------CIVIL STATUS TO BE VALIDATED-------------------------------------------------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED CIVIL STATUS IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   LOOKUPMASTER LM            
+                             WHERE  LM.OWNERID = @OWNERID            
+                                    AND LM.GROUPKEY = 456            
+                                    AND LM.CODE = LT.CIVIL_STATUS)           */    
+            
+      UPDATE LT            
+      SET    LT.CRM_MARRIAGEID = CASE            
+                                   WHEN LT.CIVIL_STATUS = 'S' THEN 1            
+                                   WHEN LT.CIVIL_STATUS = 'M' THEN 2            
+                                   WHEN LT.CIVIL_STATUS = 'D' THEN 3            
+                                   WHEN LT.CIVIL_STATUS = 'W' THEN 4            
+                 ELSE 5            
+                                 END            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE LT.ERRORCODE = 0             
+            
+      /* --------------EMPLOYMENT TYPE TO BE VALIDATED-----------------------------------------------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED EMPLOYMENT TYPE IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   CUSTOMFIELDLOOKUP CL            
+                             WHERE  CL.OWNERID = @OWNERID            
+                                    AND CL.FIELDID = 5237            
+                                    AND CL.VALUE = LT.EMPLOYMENT_TYPE)            
+            
+      ----------------RESIDENCE TYPE TO BE VALIDATED-----------------------------------------------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED RESIDENCE TYPE IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   CUSTOMFIELDLOOKUP CL            
+                             WHERE  CL.OWNERID = @OWNERID            
+                                    AND CL.FIELDID = 5236            
+                                    AND CL.VALUE = LT.RESIDENCE_FLAG)            
+            
+      ----------------DOSRI CLASSIFICATION TO BE VALIDATED------------------------------------------------                                    
+      UPDATE LT            
+  SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED DOSRI CLASSIFICATION IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   CUSTOMFIELDLOOKUP CL            
+                             WHERE  CL.OWNERID = @OWNERID            
+                                    AND CL.FIELDID = 5235            
+                                    AND CL.VALUE = LT.DOSRI_CLASSICATION)            
+            
+      --------------------------PEP CLASSIFICATION TO BE VALIDATED-----------------------------------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED PEP CLASSIFICATION IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   CUSTOMFIELDLOOKUP CL            
+                             WHERE  CL.OWNERID = @OWNERID            
+                                    AND CL.FIELDID = 5234            
+                                    AND CL.VALUE = LT.PEP_REL)            
+            
+      ------------------------------NO OF CHILDREN DATA TO BE VALIDATED ------------------------------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED NOC DATA IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   CUSTOMFIELDLOOKUP CL            
+                             WHERE  CL.OWNERID = @OWNERID            
+                                  AND CL.FIELDID = 5233            
+                                    AND CL.VALUEID = LT.NO_OF_CHILD)            
+            
+      ------------------------------NATIONALITY TO BE VALIDATED--------------------------------------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED NATIONALITY DATA IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   COUNTRIES C            
+                             WHERE  C.OWNERID = @OWNERID            
+                                    AND C.COUNTRYCODE = LT.NATIONALITY)                                  */    
+      /* RESOLVING NATIONALITY */      
+      UPDATE LT            
+      SET    LT.NATIONALITY = C.NAME            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN COUNTRIES C            
+                     ON C.OWNERID = @OWNERID            
+                        AND C.COUNTRYCODE = LT.NATIONALITY            
+      WHERE  LT.ERRORCODE = 0                
+      /* -------------------------------BIRTH STATE TO BE VALIDATED--------------------------------------------                                    
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED BIRTH STATE IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   STATES S            
+                             WHERE  S.OWNERID = @OWNERID            
+                   AND S.STATECODE = LT.BIRTH_PLACE)                                                       */    
+            
+   /* RESOLVING BIRTH STATE IN INVALID */    
+      UPDATE LT            
+      SET    LT.BIRTH_PLACE = S.NAME            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN STATES S            
+                     ON S.OWNERID = @OWNERID            
+                        AND S.STATECODE = LT.BIRTH_PLACE            
+      WHERE  LT.ERRORCODE = 0            
+            
+   /* ------------------------------PROVINCE TO BE VALIDATED ----------------------------------------------            
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED BUSINESS PROVINCE IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0         
+          AND ISNULL(LT.BUSINESS_PROVINCE, N'') != N''            
+             AND NOT EXISTS (SELECT 1            
+                             FROM   STATES S            
+                             WHERE  S.OWNERID = @OWNERID            
+                                    AND S.STATECODE = LT.BUSINESS_PROVINCE)                                      
+            
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED RESIDENCE PROVINCE IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0            
+             AND ISNULL(LT.RESIDENCE_PROVINCE, N'') != N''      
+    AND NOT EXISTS (SELECT 1            
+                             FROM   STATES S            
+                             WHERE  S.OWNERID = @OWNERID            
+                                    AND S.STATECODE = LT.RESIDENCE_PROVINCE)            
+            
+      UPDATE LT            
+      SET    LT.ERRORCODE = 1,            
+             LT.ERRORMESSAGE = N'PROVIDED ALTERNATE PROVINCE IS INVALID'            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 0       
+    AND ISNULL(LT.ALTERNATE_PROVINCE, N'') != N''      
+             AND NOT EXISTS (SELECT 1            
+                             FROM   STATES S            
+                             WHERE  S.OWNERID = @OWNERID            
+                                    AND S.STATECODE = LT.ALTERNATE_PROVINCE)          */    
+            
+      /* RESOLVING PROVINCE CODE */            
+      UPDATE LT            
+      SET    LT.ALTERNATE_PROVINCE = S.NAME            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN STATES S            
+                     ON S.OWNERID = @OWNERID            
+                        AND S.STATECODE = LT.ALTERNATE_PROVINCE       
+      WHERE  LT.ERRORCODE = 0            
+            
+      UPDATE LT            
+      SET    LT.RESIDENCE_PROVINCE = S.NAME            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN STATES S            
+                     ON S.OWNERID = @OWNERID            
+                        AND S.STATECODE = LT.RESIDENCE_PROVINCE            
+      WHERE  LT.ERRORCODE = 0            
+            
+      UPDATE LT            
+      SET    LT.BUSINESS_PROVINCE = S.NAME            
+      FROM   MPI_CUST_INC_LT LT            
+             INNER JOIN STATES S            
+                     ON S.OWNERID = @OWNERID            
+                        AND S.STATECODE = LT.BUSINESS_PROVINCE            
+      WHERE  LT.ERRORCODE = 0            
+      ------------------------------RESOLVING CITY DATA-------------------------------------------------        
+      UPDATE LT        
+      SET    LT.RESIDENCE_CITY = D.NAME        
+      FROM   MPI_CUST_INC_LT LT        
+       INNER JOIN DISTRICTS D        
+                     ON D.OWNERID = @OWNERID        
+                        AND D.DISTRICTCODE = LT.RESIDENCE_CITY        
+      WHERE  LT.ERRORCODE = 0        
+        
+      UPDATE LT        
+      SET    LT.BUSINESS_CITY = D.NAME        
+      FROM   MPI_CUST_INC_LT LT        
+             INNER JOIN DISTRICTS D        
+                     ON D.OWNERID = @OWNERID        
+                        AND D.DISTRICTCODE = LT.BUSINESS_CITY        
+      WHERE  LT.ERRORCODE = 0        
+        
+      UPDATE LT        
+      SET    LT.ALTERNATE_CITY = D.NAME        
+      FROM   MPI_CUST_INC_LT LT        
+             INNER JOIN DISTRICTS D        
+                     ON D.OWNERID = @OWNERID        
+                        AND D.DISTRICTCODE = LT.ALTERNATE_CITY        
+      WHERE  LT.ERRORCODE = 0        
+        
+      ------------------------------RESOLVING COUNTRY DATA-------------------------------------------------        
+      UPDATE LT        
+      SET    LT.RESIDENCE_COUNTRY = C.NAME        
+      FROM   MPI_CUST_INC_LT LT        
+             INNER JOIN COUNTRIES C        
+                     ON C.OWNERID = @OWNERID        
+                        AND C.COUNTRYCODE = LT.RESIDENCE_COUNTRY        
+      WHERE  LT.ERRORCODE = 0        
+        
+      UPDATE LT        
+      SET    LT.BUSINESS_COUNTRY = C.NAME        
+      FROM   MPI_CUST_INC_LT LT        
+             INNER JOIN COUNTRIES C        
+                     ON C.OWNERID = @OWNERID        
+                        AND C.COUNTRYCODE = LT.BUSINESS_COUNTRY        
+      WHERE  LT.ERRORCODE = 0        
+       
+      UPDATE LT        
+      SET    LT.ALTERNATE_COUNTRY = C.NAME        
+      FROM   MPI_CUST_INC_LT LT        
+             INNER JOIN COUNTRIES C        
+                     ON C.OWNERID = @OWNERID        
+                        AND C.COUNTRYCODE = LT.ALTERNATE_COUNTRY        
+      WHERE  LT.ERRORCODE = 0        
+      ------------------------------INSERT DATA IN LOG SUMMARY---------------------------------------------                                    
+      DECLARE @TASKID      INT,            
+              @JOBID       INT,            
+              @CURRENTDATE DATETIME,            
+              @BATCHNO     INT,            
+              @COUNT       INT,            
+              @COUNT1      INT;  
+            
+      SELECT @JOBID = JOBID            
+      FROM   CIS_JOB            
+      WHERE  OWNERID = @OWNERID            
+             AND JOBNAME = N'MPI - CUSTOMER INCREMENTAL DATA BOOTUP'            
+            
+      SELECT @TASKID = TASKID            
+      FROM   CIS_TASK            
+      WHERE  OWNERID = @OWNERID            
+             AND JOBID = @JOBID            
+             AND TASKNAME = N'TASK 2: VALIDATE CUSTOMER DATA IN LT'            
+            
+      SET @CURRENTDATE = GETUTCDATE();            
+      SET @BATCHNO = DBO.CIS_GET_BATCH_NUMBER(@OWNERID, @JOBID)            
+            
+      INSERT INTO CIS_RECORDLOG            
+       (OWNERID,            
+                   BATCHNUMBER,            
+                   TASKID,            
+                   FIELD1,            
+                   OCCUREDAT,            
+                   EXCEPTION)            
+      SELECT @OWNERID,            
+             @BATCHNO,            
+             @TASKID,            
+             LT.CIF,            
+             @CURRENTDATE,            
+             LT.ERRORMESSAGE            
+      FROM   MPI_CUST_INC_LT LT            
+      WHERE  LT.ERRORCODE = 1            
+            
+   SET @COUNT = @@ROWCOUNT;            
+            
+      SELECT @COUNT1 = COUNT(1)            
+      FROM   MPI_CUST_INC_LT            
+      WHERE  ERRORCODE = 0;            
+            
+      UPDATE CIS_LOG            
+      SET    FAILURECOUNT = @COUNT,            
+             SUCCESSCOUNT = @COUNT1            
+      WHERE  OWNERID = @OWNERID            
+             AND BATCHNUMBER = @BATCHNO            
+             AND SOURCEID = @TASKID            
+             AND SOURCETYPEID = 3;            
+END;
