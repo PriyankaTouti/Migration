@@ -1,0 +1,651 @@
+CREATE   PROCEDURE MPI_CUST_INC_IMPORT(@OWNERID INT)              
+AS              
+  /*                                  
+  -- DESCRIPTION: INSERT NEW INCREMENTAL CUSTOMERS IN CRMNEXT.                                                  
+  -- CREATED BY : PRADYUMAN SHARMA; CREATED ON : 7-DEC-2023                                            
+  -- EXEC [MPI_CUST_INC_IMPORT] 985                                            
+  */              
+  BEGIN              
+      DECLARE @GETCURRENTDATE DATETIME = GETUTCDATE();              
+      DECLARE @BATCHNO      INT,              
+              @JOBID        INT,              
+              @PASSID       INT,              
+              @TASKID       INT,              
+              @SUCCESSCOUNT INT = 0,              
+              @FAILURECOUNT INT = 0,              
+              @COUNT        INT = 0,              
+              @ERRORMESSAGE NVARCHAR(256);              
+              
+      /* UPDATING COUNT IN THE LOG TABLE */              
+      SELECT @JOBID = JOBID              
+      FROM   CIS_JOB              
+      WHERE  OWNERID = @OWNERID              
+             AND JOBNAME = N'MPI - CUSTOMER INCREMENTAL DATA BOOTUP';              
+              
+      SELECT @PASSID = PASSID              
+      FROM   CIS_PASS              
+      WHERE  OWNERID = @OWNERID              
+             AND PASSNAME = N'PASS 1: INCREMENTAL CUSTOMER DATA BOOTUP';              
+              
+      SELECT @TASKID = TASKID              
+      FROM   CIS_TASK              
+      WHERE  OWNERID = @OWNERID              
+             AND JOBID = @JOBID              
+             AND PASSID = @PASSID              
+             AND TASKNAME = N'TASK 4: IMPORT VALID CUSTOMER RECORDS';              
+              
+      /* FETCHING THE RECORDS FOR WHICH DATA HAS TO BE INSERTED */              
+      SELECT *,              
+             ROW_NUMBER()              
+               OVER (              
+                 ORDER BY LT.ACCOUNTID) ROW_NUM              
+      INTO   #MPI_CUST_INC_TEMP              
+      FROM   MPI_CUST_INC_LT LT              
+      WHERE  LT.ERRORCODE = 0              
+             AND LT.FLAG = 0              
+              
+      SET @COUNT = @@ROWCOUNT;              
+              
+      /* VARIABLES FOR RUNNING DATA IN LOOP   */              
+      DECLARE @STARTINDEX INT = 0;              
+      DECLARE @ENDINDEX INT = 0;              
+              
+      --LOOP START --                                            
+      WHILE ( @STARTINDEX < @COUNT )              
+        BEGIN              
+            --UPDATE INDEXES --                                            
+            SET @STARTINDEX = @ENDINDEX + 1;              
+            SET @ENDINDEX = @ENDINDEX + 500;              
+            -- RUNNING LOOP WITH 500 RECORDS IN ONE BATCH                                              
+              
+            PRINT( @STARTINDEX )              
+              
+            PRINT( @ENDINDEX )              
+              
+            BEGIN TRY              
+                --BEGIN TRANSACTION                                  
+                /* 001 - ACCOUNTS */              
+                INSERT INTO ACCOUNTS              
+                            (OWNERID,              
+                             PARENTID,              
+                             ACCOUNTID,              
+                             RATINGID,              
+                             INDUSTRYID,              
+                             /*02*/NAME,              
+                             SHORTNAME,              
+                             WEBURL,              
+                             ACCOUNTTYPE,              
+                             COMMENTS,              
+                             /*03*/EMPLOYEECOUNTID,              
+                             IMPORTANCEID,              
+                             CONFIDENCEID,              
+                             /*04*/CREATEDON,              
+                             CREATEDBY,              
+         LASTMODIFIEDON,              
+                             LASTMODIFIEDBY,              
+                             LAYOUTID,              
+        CREATEDBYTYPE,              
+                             LASTMODIFIEDBYTYPE,              
+                             /*05*/EXPIRESON,              
+                             ASSIGNEDTO,              
+                             PHONE,              
+                             OFFICEPHONE,              
+                             MOBILEPHONE,              
+        EMAIL,              
+                             FAX,              
+                             /*06*/SHIP_ADDRESS,              
+                             /*07*/SHIP_CITY,              
+        SHIP_STATE,              
+                             SHIP_COUNTRY,              
+                             /*08*/BILL_ADDRESS,              
+                             /*09*/BILL_CITY,              
+      BILL_STATE,              
+                             BILL_COUNTRY,              
+                             /*09*/CODE,              
+                             STATUSID,              
+                             REMINDERDATE1,              
+                 STATUSCODEID,              
+                             STATUSCODECHANGEDON,              
+                             PROCESSID,              
+                             TOPPARENT,              
+                             /*10*/LO,              
+                             HI,              
+                             DLPTRANSACTIONID,              
+                             PREFERREDCHANNELID,              
+                             ACCOUNTCURRENTOWNERID,              
+                             DATEOFBIRTH,              
+                             /*11*/GENDERID,              
+                             MARITALSTATUSID)              
+                SELECT @OWNERID,              
+                       0   AS PARENTID,              
+                       ACCOUNTID,              
+                       1   AS RATINGID,              
+                       0   AS INDUSTRYID,              
+                       ISNULL(FIRST_NAME,'') + N' ' + ISNULL(MIDDLE_NAME,'') + N' ' + ISNULL(LAST_NAME,''),              
+                       LAST_NAME,              
+                       N'' AS WEBURL,              
+                       0   AS ACCOUNTTYPE,              
+                       N'' AS COMMENTS,              
+                       0   AS EMPLOYEECOUNTID,              
+                       1   AS IMPORTANCEID,              
+                       0   AS CONFIDENCEID,              
+                       @GETCURRENTDATE,              
+                       1   AS CREATEDBY,              
+                       @GETCURRENTDATE,              
+                       1   AS LASTMODIFIEDBY,              
+                       3   AS LAYOUTID,              
+                       2   AS CREATEDBYTYPE,              
+                       2   AS LASTMODIFIEDBYTYPE,              
+                       @GETCURRENTDATE,              
+                       1   AS ASSIGNEDTO,              
+                       HOME_NUMBER,              
+                       OFFICE_NUMBER,              
+                       MOBILE_NUMBER_1,              
+                       N'' AS EMAIL,              
+                       N'' AS FAX,              
+                       BUSINESS_ADDRESS + N' ' + BUSINESS_BARANGAY              
+                       + N' ' + BUSINESS_CITY + N' ' + BUSINESS_PROVINCE              
+                       + N' ' + BUSINESS_COUNTRY,              
+                       BUSINESS_BARANGAY,              
+                       BUSINESS_PROVINCE,              
+                       BUSINESS_COUNTRY,              
+                       RESIDENCE_ADDRESS + N' ' + RESIDENCE_BARANGAY              
+                       + N' ' + RESIDENCE_CITY + N' ' + RESIDENCE_PROVINCE              
+                       + N' ' + RESIDENCE_COUNTRY,              
+  RESIDENCE_BARANGAY,              
+                   RESIDENCE_PROVINCE,              
+                       RESIDENCE_COUNTRY,              
+                       CIF AS CODE,              
+                       1   AS STATUSID,              
+                       CAST(DATE_OF_BIRTH AS DATETIME),        
+                       0   AS STATUSCODEID,              
+                       @GETCURRENTDATE,              
+                       0   AS PROCESSID,              
+                       ACCOUNTID,              
+                       1   AS LO,              
+                       1   AS HI,              
+                       0   AS DLPTRANSACTIONID,              
+                       0   AS PREFERREDCHANNELID,              
+                       0   AS ACCOUNTCURRENTOWNERID,              
+                       CAST(DATE_OF_BIRTH AS DATETIME),        
+                       CRM_GENDERID,              
+                       CRM_MARRIAGEID              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                SET @SUCCESSCOUNT=@SUCCESSCOUNT + @@ROWCOUNT;              
+              
+                /* 002 - ACC_EX1 */              
+                INSERT INTO ACC_EX1              
+                            (OWNERID,              
+                             ACC_EX1_ID,              
+        ACC_EX1_1,              
+                             ACC_EX1_2,              
+                             ACC_EX1_3,              
+                             ACC_EX1_4,              
+                             ACC_EX1_5,              
+                             ACC_EX1_6,              
+                             ACC_EX1_7,              
+                             ACC_EX1_8,              
+        ACC_EX1_9,              
+                             /*02*/ACC_EX1_10,              
+                             ACC_EX1_11,              
+                             ACC_EX1_12,              
+                             ACC_EX1_13,              
+                             ACC_EX1_14,              
+                             ACC_EX1_15,              
+                             ACC_EX1_16,              
+                             ACC_EX1_18,              
+        ACC_EX1_19,              
+                             /*03*/ACC_EX1_20,              
+                             ACC_EX1_21,              
+                             ACC_EX1_22,              
+                             ACC_EX1_23,              
+                             ACC_EX1_24,              
+                             ACC_EX1_25,              
+                             ACC_EX1_26,              
+                             ACC_EX1_27,              
+                             ACC_EX1_28,              
+                             ACC_EX1_29,              
+                             /*04*/ACC_EX1_30,              
+                             ACC_EX1_31,              
+                             ACC_EX1_32,              
+                             ACC_EX1_33,              
+                             ACC_EX1_34,              
+                             ACC_EX1_35,              
+                             ACC_EX1_36,              
+                             ACC_EX1_37,              
+                             ACC_EX1_38,              
+                             ACC_EX1_39,              
+                             /*05*/ACC_EX1_40,           
+        Acc_ex1_41, --Acc - Business Address            
+                             ACC_EX1_43,--ACC - BUSINESS ADDRESS COUNTRY                  
+                             ACC_EX1_44,--ACC - RESIDENCE ADDRESS COUNTRY                  
+                             ACC_EX1_45,--ACC - BUSINESS  ADDRESS PROVINCE                  
+                             ACC_EX1_46,--ACC - RESIDENCE ADDRESS PROVINCE                  
+                             ACC_EX1_47,--ACC - BUSINESS ADDRESS CITY                  
+       ACC_EX1_48,--ACC - RESIDENCE ADDRESS CITY      
+                             ACC_EX1_49,--ACC - BUSINESS ADDRESS BARANGAY                  
+                             ACC_EX1_51,--ACC - RESIDENCE ADDRESS BARANGAY                  
+        Acc_ex1_52,  --Acc - Residence Address              
+                             -----------------                  
+                             ACC_EX1_50,              
+                ACC_EX1_69,              
+                             ACC_EX1_100)              
+                SELECT @OWNERID,              
+                       ACCOUNTID,              
+                       CUST_SEGMENT,              
+                       REPEAT_BORROWER_FILE_FLAG,              
+                       TOTAL_TRB,              
+                       REL_TYPE,              
+                       NO_OF_CHILD,              
+                       TOTAL_ADB_6MO,              
+              TOTAL_ADB_12MO,              
+                       MOBILE_NUMBER_2,              
+                       TOTAL_AMD_6MO,              
+                       TOTAL_AMD_12MO,              
+                       CAST(CAST(CAST(AS_OF_DATE AS INT) AS nvarchar(8)) AS DATETIME),        
+                       NAME_SUFFIX,              
+                       CIF_DPD,              
+                       CAST(DT_LAST_TXN AS DATETIME),                                      
+                       CAST(DT_LAST_RETURNED_CHCK AS DATETIME),          
+                       MAX_DEP_MOB,              
+                       BIRTH_PLACE,              
+                       OVERALL_HANDLING,              
+                       TOTAL_OB_ALL_LOANS,              
+                       NATIONALITY,              
+                       PEP_REL,              
+                       DOSRI_CLASSICATION,              
+                       RESIDENCE_FLAG,              
+                       PROFESSION,              
+                       EMPLOYMENT_TYPE,              
+                       INCOME_SOURCE,              
+                       NATURE_OF_BUSINESS,              
+                       EMP_STATUS,              
+        EMP_NAME,              
+                       ALTERNATE_ADDRESS,              
+                       ALTERNATE_COUNTRY,              
+                       ALTERNATE_PROVINCE,              
+                       ALTERNATE_CITY,              
+                       ALTERNATE_BARANGAY,              
+                       NO_OPEN_ACCOUNTS,              
+                       TOTAL_OB_ALL_AUTO,              
+                       TOTAL_MO_AMORT,              
+                       CIF_NPL,              
+                       CAST(DT_LAST_WO AS DATETIME),           
+        BUSINESS_ADDRESS,          
+                       BUSINESS_COUNTRY,              
+                       RESIDENCE_COUNTRY,              
+                       BUSINESS_PROVINCE,              
+                       RESIDENCE_PROVINCE,              
+                       BUSINESS_CITY,              
+                       RESIDENCE_CITY,              
+                       BUSINESS_BARANGAY,              
+                       RESIDENCE_BARANGAY,          
+        RESIDENCE_ADDRESS,          
+                       -------------                  
+                       FIRST_NAME,              
+                       MIDDLE_NAME,              
+                       LAST_NAME              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+              INSERT INTO ACC_EX2              
+                            (OWNERID,              
+                             ACC_EX2_ID)              
+                SELECT @OWNERID,              
+                       ACCOUNTID              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                INSERT INTO ACC_EX3              
+                            (OWNERID,              
+                             ACC_EX3_ID,  
+        Acc_ex3_59,  
+        Acc_ex3_61)              
+                SELECT @OWNERID,              
+                       ACCOUNTID,   
+        CIVIL_STATUS,  
+        MOS_LAST_LOAN  
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                /* 003 - VERIFICATION -- FOR ID NUMBER 1 */              
+                INSERT INTO VERIFICATION              
+                            (OWNERID,              
+                             CUSTOMOBJECTID,              
+                             SUBJECT,              
+                             ASSIGNEDTOID,              
+                             ASSIGNEDTONAME,              
+                             /*02*/STATUSCODENAME,              
+                             STATUSCODEID,              
+                             RELATEDTONAME,              
+                             RELATEDTOID,              
+                             RELATEDTOTYPEID,              
+      RELATEDTOTYPENAME,              
+                             CREATEDBYNAME,              
+                             /*03*/CREATEDBY,              
+                             CREATEDON,              
+                             LASTMODIFIEDON,              
+                             STATUSID,              
+                             STATUS,              
+                             /*04*/STRUCTUREID,              
+                             LAYOUTID,              
+                             PROCESSID)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID1,              
+                       ID_NUMBER_1,              
+                       1           AS ASSIGNEDTOID,              
+                       N''         AS ASSIGNEDTONAME,              
+                       N''         AS STATUSCODENAME,              
+                       0           AS STATUSCODEID,              
+                       ISNULL(FIRST_NAME,'') + N' ' + ISNULL(MIDDLE_NAME,'') + N' ' + ISNULL(LAST_NAME,''),              
+                       ACCOUNTID,              
+                       2           AS RELATEDTOTYPEID,              
+                       N'BORROWER' AS RELATEDTOTYPENAME,              
+                       N''         AS CREATEDBYNAME,              
+                       1           AS CREATEDBY,              
+                       @GETCURRENTDATE,              
+                       @GETCURRENTDATE,              
+                       1           AS STATUSID,              
+                       N' '        AS STATUS,              
+                       1           AS STRUCTUREID,              
+                       10204009    AS LAYOUTID,              
+                       0           AS PROCESSID              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID1 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                /* VER_EX1 */              
+                INSERT INTO VER_EX1              
+                            (OWNERID,              
+                             VER_EX1_ID,              
+                             VER_EX1_1)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID1,              
+                       ID_TYPE_1              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID1 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                /* 004 - VERIFICATION -- FOR ID NUMBER 2 */              
+                INSERT INTO VERIFICATION              
+                            (OWNERID,              
+                             CUSTOMOBJECTID,              
+                             SUBJECT,              
+                             ASSIGNEDTOID,              
+                             ASSIGNEDTONAME,              
+                             /*02*/STATUSCODENAME,              
+                             STATUSCODEID,              
+                             RELATEDTONAME,              
+                             RELATEDTOID,              
+                             RELATEDTOTYPEID,              
+                             RELATEDTOTYPENAME,              
+        CREATEDBYNAME,              
+                            /*03*/CREATEDBY,              
+                             CREATEDON,              
+                             LASTMODIFIEDON,              
+                             STATUSID,              
+                             STATUS,              
+                             /*04*/STRUCTUREID,              
+                             LAYOUTID,              
+                             PROCESSID)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID2,              
+                       ID_NUMBER_2,              
+                       1           AS ASSIGNEDTOID,              
+                       N''         AS ASSIGNEDTONAME,              
+                       N''         AS STATUSCODENAME,              
+            0           AS STATUSCODEID,              
+                       ISNULL(FIRST_NAME,'') + N' ' + ISNULL(MIDDLE_NAME,'') + N' ' + ISNULL(LAST_NAME,''),              
+                       ACCOUNTID,              
+                       2           AS RELATEDTOTYPEID,              
+                       N'BORROWER' AS RELATEDTOTYPENAME,              
+                       N''         AS CREATEDBYNAME,              
+                       1           AS CREATEDBY,              
+                       @GETCURRENTDATE,              
+                       @GETCURRENTDATE,              
+                       1           AS STATUSID,              
+                       N' '        AS STATUS,              
+                       2           AS STRUCTUREID,              
+                       10204009    AS LAYOUTID,              
+     0           AS PROCESSID              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID2 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                INSERT INTO VER_EX1              
+                            (OWNERID,              
+                             VER_EX1_ID,              
+                             VER_EX1_1)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID2,              
+                       ID_TYPE_2              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID2 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                /* 005 - VERIFICATION -- FOR ID NUMBER 3 */              
+                INSERT INTO VERIFICATION              
+                            (OWNERID,              
+                             CUSTOMOBJECTID,              
+                 SUBJECT,              
+                             ASSIGNEDTOID,              
+                             ASSIGNEDTONAME,              
+                             /*02*/STATUSCODENAME,              
+                             STATUSCODEID,              
+                             RELATEDTONAME,              
+                             RELATEDTOID,              
+                             RELATEDTOTYPEID,              
+        RELATEDTOTYPENAME,              
+                             CREATEDBYNAME,              
+                             /*03*/CREATEDBY,              
+                             CREATEDON,              
+                             LASTMODIFIEDON,              
+                             STATUSID,              
+                             STATUS,              
+                             /*04*/STRUCTUREID,              
+                             LAYOUTID,              
+                             PROCESSID)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID3,              
+                       ID_NUMBER_3,              
+        1           AS ASSIGNEDTOID,              
+                       N''         AS ASSIGNEDTONAME,              
+                       N''         AS STATUSCODENAME,              
+                       0         AS STATUSCODEID,              
+                       ISNULL(FIRST_NAME,'') + N' ' + ISNULL(MIDDLE_NAME,'') + N' ' + ISNULL(LAST_NAME,''),              
+                       ACCOUNTID,              
+                       2           AS RELATEDTOTYPEID,              
+                       N'BORROWER' AS RELATEDTOTYPENAME,              
+                       N''         AS CREATEDBYNAME,              
+                       1           AS CREATEDBY,              
+                       @GETCURRENTDATE,              
+                       @GETCURRENTDATE,              
+                       1           AS STATUSID,              
+                       N' '        AS STATUS,              
+                       3           AS STRUCTUREID,              
+                       10204009    AS LAYOUTID,              
+                       0           AS PROCESSID              
+           FROM   #MPI_CUST_INC_TEMP LT         
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID3 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                INSERT INTO VER_EX1              
+                            (OWNERID,              
+                             VER_EX1_ID,              
+                             VER_EX1_1)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID3,              
+                       ID_TYPE_3              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID3 = 1              
+                       AND LT.ROWINDEX BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                /* 006 - VERIFICATION -- FOR ID NUMBER 4 */              
+                INSERT INTO VERIFICATION              
+                            (OWNERID,              
+                  CUSTOMOBJECTID,              
+                             SUBJECT,              
+                             ASSIGNEDTOID,              
+                             ASSIGNEDTONAME,              
+                             /*02*/STATUSCODENAME,              
+                             STATUSCODEID,              
+                             RELATEDTONAME,              
+                             RELATEDTOID,              
+                             RELATEDTOTYPEID,              
+                             RELATEDTOTYPENAME,              
+                             CREATEDBYNAME,              
+                             /*03*/CREATEDBY,              
+                             CREATEDON,              
+                             LASTMODIFIEDON,              
+                             STATUSID,              
+                             STATUS,              
+                             /*04*/STRUCTUREID,              
+                             LAYOUTID,              
+                             PROCESSID)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID4,        
+     ID_NUMBER_4,              
+                       1           AS ASSIGNEDTOID,              
+                       N''         AS ASSIGNEDTONAME,              
+                       N''         AS STATUSCODENAME,              
+                       0           AS STATUSCODEID,              
+                       ISNULL(FIRST_NAME,'') + N' ' + ISNULL(MIDDLE_NAME,'') + N' ' + ISNULL(LAST_NAME,''),              
+                       ACCOUNTID,              
+                       2           AS RELATEDTOTYPEID,              
+                       N'BORROWER' AS RELATEDTOTYPENAME,              
+                       N''         AS CREATEDBYNAME,              
+                       1           AS CREATEDBY,              
+                       @GETCURRENTDATE,              
+                       @GETCURRENTDATE,              
+                       1           AS STATUSID,              
+                       N' '        AS STATUS,              
+                       4           AS STRUCTUREID,              
+               10204009    AS LAYOUTID,              
+                       0           AS PROCESSID              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID4 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                INSERT INTO VER_EX1              
+                            (OWNERID,              
+                             VER_EX1_ID,              
+                    VER_EX1_1)              
+                SELECT @OWNERID,              
+                       CRM_GEN_VERID4,              
+                       ID_TYPE_4              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID4 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                /* 007 - VERIFICATION -- FOR ID NUMBER 5 */              
+                INSERT INTO VERIFICATION              
+                            (OWNERID,              
+                             CUSTOMOBJECTID,              
+                             SUBJECT,              
+                             ASSIGNEDTOID,              
+                             ASSIGNEDTONAME,              
+                             /*02*/STATUSCODENAME,              
+                             STATUSCODEID,              
+                             RELATEDTONAME,              
+                             RELATEDTOID,              
+                             RELATEDTOTYPEID,              
+                             RELATEDTOTYPENAME,              
+                             CREATEDBYNAME,              
+ /*03*/CREATEDBY,              
+                             CREATEDON,              
+                             LASTMODIFIEDON,              
+                             STATUSID,              
+                             STATUS,              
+                             /*04*/STRUCTUREID,              
+                             LAYOUTID,              
+                             PROCESSID)              
+                SELECT @OWNERID,              
+         CRM_GEN_VERID5,              
+                       ID_NUMBER_5,              
+                       1        AS ASSIGNEDTOID,              
+                       N''      AS ASSIGNEDTONAME,              
+                       N''      AS STATUSCODENAME,              
+                       0        AS STATUSCODEID,              
+                       ISNULL(FIRST_NAME,'') + N' ' + ISNULL(MIDDLE_NAME,'') + N' ' + ISNULL(LAST_NAME,''),              
+                       ACCOUNTID,              
+                       0        AS RELATEDTOTYPEID,              
+                       N''      AS RELATEDTOTYPENAME,              
+                       N''      AS CREATEDBYNAME,     
+                       1   AS CREATEDBY,              
+                       @GETCURRENTDATE,              
+                       @GETCURRENTDATE,              
+                       1        AS STATUSID,              
+                       N' '     AS STATUS,              
+                       5        AS STRUCTUREID,              
+                       10204009 AS LAYOUTID,              
+                       0        AS PROCESSID              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+                       AND LT.INSERT_ID5 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+              
+                INSERT INTO VER_EX1              
+                            (OWNERID,              
+                             VER_EX1_ID,              
+                             VER_EX1_1)              
+          SELECT @OWNERID,              
+                       CRM_GEN_VERID5,              
+                       ID_TYPE_5              
+                FROM   #MPI_CUST_INC_TEMP LT              
+                WHERE  LT.ERRORCODE = 0              
+             AND LT.INSERT_ID5 = 1              
+                       AND LT.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+            --COMMIT                                  
+            --        END TRY                                  
+            --        BEGIN CATCH                                  
+            --            -- CAPTURING THE FAILURE REASON                                            
+            --            SELECT @ERRORMESSAGE = SUBSTRING(ERROR_MESSAGE(), 0, 255);                                  
+            --     ROLLBACK                                  
+            --            -- UPDATING THE LT.                                             
+            --            UPDATE LT                                  
+            --            SET    LT.ERRORCODE = 1,                                  
+            --                   LT.ERRORMESSAGE = @ERRORMESSAGE                                  
+            --            FROM   MPI_CUST_INC_LT LT                                  
+            --            WHERE  LT.ERRORCODE = 0;                                  
+            --        END CATCH                                  
+            --    END                      
+   END TRY              
+              
+            BEGIN CATCH              
+                /*CAPTURE FAILURE REASON*/              
+                SELECT @ERRORMESSAGE = SUBSTRING(ERROR_MESSAGE(), 0, 255);              
+              
+                /*CAPTURE AGAINST LT*/              
+                UPDATE LT              
+                SET    LT.ERRORCODE = 1,              
+                       LT.ERRORMESSAGE = @ERRORMESSAGE              
+                FROM   MPI_CUST_INC_LT LT              
+                       INNER JOIN #MPI_CUST_INC_TEMP T              
+                               ON LT.ACCOUNTID = T.ACCOUNTID              
+                WHERE  LT.ERRORCODE = 0              
+                       AND T.ROW_NUM BETWEEN @STARTINDEX AND @ENDINDEX              
+            END CATCH              
+        END /*END OF WHILE LOOP*/              
+      SET @FAILURECOUNT = @COUNT - @SUCCESSCOUNT;              
+              
+      UPDATE CIS_LOG              
+      SET    FAILURECOUNT = @FAILURECOUNT,              
+             SUCCESSCOUNT = @SUCCESSCOUNT              
+      WHERE  OWNERID = @OWNERID              
+             AND BATCHNUMBER = @BATCHNO              
+             AND SOURCETYPEID = 3              
+             AND SOURCEID = @TASKID;              
+  END 
