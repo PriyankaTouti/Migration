@@ -1,0 +1,979 @@
+CREATE     PROCEDURE [DBO].[MPI_CUST_INC_UPDATE](@OWNERID INT)                      
+AS                      
+  /*                                       
+  -- DESCRIPTION:  TO UPDATE CUSTOMER DATA FOR EXISTING CUSTOMER.                                       
+  -- CREATED BY :  PRADYUMAN SHARMA; CREATED ON :  6TH-DEC-2023                                                            
+  -- EXEC MPI_CUST_INC_UPDATE 985                                                          
+  */                      
+BEGIN                      
+      DECLARE @BATCHNUMBER  INT,                      
+              @JOBID        INT,                      
+              @TASKID       INT,                      
+              @SUCCESSCOUNT INT = 0,                      
+              @FAILURECOUNT INT = 0,                      
+              @COUNT        INT = 0,                      
+              @CREATEDDATE  DATETIME,                      
+              @UPDATEDDATE  DATETIME,                      
+              @ERRORMESSAGE NVARCHAR(256)                      
+                      
+      /* MOVING DATA INTO TEMP TABLE */                      
+      SELECT *,                      
+             ROW_NUMBER()                      
+               OVER (                      
+                 ORDER BY LT.ACCOUNTID) ROW_NUM                      
+      INTO   #MPI_CUST_INCC_TEMP                      
+      FROM   MPI_CUST_INC_LT LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.FLAG = 1                      
+                      
+      /* UPDATING NAME OF CUSTOMER */                      
+      UPDATE ACC                      
+      SET    ACC.NAME = ISNULL(LT.FIRST_NAME,'') + N' ' + ISNULL(LT.MIDDLE_NAME,'') + N' '                      
+                        + ISNULL(LT.LAST_NAME,'')                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID;                      
+                      
+      SET @SUCCESSCOUNT = @@ROWCOUNT;                      
+                      
+      /* UPDATING GENDER OF CUSTOMER */                      
+      UPDATE ACC                      
+      SET    ACC.GENDERID = LT.CRM_GENDERID                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID;                      
+                      
+      /* UPDATING SHORT NAME OF CUSTOMER */                      
+      UPDATE ACC                      
+      SET    ACC.SHORTNAME = LT.LAST_NAME                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID;                      
+                      
+      /* UPDATING LAST MODIFIED DATE */                      
+      UPDATE ACC                      
+      SET    ACC.LASTMODIFIEDON = GETUTCDATE()                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID;                      
+                      
+      /* UPDATING HOME NUMBER */                      
+      UPDATE ACC                      
+      SET    ACC.PHONE = LT.HOME_NUMBER                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING OFFICE NUMBER */                      
+      UPDATE ACC                      
+      SET    ACC.OFFICEPHONE = LT.OFFICE_NUMBER                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID              
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING MOBILE NUMBER */                      
+    UPDATE ACC                      
+      SET    ACC.MOBILEPHONE = LT.MOBILE_NUMBER_1                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING SHIPPING ADDRESS */                      
+      UPDATE ACC                      
+      SET    ACC.SHIP_ADDRESS = LT.BUSINESS_ADDRESS + N' '                      
+                                + LT.BUSINESS_BARANGAY + N' ' + LT.BUSINESS_CITY                      
+                                + N' ' + LT.BUSINESS_PROVINCE + N' '                      
+                                + LT.BUSINESS_COUNTRY                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+  /* UPDATING SHIPPING CITY */                      
+      UPDATE ACC                      
+      SET    ACC.SHIP_CITY = LT.BUSINESS_BARANGAY                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+           ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING SHIPPING STATE */                      
+      UPDATE ACC                      
+      SET    ACC.SHIP_STATE = LT.BUSINESS_PROVINCE                      
+     FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING SHIPPING COUNTRY */                      
+      UPDATE ACC                      
+      SET    ACC.SHIP_COUNTRY = LT.BUSINESS_COUNTRY                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING BUSINESS ADDRESS */                      
+      UPDATE ACC                      
+      SET    ACC.BILL_ADDRESS = LT.RESIDENCE_ADDRESS + N' '                      
+                                + LT.RESIDENCE_BARANGAY + N' '                      
+                                + LT.RESIDENCE_CITY + N' '                      
+                                + LT.RESIDENCE_PROVINCE + N' '                      
+                                + LT.RESIDENCE_COUNTRY                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING SHIPPING CITY */                      
+      UPDATE ACC                      
+      SET    ACC.BILL_CITY = LT.RESIDENCE_BARANGAY                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+  ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING SHIPPING STATE */                      
+      UPDATE ACC                      
+      SET    ACC.BILL_STATE = LT.RESIDENCE_PROVINCE                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+             
+      /* UPDATING SHIPPING COUNTRY */                      
+      UPDATE ACC                      
+      SET    ACC.BILL_COUNTRY = LT.RESIDENCE_COUNTRY                      
+      FROM   ACCOUNTS ACC                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID                      
+                      
+      /* UPDATING MARRIAGE ID */                      
+      UPDATE ACC                      
+      SET    ACC.MARITALSTATUSID = LT.CRM_MARRIAGEID                      
+      FROM   ACCOUNTS ACC                      
+  INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON ACC.OWNERID = @OWNERID                      
+                        AND ACC.ACCOUNTID = LT.ACCOUNTID  
+        
+   /* UPDATING DATE OF BIRTH FIELD */  
+   UPDATE ACC  
+   SET    ACC.DATEOFBIRTH = LT.DATE_OF_BIRTH  
+   FROM   ACCOUNTS ACC  
+   INNER JOIN #MPI_CUST_INCC_TEMP LT  
+      ON ACC.OWNERID = @OWNERID  
+      AND ACC.ACCOUNTID = LT.ACCOUNTID  
+                      
+      /* UPDATING ACCOUNT EXTENDED FIELDS */                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_1 = LT.CUST_SEGMENT                      
+     FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_2 = LT.REPEAT_BORROWER_FILE_FLAG                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_3 = LT.TOTAL_TRB                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_4 = LT.REL_TYPE                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+   SET    A1.ACC_EX1_5 = LT.NO_OF_CHILD                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_6 = LT.TOTAL_ADB_6MO                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                 ON A1.OWNERID = @OWNERID                      
+AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_7 = LT.TOTAL_ADB_12MO                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_8 = LT.MOBILE_NUMBER_2                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                   
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_9 = LT.TOTAL_AMD_6MO                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                 
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_10 = LT.TOTAL_AMD_12MO                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_11 = CAST(CAST(CAST(LT.AS_OF_DATE AS INT) AS NVARCHAR(8)) AS DATETIME)                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_12 = LT.NAME_SUFFIX                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_13 = LT.CIF_DPD                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                 AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_14 = CAST(LT.DT_LAST_TXN AS DATETIME)                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_15 = CAST(LT.DT_LAST_RETURNED_CHCK AS DATETIME)                     
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                    ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_16 = LT.MAX_DEP_MOB                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+  SET    A1.ACC_EX1_18 = LT.BIRTH_PLACE                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_19 = LT.OVERALL_HANDLING                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_20 = LT.TOTAL_OB_ALL_LOANS                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_21 = LT.NATIONALITY                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID        
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_22 = LT.PEP_REL                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                       AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_23 = LT.DOSRI_CLASSICATION                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_24 = LT.RESIDENCE_FLAG                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_25 = LT.PROFESSION                      
+      FROM   ACC_EX1 A1           
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_26 = LT.EMPLOYMENT_TYPE                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_27 = LT.INCOME_SOURCE                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_28 = LT.NATURE_OF_BUSINESS                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT         
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_29 = LT.EMP_STATUS                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_30 = LT.EMP_NAME                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+            
+      UPDATE A1                      
+      SET    A1.ACC_EX1_31 = LT.ALTERNATE_ADDRESS                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_32 = LT.ALTERNATE_COUNTRY                      
+      FROM   ACC_EX1 A1                 
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;          
+                      
+    UPDATE A1                      
+      SET    A1.ACC_EX1_33 = LT.ALTERNATE_PROVINCE                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_34 = LT.ALTERNATE_CITY                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_35 = LT.ALTERNATE_BARANGAY                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_36 = LT.NO_OPEN_ACCOUNTS                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_37 = LT.TOTAL_OB_ALL_AUTO                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+  SET    A1.ACC_EX1_38 = LT.TOTAL_MO_AMORT                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+            
+      UPDATE A1                      
+      SET    A1.ACC_EX1_39 = LT.CIF_NPL                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+    UPDATE A1                      
+      SET    A1.ACC_EX1_40 = CAST(LT.DT_LAST_WO AS DATETIME)                     
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+   UPDATE A1                
+   SET    A1.ACC_EX1_41 = LT.BUSINESS_ADDRESS                
+   FROM   ACC_EX1 A1                
+    INNER JOIN #MPI_CUST_INCC_TEMP LT                
+      ON A1.OWNERID = @OWNERID                
+                       AND A1.ACC_EX1_ID = LT.ACCOUNTID;                
+                   
+      UPDATE A1                      
+      SET    A1.ACC_EX1_43 = LT.BUSINESS_COUNTRY                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                    ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                      
+      UPDATE A1                      
+      SET    A1.ACC_EX1_44 = LT.RESIDENCE_COUNTRY                      
+      FROM   ACC_EX1 A1                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON A1.OWNERID = @OWNERID                      
+                        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                           
+                             
+       UPDATE A1                      
+       SET    A1.ACC_EX1_45 = LT.BUSINESS_PROVINCE                      
+   FROM   ACC_EX1 A1                      
+              INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                      ON A1.OWNERID = @OWNERID                      
+                         AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                          
+          UPDATE A1                      
+       SET    A1.ACC_EX1_46 = LT.RESIDENCE_PROVINCE                      
+       FROM   ACC_EX1 A1                      
+              INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                      ON A1.OWNERID = @OWNERID                      
+                         AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                                   
+       UPDATE A1                      
+       SET    A1.ACC_EX1_47 = LT.BUSINESS_CITY                      
+       FROM ACC_EX1 A1                      
+              INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                      ON A1.OWNERID = @OWNERID                      
+        AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                          
+       UPDATE A1                      
+       SET    A1.ACC_EX1_48 = LT.RESIDENCE_CITY                      
+       FROM   ACC_EX1 A1                      
+              INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                      ON A1.OWNERID = @OWNERID                      
+                         AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                          
+       UPDATE A1                      
+       SET    A1.ACC_EX1_49 = LT.BUSINESS_BARANGAY                      
+       FROM   ACC_EX1 A1                      
+              INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                      ON A1.OWNERID = @OWNERID                      
+                         AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                             
+       UPDATE A1                      
+       SET    A1.ACC_EX1_51 = LT.RESIDENCE_BARANGAY                 
+       FROM   ACC_EX1 A1                      
+              INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                      ON A1.OWNERID = @OWNERID                      
+                         AND A1.ACC_EX1_ID = LT.ACCOUNTID;                
+                       
+       UPDATE A1                
+    SET    A1.ACC_EX1_52 = LT.RESIDENCE_ADDRESS                
+    FROM   ACC_EX1 A1                
+     INNER JOIN #MPI_CUST_INCC_TEMP LT                
+       ON A1.OWNERID = @OWNERID                
+      AND A1.ACC_EX1_ID = LT.ACCOUNTID;                
+                          
+       UPDATE A1                      
+          SET    A1.ACC_EX1_50 = LT.FIRST_NAME                      
+          FROM   ACC_EX1 A1                      
+                 INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                         ON A1.OWNERID = @OWNERID                      
+                            AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                          
+          UPDATE A1                      
+          SET    A1.ACC_EX1_69 = LT.MIDDLE_NAME                      
+          FROM   ACC_EX1 A1                      
+                 INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                    ON A1.OWNERID = @OWNERID                      
+                            AND A1.ACC_EX1_ID = LT.ACCOUNTID;                      
+                          
+          UPDATE A1                      
+          SET    A1.ACC_EX1_100 = LT.LAST_NAME                      
+          FROM   ACC_EX1 A1                      
+                 INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                         ON A1.OWNERID = @OWNERID                      
+                            AND A1.ACC_EX1_ID = LT.ACCOUNTID;         
+        UPDATE A3      
+    SET    A3.ACC_EX3_59 = LT.CIVIL_STATUS       
+    FROM   ACC_EX3 A3      
+     INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                         ON A3.OWNERID = @OWNERID                      
+                            AND A3.ACC_EX3_ID = LT.ACCOUNTID;  
+    
+    UPDATE A3      
+    SET    A3.ACC_EX3_61 = LT.MOS_LAST_LOAN      
+    FROM   ACC_EX3 A3      
+     INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                         ON A3.OWNERID = @OWNERID                      
+                            AND A3.ACC_EX3_ID = LT.ACCOUNTID;         
+                          
+      /* UPDATING VERIFICATION TABLE */                      
+      UPDATE V                      
+      SET    V.RELATEDTONAME = LT.FIRST_NAME + N' ' + LT.MIDDLE_NAME + N' '          
+                               + LT.LAST_NAME                      
+      FROM   VERIFICATION V                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.OWNERID = @OWNERID     
+      AND RelatedToTypeId=2    
+                        AND V.RELATEDTOID = LT.ACCOUNTID;                      
+                      
+      UPDATE V                      
+      SET    V.LASTMODIFIEDON = GETUTCDATE()                      
+      FROM   VERIFICATION V                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.OWNERID = @OWNERID                      
+                        AND V.RELATEDTOID = LT.ACCOUNTID;                      
+                      
+      UPDATE V                      
+      SET    V.SUBJECT = LT.ID_NUMBER_1                      
+      FROM   VERIFICATION V                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.OWNERID = @OWNERID                      
+                        AND V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 1                      
+                        AND LT.INSERT_ID1 = 0                    
+      AND ISNULL(LT.ID_NUMBER_1, N'') != N''                    
+                      
+      UPDATE V                      
+      SET    V.SUBJECT = LT.ID_NUMBER_2                      
+      FROM   VERIFICATION V                      
+    INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.OWNERID = @OWNERID                      
+                        AND V.RELATEDTOID = LT.ACCOUNTID                      
+           AND V.STRUCTUREID = 2                      
+                        AND LT.INSERT_ID2 = 0                      
+      AND ISNULL(LT.ID_NUMBER_2, N'') != N''                    
+                      
+      UPDATE V                      
+      SET    V.SUBJECT = LT.ID_NUMBER_3                      
+      FROM   VERIFICATION V                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+        ON V.OWNERID = @OWNERID                      
+                        AND V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 3                      
+                        AND LT.INSERT_ID3 = 0                      
+      AND ISNULL(LT.ID_NUMBER_3, N'') != N''                    
+                      
+      UPDATE V                      
+      SET    V.SUBJECT = LT.ID_NUMBER_4                      
+      FROM   VERIFICATION V                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.OWNERID = @OWNERID                      
+                  AND V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 4                      
+                        AND LT.INSERT_ID4 = 0                      
+      AND ISNULL(LT.ID_NUMBER_4, N'') != N''                    
+                      
+      UPDATE V                      
+      SET    V.SUBJECT = LT.ID_NUMBER_5                      
+      FROM   VERIFICATION V                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.OWNERID = @OWNERID                      
+                        AND V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 5                      
+                        AND LT.INSERT_ID5 = 0                      
+      AND ISNULL(LT.ID_NUMBER_5, N'') != N''                    
+                      
+      UPDATE V1                      
+      SET    V1.VER_EX1_1 = LT.ID_TYPE_1                      
+      FROM   VER_EX1 V1                      
+             INNER JOIN VERIFICATION V                      
+                     ON V.CUSTOMOBJECTID = V1.VER_EX1_ID                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 1                     
+                        AND LT.INSERT_ID1 = 0                    
+      AND ISNULL(LT.ID_TYPE_1, N'') != N''                      
+                      
+      UPDATE V1                      
+      SET    V1.VER_EX1_1 = LT.ID_TYPE_2                        FROM   VER_EX1 V1                      
+             INNER JOIN VERIFICATION V                      
+                     ON V.CUSTOMOBJECTID = V1.VER_EX1_ID                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+     ON V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 2                      
+                        AND LT.INSERT_ID2 = 0                    
+      AND ISNULL(LT.ID_TYPE_2, N'') != N''                    
+                      
+      UPDATE V1                      
+      SET    V1.VER_EX1_1 = LT.ID_TYPE_3                      
+      FROM   VER_EX1 V1                      
+             INNER JOIN VERIFICATION V                      
+                     ON V.CUSTOMOBJECTID = V1.VER_EX1_ID                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 3                      
+                        AND LT.INSERT_ID3 = 0                    
+      AND ISNULL(LT.ID_TYPE_3, N'') != N''                    
+                      
+      UPDATE V1                      
+      SET    V1.VER_EX1_1 = LT.ID_TYPE_4                      
+      FROM   VER_EX1 V1                      
+             INNER JOIN VERIFICATION V                      
+      ON V.CUSTOMOBJECTID = V1.VER_EX1_ID                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.RELATEDTOID = LT.ACCOUNTID                      
+              AND V.STRUCTUREID = 4                      
+                        AND LT.INSERT_ID4 = 0                    
+      AND ISNULL(LT.ID_TYPE_4, N'') != N''                    
+                      
+      UPDATE V1                      
+      SET    V1.VER_EX1_1 = LT.ID_TYPE_5                      
+      FROM   VER_EX1 V1                      
+             INNER JOIN VERIFICATION V                      
+                     ON V.CUSTOMOBJECTID = V1.VER_EX1_ID                      
+             INNER JOIN #MPI_CUST_INCC_TEMP LT                      
+                     ON V.RELATEDTOID = LT.ACCOUNTID                      
+                        AND V.STRUCTUREID = 5                      
+                        AND LT.INSERT_ID5 = 0                     
+      AND ISNULL(LT.ID_TYPE_5,N'') != N''                    
+                      
+      /* INSERTING NEW ID'S FOR EXISTING CUSTOMERS */                      
+      INSERT INTO VERIFICATION                      
+                  (OWNERID,                      
+                   CUSTOMOBJECTID,                      
+                   SUBJECT,                      
+                   ASSIGNEDTOID,                      
+                   ASSIGNEDTONAME,                      
+                   /*02*/STATUSCODENAME,                      
+          STATUSCODEID,                      
+                   RELATEDTONAME,                      
+       RELATEDTOID,                      
+              RELATEDTOTYPEID,                      
+                   RELATEDTOTYPENAME,                      
+                   CREATEDBYNAME,                      
+                   /*03*/CREATEDBY,                      
+                   CREATEDON,                      
+                   LASTMODIFIEDON,                      
+                   STATUSID,                      
+                   STATUS,                      
+                   /*04*/STRUCTUREID,                      
+                   LAYOUTID,                      
+                   PROCESSID)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID1,                      
+             LT.ID_NUMBER_1,                      
+             0           AS ASSIGNEDTOID,                      
+             N''         AS ASSIGNEDTONAME,                      
+             N''         AS STATUSCODENAME,                      
+             0           AS STATUSCODEID,                      
+             ISNULL(LT.FIRST_NAME,'') + N' ' + ISNULL(LT.MIDDLE_NAME,'') + N' ' + ISNULL(LT.LAST_NAME,''),                      
+             LT.ACCOUNTID,                      
+             2           AS RELATEDTOTYPEID,                      
+           N'BORROWER' AS RELATEDTOTYPENAME,                      
+             N''         AS CREATEDBYNAME,                      
+             1           AS CREATEDBY,                      
+             GETUTCDATE(),                      
+             GETUTCDATE(),                      
+             1     AS STATUSID,                      
+             N' '        AS STATUS,                      
+             1           AS STRUCTUREID,                      
+             10204009    AS LAYOUTID,                      
+             0           AS PROCESSID                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID1 = 1                      
+                      
+      INSERT INTO VER_EX1                      
+                  (OWNERID,                      
+               VER_EX1_ID,                      
+                   VER_EX1_1)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID1,                      
+             LT.ID_TYPE_1           
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID1 = 1                      
+                      
+      INSERT INTO VERIFICATION                      
+                  (OWNERID,                      
+                   CUSTOMOBJECTID,                      
+                   SUBJECT,                      
+                   ASSIGNEDTOID,                      
+          ASSIGNEDTONAME,                      
+                   /*02*/STATUSCODENAME,                      
+                   STATUSCODEID,                      
+                   RELATEDTONAME,                      
+                   RELATEDTOID,                     
+                   RELATEDTOTYPEID,                      
+                   RELATEDTOTYPENAME,                      
+                   CREATEDBYNAME,                      
+                   /*03*/CREATEDBY,                      
+                   CREATEDON,                      
+                   LASTMODIFIEDON,                      
+                   STATUSID,                      
+                   STATUS,                      
+                   /*04*/STRUCTUREID,                      
+                   LAYOUTID,                      
+                   PROCESSID)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID2,                      
+             LT.ID_NUMBER_2,                      
+             0           AS ASSIGNEDTOID,                      
+             N''         AS ASSIGNEDTONAME,                      
+             N''         AS STATUSCODENAME,                      
+             0  AS STATUSCODEID,                      
+             ISNULL(LT.FIRST_NAME,'') + N' ' + ISNULL(LT.MIDDLE_NAME,'') + N' ' + ISNULL(LT.LAST_NAME,''),                      
+             LT.ACCOUNTID,                      
+             2           AS RELATEDTOTYPEID,                      
+             N'BORROWER' AS RELATEDTOTYPENAME,                      
+             N''         AS CREATEDBYNAME,                      
+             1           AS CREATEDBY,                      
+             GETUTCDATE(),                      
+             GETUTCDATE(),                      
+             1           AS STATUSID,                      
+             N' '    AS STATUS,                      
+             2           AS STRUCTUREID,                      
+             10204009    AS LAYOUTID,                     
+             0           AS PROCESSID                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID2 = 1                      
+                      
+      INSERT INTO VER_EX1                      
+                  (OWNERID,                      
+                   VER_EX1_ID,                      
+                   VER_EX1_1)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID2,                      
+             LT.ID_TYPE_2                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID2 = 1                
+                      
+      INSERT INTO VERIFICATION                      
+                  (OWNERID,                      
+                   CUSTOMOBJECTID,                      
+                   SUBJECT,                      
+                   ASSIGNEDTOID,                      
+                   ASSIGNEDTONAME,                      
+                   /*02*/STATUSCODENAME,                      
+                   STATUSCODEID,                      
+                   RELATEDTONAME,                      
+                   RELATEDTOID,      
+                   RELATEDTOTYPEID,                      
+                   RELATEDTOTYPENAME,                      
+                   CREATEDBYNAME,                      
+                   /*03*/CREATEDBY,            
+                   CREATEDON,                      
+                   LASTMODIFIEDON,                      
+                   STATUSID,                      
+                   STATUS,                      
+                   /*04*/STRUCTUREID,                      
+                   LAYOUTID,                      
+                   PROCESSID)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID3,                      
+             LT.ID_NUMBER_3,                      
+             0           AS ASSIGNEDTOID,                      
+             N''         AS ASSIGNEDTONAME,                      
+             N''         AS STATUSCODENAME,                      
+             0           AS STATUSCODEID,                      
+             ISNULL(LT.FIRST_NAME,'') + N' ' + ISNULL(LT.MIDDLE_NAME,'') + N' ' + ISNULL(LT.LAST_NAME,''),                      
+             LT.ACCOUNTID,                      
+             2           AS RELATEDTOTYPEID,                      
+             N'BORROWER' AS RELATEDTOTYPENAME,                      
+             N''         AS CREATEDBYNAME,                      
+             1        AS CREATEDBY,                      
+             GETUTCDATE(),                      
+             GETUTCDATE(),                      
+             1           AS STATUSID,                      
+             N' '        AS STATUS,                      
+             3           AS STRUCTUREID,                      
+             10204009    AS LAYOUTID,                      
+             0           AS PROCESSID                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID3 = 1                      
+                      
+      INSERT INTO VER_EX1              
+                  (OWNERID,                      
+                   VER_EX1_ID,                      
+                   VER_EX1_1)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID3,                      
+  LT.ID_TYPE_3                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+   WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID3 = 1                      
+                      
+      INSERT INTO VERIFICATION                      
+                  (OWNERID,                      
+                   CUSTOMOBJECTID,                      
+                   SUBJECT,                      
+                   ASSIGNEDTOID,                      
+                   ASSIGNEDTONAME,                      
+                   /*02*/STATUSCODENAME,                      
+                   STATUSCODEID,                      
+                   RELATEDTONAME,                      
+                   RELATEDTOID,                      
+                   RELATEDTOTYPEID,                      
+                   RELATEDTOTYPENAME,                      
+                   CREATEDBYNAME,                      
+                  /*03*/CREATEDBY,                      
+                   CREATEDON,                      
+                   LASTMODIFIEDON,                      
+                   STATUSID,                      
+                   STATUS,                      
+                   /*04*/STRUCTUREID,                      
+                   LAYOUTID,                      
+                   PROCESSID)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID4,       
+             LT.ID_NUMBER_4,                      
+ 0           AS ASSIGNEDTOID,                      
+             N''         AS ASSIGNEDTONAME,                      
+             N''         AS STATUSCODENAME,                      
+             0           AS STATUSCODEID,                
+             ISNULL(LT.FIRST_NAME,'') + N' ' + ISNULL(LT.MIDDLE_NAME,'') + N' ' + ISNULL(LT.LAST_NAME,''),                      
+             LT.ACCOUNTID,                      
+             2     AS RELATEDTOTYPEID,                      
+             N'BORROWER' AS RELATEDTOTYPENAME,                      
+             N''         AS CREATEDBYNAME,                      
+             1           AS CREATEDBY,                      
+             GETUTCDATE(),                      
+             GETUTCDATE(),                      
+    1           AS STATUSID,                      
+             N' '        AS STATUS,                      
+             4           AS STRUCTUREID,                      
+             10204009    AS LAYOUTID,                      
+             0           AS PROCESSID                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID4 = 1                      
+                      
+      INSERT INTO VER_EX1                      
+                  (OWNERID,                      
+                   VER_EX1_ID,                  
+                   VER_EX1_1)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID4,                      
+             LT.ID_TYPE_4                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID4 = 1                      
+                      
+      INSERT INTO VERIFICATION                      
+                  (OWNERID,                      
+                   CUSTOMOBJECTID,                      
+                   SUBJECT,                      
+                   ASSIGNEDTOID,                      
+                   ASSIGNEDTONAME,           
+                   /*02*/STATUSCODENAME,                      
+                   STATUSCODEID,                      
+                   RELATEDTONAME,                      
+                   RELATEDTOID,                      
+                   RELATEDTOTYPEID,                      
+                   RELATEDTOTYPENAME,       
+                   CREATEDBYNAME,                      
+                   /*03*/CREATEDBY,                      
+                   CREATEDON,                      
+                   LASTMODIFIEDON,                      
+                   STATUSID,                      
+                   STATUS,                      
+                   /*04*/STRUCTUREID,                      
+                   LAYOUTID,                      
+                   PROCESSID)                      
+      SELECT @OWNERID,                      
+             LT.CRM_GEN_VERID5,                      
+             LT.ID_NUMBER_5,                      
+             0        AS ASSIGNEDTOID,                      
+             N''      AS ASSIGNEDTONAME,                      
+             N''      AS STATUSCODENAME,                      
+             0        AS STATUSCODEID,                      
+             ISNULL(LT.FIRST_NAME,'') + N' ' + ISNULL(LT.MIDDLE_NAME,'') + N' ' + ISNULL(LT.LAST_NAME,''),                      
+             LT.ACCOUNTID,                      
+             0        AS RELATEDTOTYPEID,                      
+             N''      AS RELATEDTOTYPENAME,                      
+             N''      AS CREATEDBYNAME,                      
+             1  AS CREATEDBY,                      
+             GETUTCDATE(),                      
+             GETUTCDATE(),                      
+             1        AS STATUSID,                      
+             N' '     AS STATUS,                      
+             5        AS STRUCTUREID,                      
+             10204009 AS LAYOUTID,                      
+             0        AS PROCESSID                      
+   FROM   #MPI_CUST_INCC_TEMP LT WHERE  LT.ERRORCODE = 0                      
+   AND LT.INSERT_ID5 = 1                      
+                      
+      INSERT INTO VER_EX1                      
+                  (OWNERID,             
+                   VER_EX1_ID,                      
+                   VER_EX1_1)                      
+      SELECT @OWNERID,   
+             LT.CRM_GEN_VERID5,                      
+             LT.ID_TYPE_5                      
+      FROM   #MPI_CUST_INCC_TEMP LT                      
+      WHERE  LT.ERRORCODE = 0                      
+             AND LT.INSERT_ID5 = 1;                      
+                      
+      SET @FAILURECOUNT = @COUNT - @SUCCESSCOUNT;                      
+                      
+      /* UPDATE COUNT IN CIS LOG TABLE */                      
+      SELECT @JOBID = JOBID                      
+      FROM   CIS_JOB                      
+      WHERE  OWNERID = @OWNERID                      
+             AND JOBNAME = N'MPI - CUSTOMER INCREMENTAL DATA BOOTUP';                      
+                      
+      SELECT @TASKID = TASKID                      
+      FROM   CIS_TASK                      
+      WHERE  OWNERID = @OWNERID                      
+             AND JOBID = @JOBID                      
+             AND TASKNAME = N'TASK 5: UPDATE VALID CUSTOMER RECORDS';                      
+                      
+      SET @BATCHNUMBER = DBO.CIS_GET_BATCH_NUMBER (@OWNERID, @JOBID)                      
+      SET @CREATEDDATE = GETUTCDATE()                      
+                      
+      /* UPDATE INVALID/VALID RECORDS COUNT IN CIS_LOG TABLE FOR EASY VISIBILITY ON UI */                      
+      UPDATE CIS_LOG                      
+      SET    SUCCESSCOUNT = @SUCCESSCOUNT,                      
+             FAILURECOUNT = @FAILURECOUNT                      
+      WHERE  OWNERID = @OWNERID                      
+             AND BATCHNUMBER = @BATCHNUMBER                      
+             AND SOURCETYPEID = 3                      
+             AND SOURCEID = @TASKID;                      
+END;
