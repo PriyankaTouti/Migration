@@ -1,0 +1,163 @@
+CREATE   PROCEDURE MPI_CUST_HOLDING_INC_UPDATE(@OWNERID INT)            
+AS            
+/*             
+-- Description:  To update holding data for customer.             
+-- Created By :  Pradyuman Sharma; Created On :  6th-Dec-2023                                  
+-- EXEC MPI_CUST_HOLDING_INC_UPDATE 985   
+ last modified by : prateek pathre (20-03-2024) || Added productid and productcat update in holding  
+*/              
+BEGIN          
+   DECLARE  @BATCHNUMBER  INT,                                   
+      @JOBID        INT,                                   
+      @TASKID       INT,                              
+      @SUCCESSCOUNT INT = 0,                                
+      @FAILURECOUNT INT = 0,                                
+      @COUNT        INT = 0,                                
+      @CREATEDDATE  DATETIME,                          
+      @UPDATEDDATE  DATETIME,                        
+      @ERRORMESSAGE NVARCHAR(256)             
+          
+   /* MOVING DATA INTO TEMP TABLE */          
+   SELECT *,ROW_NUMBER() OVER (ORDER BY LT.HOLDINGID) ROW_NUM                                 
+   INTO  #MPI_CUST_INCN_TEMP                                
+   FROM  MPI_CUST_HOLDING_INC_LT LT                            
+   WHERE LT.ERRORCODE = 0                                
+   AND   LT.FLAG = 1               
+     
+------------------------------ UPDATE PRODUCTID AND PRODUCTCATEGORYID BASIS OF EXISTING HOLDINGID ------------------------------------  
+UPDATE H  
+SET H.PRODUCTID = LT.CRM_PRODUCTID, H.ProductCategoryId = LT.CRM_PRODUCTCATEGORYID ,H.ProductName = LT.PRODUCT ,  
+H.ProductCategoryName = LT.PRODUCT_CATEGORY  
+FROM HOLDING H INNER JOIN MPI_CUST_HOLDING_INC_LT LT ON H.OWNERID = 985 AND H.CUSTOMOBJECTID = LT.HOLDINGID  
+WHERE H.OWNERID = 985  
+                       
+   /* UPDATING LOAN LIMIT */          
+   UPDATE H1                                  
+   SET    H1.HOL_EX1_1 = T.LOAN_LIMIT          
+   FROM   HOL_EX1 H1                                  
+   INNER JOIN #MPI_CUST_INCN_TEMP T                                  
+   ON     H1.OWNERID = @OwnerID                         
+   AND    H1.HOL_EX1_ID = T.HOLDINGID;          
+          
+   SET @SUCCESSCOUNT = @@ROWCOUNT;          
+          
+   /* UPDATING LOAN OSB */          
+   UPDATE H1                                  
+   SET    H1.HOL_EX1_2 = T.OSB          
+   FROM   HOL_EX1 H1                                  
+   INNER JOIN #MPI_CUST_INCN_TEMP T                                  
+   ON     H1.OWNERID = @OwnerID                         
+   AND    H1.HOL_EX1_ID = T.HOLDINGID;           
+          
+   /* UPDATING MONTHLY AMORT */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_3 = T.MONTHLY_AMORT          
+   FROM   HOL_EX1 H1          
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON     H1.OWNERID = @OWNERID          
+   AND    H1.Hol_ex1_ID = T.HOLDINGID;          
+          
+   /* UPDATING LOAN TERM */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_4 = T.LOAN_TERM          
+   FROM   HOL_EX1 H1          
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON    H1.OWNERID = @OWNERID          
+   AND   H1.HOL_EX1_ID = T.HOLDINGID;          
+          
+   /* UPDATING MONTHS ON BOOKS */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_5 = T.MOB          
+   FROM   HOL_EX1 H1          
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON    H1.OWNERID = @OWNERID          
+   AND   H1.HOL_EX1_ID = T.HOLDINGID;          
+          
+   /* UPDATING UTIL RATE */          
+   UPDATE H1          
+   SET   H1.HOL_EX1_6 = T.UTIL_RATE          
+   FROM   HOL_EX1 H1          
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON    H1.OwnerId = @OWNERID          
+   AND   H1.HOL_EX1_ID = T.HOLDINGID;          
+          
+   /* UPDATING DATE OPENED */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_7 = T.DATE_OPENED          
+   FROM   Hol_ex1 H1           
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON    H1.OwnerId = @OWNERID          
+   AND   H1.HOL_EX1_ID = T.HOLDINGID;          
+             
+   /* UPDATING DATE CLOSED */             UPDATE H1          
+   SET    H1.HOL_EX1_8 = T.DATE_CLOSED          
+   FROM   Hol_ex1 H1           
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON    H1.OwnerId = @OWNERID          
+   AND   H1.HOL_EX1_ID = T.HOLDINGID;           
+             
+   /* UPDATING SORT FLAG */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_9 = T.SORT_FLAG            
+   FROM   Hol_ex1 H1           
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON    H1.OwnerId = @OWNERID          
+   AND   H1.HOL_EX1_ID = T.HOLDINGID;          
+             
+   /* UPDATING STATUS OF THE HOLDING */      
+   UPDATE H1      
+   SET    H1.HOL_EX1_10 = T.[STATUS]      
+   FROM   HOL_EX1 H1      
+   INNER  JOIN #MPI_CUST_INCN_TEMP T          
+   ON   H1.OwnerId = @OWNERID          
+   AND   H1.HOL_EX1_ID = T.HOLDINGID;       
+         
+   /* UPDATING AS OF DATE */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_98 = CAST(CAST(T.AS_OF_DATE AS NVARCHAR(16)) AS DATETIME)              
+   FROM   HOL_EX1 H1          
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON     H1.OWNERID = @OWNERID          
+   AND    H1.HOL_EX1_ID = T.HOLDINGID;          
+          
+   /* UPDATING CENTER RM */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_99 = T.CENTER_RM          
+   FROM   HOL_EX1 H1          
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON     H1.OWNERID = @OWNERID          
+   AND    H1.HOL_EX1_ID = T.HOLDINGID;          
+          
+   /* UPDATING ACCOUNT HANDLING */          
+   UPDATE H1          
+   SET    H1.HOL_EX1_100 = T.ACCT_HANDLING            
+   FROM   HOL_EX1 H1          
+   INNER JOIN #MPI_CUST_INCN_TEMP T          
+   ON     H1.OWNERID = @OWNERID          
+   AND    H1.HOL_EX1_ID = T.HOLDINGID;          
+          
+   SET @FAILURECOUNT = @COUNT - @SUCCESSCOUNT;                                                              
+  /* UPDATE COUNT IN CIS LOG TABLE */                                 
+   SELECT @JOBID = JOBID                                 
+   FROM   CIS_JOB                                 
+   WHERE  OWNERID = @OWNERID                                 
+   AND    JOBNAME = N'MPI - Customer Incremental Data Bootup';                                 
+                              
+   SELECT @TASKID = TASKID                                 
+   FROM   CIS_TASK                                 
+   WHERE  OWNERID = @OWNERID                                 
+   AND JOBID = @JOBID                                 
+   AND TASKNAME = N'Task 5: Update Valid Customer Holding Records';                                 
+                              
+   SET @BATCHNUMBER = DBO.CIS_GET_BATCH_NUMBER (@OWNERID, @JOBID)                                
+   SET @CREATEDDATE = GETUTCDATE()                            
+                        
+   /* UPDATE INVALID/VALID RECORDS COUNT IN CIS_LOG TABLE FOR EASY VISIBILITY ON UI */          
+   UPDATE CIS_LOG                                  
+   SET    SUCCESSCOUNT =  @SUCCESSCOUNT,                                
+          FAILURECOUNT =  0                                  
+   WHERE  OWNERID =       @OWNERID                                  
+   AND    BATCHNUMBER =   @BATCHNUMBER                                  
+   AND    SOURCETYPEID =  3          
+   AND    SOURCEID =      @TASKID;                                                     
+END; 
