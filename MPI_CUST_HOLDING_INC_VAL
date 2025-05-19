@@ -1,0 +1,152 @@
+CREATE   PROCEDURE MPI_CUST_HOLDING_INC_VAL(@OWNERID INT)                            
+AS                            
+/*                            
+  -- Description:  Validate Holding Data in landing Table                                        
+  -- Created By :  Pradyuman Sharma |                           
+  -- Created On :  7th-Dec-2023 | Modified On: 23-Dec-2023      
+  last modified by: prateek pathre (20-03-2024) || Corrected Product resolution logic  
+  -- EXEC MPI_CUST_HOLDING_INC_VAL 985                                      
+*/                            
+BEGIN          
+   /* CIF MANDATORY */                      
+      UPDATE LT                        
+      SET    LT.ERRORCODE = 1,                        
+             LT.ERRORMESSAGE = N'Given CIF does not exists in OriginationNext'                        
+      FROM   MPI_CUST_HOLDING_INC_LT LT                        
+      WHERE  LT.ERRORCODE = 0                        
+             AND NOT EXISTS(SELECT 1                        
+                            FROM   ACCOUNTS ACC                        
+                            WHERE  ACC.OWNERID = @OWNERID                        
+                                   AND ACC.CODE = LT.CIF);                  
+        
+    /* UPDATING ACCOUNT ID TO CHECK WHETHER HOLDING RECORD IS NEW OR EXISTING  */                                     
+    UPDATE LT                          
+    SET    LT.CRM_ACCOUNTID = ACC.AccountID                            
+    FROM   MPI_CUST_HOLDING_INC_LT LT                                                 
+        INNER JOIN ACCOUNTS ACC                            
+          ON ACC.OWNERID = @Ownerid                                                 
+            AND ACC.Code = LT.CIF                            
+     WHERE LT.ERRORCODE = 0;                                                 
+                           
+    /* CHECKING AND UPDATING HOLDING ID IF RECORD IS NEW OR EXISTING AND UPDATING THE FLAG TO DIFFERENTIATE BETWEEN NEW AND EXISTING RECORDS */                
+    UPDATE LT                          
+    SET    LT.FLAG = 1                          
+    FROM   MPI_CUST_HOLDING_INC_LT LT                          
+           INNER JOIN HOLDING HOL                          
+           ON HOL.OWNERID = @OWNERID                          
+           AND LT.CRM_ACCOUNTID = HOL.ACCOUNTID                
+           AND LT.ACCT_NO = HOL.HOLDINGNUMBER                
+    WHERE LT.ERRORCODE = 0;              
+             
+    UPDATE LT             
+    SET    LT.HOLDINGID = HOL.CUSTOMOBJECTID            
+    FROM   MPI_CUST_HOLDING_INC_LT LT                          
+           INNER JOIN HOLDING HOL                          
+           ON HOL.OWNERID = @OWNERID                          
+           AND LT.CRM_ACCOUNTID = HOL.ACCOUNTID                
+           AND LT.ACCT_NO = HOL.HOLDINGNUMBER                
+    WHERE  LT.ERRORCODE = 0;              
+                            
+    /* PRODUCT CATEGORY TO BE VALIDATED */                            
+    /* UPDATE LT                            
+    SET    LT.ERRORCODE = 1,                            
+           LT.ERRORMESSAGE = N'Given Product category does not exists'                            
+    FROM   MPI_CUST_HOLDING_INC_LT LT                            
+    WHERE  LT.ERRORCODE = 0                            
+       AND LT.PRODUCT_CATEGORY NOT IN ( N'Deposit', N'Loan', N'Card' )  */                          
+                            
+    UPDATE LT                            
+    SET    CRM_PRODUCTCATEGORYID = CASE                            
+                                     WHEN LT.PRODUCT_CATEGORY = N'Deposit' THEN 1                            
+                                     WHEN LT.PRODUCT_CATEGORY = N'Loan'    THEN 2                            
+                       ELSE 11      
+                                   END                            
+    FROM   MPI_CUST_HOLDING_INC_LT LT                            
+    WHERE  LT.ERRORCODE = 0                            
+        
+    /* PRODUCT TO BE VALIDATED */                            
+    /* UPDATE LT                            
+    SET    LT.ERRORCODE = 1,                            
+           LT.ERRORMESSAGE = N'Given Product does not exists'                            
+    FROM   MPI_CUST_HOLDING_INC_LT LT                            
+    WHERE  LT.ERRORCODE = 0                            
+       AND LT.PRODUCT NOT IN ( N'CASA', N'Time Deposit', N'Auto New', N'Truck Loan',                   
+                                        N'Mortgage Loan', N'Personal Loan', N'Credit Card')  */                          
+                            
+   UPDATE LT                            
+    SET    LT.CRM_PRODUCTID = P.PRODUCTID                          
+    FROM   MPI_CUST_HOLDING_INC_LT LT   INNER JOIN PRODUCTS P   
+ ON P.OWNERID = 985 AND LT.PRODUCT = P.NAME  
+    WHERE  LT.ERRORCODE = 0 AND PARENTPRODUCTID ! = 0  
+  
+ UPDATE MPI_CUST_HOLDING_INC_LT SET errorcode = 1,errormessage = 'Invalid Product'  
+ where errorcode = 0 and CRM_PRODUCTID = 0;  
+   
+  /*  
+    
+  UPDATE LT                            
+    SET    LT.CRM_PRODUCTID = CASE                            
+                                WHEN LT.PRODUCT = N'Time Deposit'  THEN 4                            
+                                WHEN LT.PRODUCT = N'CASA'     THEN 5                            
+                                WHEN LT.PRODUCT = N'Auto New'      THEN 6                            
+                                WHEN LT.PRODUCT = N'Truck Loan'    THEN 7                            
+                                WHEN LT.PRODUCT = N'Mortgage Loan' THEN 8            
+                                WHEN LT.PRODUCT = N'Personal Loan' THEN 9                            
+        WHEN LT.PRODUCT = N'Credit Card'   THEN 10             
+                   ELSE 12      
+                              END                            
+    FROM   MPI_CUST_HOLDING_INC_LT LT                            
+    WHERE  LT.ERRORCODE = 0                            
+      */                      
+    /* INSERT DATA IN LOG SUMMARY */                            
+    DECLARE @TASKID      INT,                            
+            @JOBID       INT,                            
+            @BATCHNO     INT,                            
+            @COUNT       INT,                            
+            @COUNT1      INT,                            
+            @CURRENTDATE DATETIME;                            
+                            
+    SELECT @JOBID = JOBID                            
+    FROM   CIS_JOB                     
+    WHERE  OWNERID = @OWNERID                            
+ AND    JOBNAME = N'MPI - Customer Incremental Data Bootup'                            
+                            
+    SELECT @TASKID = TASKID                      
+    FROM   CIS_TASK                            
+    WHERE  OWNERID = @OWNERID                            
+       AND JOBID = @JOBID                            
+       AND TASKNAME = N'Task 2: Validate Customer Holding Data in LT'                            
+                            
+    SET @CURRENTDATE = Getutcdate();                            
+    SET @BATCHNO = dbo.Cis_get_batch_number(@OWNERID, @JOBID)                            
+                            
+    INSERT INTO CIS_RECORDLOG                            
+                (OWNERID,                            
+                 BATCHNUMBER,                            
+                 TASKID,                            
+                 FIELD1,                            
+                 OCCUREDAT,                            
+                 EXCEPTION)                            
+    SELECT @OWNERID,                            
+           @BATCHNO,                            
+           @TASKID,                            
+           LT.CIF,                            
+           @CURRENTDATE,                            
+           LT.ERRORMESSAGE                            
+    FROM   MPI_CUST_HOLDING_INC_LT LT                            
+    WHERE  LT.ERRORCODE = 1                            
+                            
+    SET @COUNT = @@ROWCOUNT;                            
+                            
+    SELECT @COUNT1 = Count(1)                            
+    FROM   MPI_CUST_HOLDING_INC_LT                            
+    WHERE  ERRORCODE = 0;                            
+                            
+    UPDATE CIS_LOG         
+    SET    FAILURECOUNT = @COUNT,                            
+           SUCCESSCOUNT = @COUNT1                            
+    WHERE  OWNERID = @OWNERID                            
+       AND BATCHNUMBER = @BATCHNO                            
+       AND SOURCEID = @TASKID                            
+       AND SOURCETYPEID = 3;                            
+END; 
