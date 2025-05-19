@@ -1,0 +1,165 @@
+INSERT INTO [10.117.129.60].[MB_EDW_MART].[dbo].[LOS_FILECHECK_CUST]
+           ([DATE_KEY]
+           ,[CUST_NO]
+           ,[FIRST_NAME]
+           ,[MIDDLE_NAME]
+           ,[LAST_NAME]
+           ,[NAME_SUFFIX]
+           ,[FULL_NAME]
+           ,[CLASS_CD]
+           ,[DATE_BIRTH]
+           ,[BIRTH_PLACE_CD]
+           ,[GENDER]
+           ,[CIVIL_STATUS_CD]
+           ,[NATIONALITY]
+           ,[NO_OF_CHILD_CD]
+           ,[PEP_REL_CD]
+           ,[INSIDER_CD]
+           ,[RESD_FLAG]
+           ,[EMP_TYPE_CD]
+           ,[PROFESSION_CD]
+           ,[INCOME_SOURCE_CD]
+           ,[PSIC_CD]
+           ,[EMP_STATUS_CD]
+           ,[EMP_NAME]
+           ,[HOME_NUM]
+           ,[MOBILE_NUM_1]
+           ,[MOBILE_NUM_2]
+           ,[OFFICE_NUM]
+           ,[EMAIL_ADD]
+           ,[R_ADDR]
+           ,[R_BRGY_CD]
+           ,[R_CITY_CD]
+           ,[R_PROV_CD]
+           ,[R_COUN_CD]
+           ,[B_ADDR]
+           ,[B_BRGY_CD]
+           ,[B_CITY_CD]
+           ,[B_PROV_CD]
+           ,[B_COUN_CD]
+           ,[A_ADDR]
+           ,[A_BRGY_CD]
+           ,[A_CITY_CD]
+           ,[A_PROV_CD]
+           ,[ID_TYPE_1]
+           ,[ID_NUMBER_1]
+           ,[ID_TYPE_2]
+           ,[ID_NUMBER_2]
+           ,[ID_TYPE_3]
+           ,[ID_NUMBER_3]
+           ,[ID_TYPE_4]
+           ,[ID_NUMBER_4]
+           ,[ID_TYPE_5]
+           ,[ID_NUMBER_5]
+           ,[NO_OPEN_ACC]
+           ,[CUST_SEG_CD]
+           ,[RBP_DECISION]
+           ,[TOTAL_TRB]
+           ,[REL_TYPE]
+           ,[TOTAL_ADB_3MO]
+           ,[TOTAL_ADB_6MO]
+           ,[TOTAL_ADB_12MO]
+           ,[TOTAL_AMD_3MO]
+           ,[TOTAL_AMD_6MO]
+           ,[TOTAL_AMD_12MO]
+           ,[DT_LAST_TXN]
+           ,[MAX_DEP_MOB]
+           ,[DT_LAST_RETURNED_CHCK]
+           ,[TOTAL_OB_ALL_LOANS]
+           ,[TOTAL_OB_ALL_AUTO]
+           ,[TOTAL_MO_AMORT]
+           ,[CIF_NPL]
+           ,[CIF_DPD]
+           ,[MOS_LAST_LOAN]
+           ,[OVERALL_HANDLING]
+           ,[DT_LAST_WO]
+           ,[FIRST_PRODUCT]
+           ,[NAME_TITLE_AFTER]
+           ,[EDUCATION_CD]
+           ,[RESIDENCE_STATUS_CD]
+           ,[MOTHERS_MAIDEN_NAME]
+           ,[MONTHLY_INCOME_LEVEL])
+     VALUES
+           (<DATE_KEY, float,>
+           ,<CUST_NO, varchar,>
+           ,<FIRST_NAME, varchar,>
+           ,<MIDDLE_NAME, varchar,>
+           ,<LAST_NAME, varchar,>
+           ,<NAME_SUFFIX, varchar,>
+           ,<FULL_NAME, varchar,>
+           ,<CLASS_CD, varchar,>
+           ,<DATE_BIRTH, date,>
+           ,<BIRTH_PLACE_CD, varchar,>
+           ,<GENDER, varchar,>
+           ,<CIVIL_STATUS_CD, varchar,>
+           ,<NATIONALITY, varchar,>
+           ,<NO_OF_CHILD_CD, varchar,>
+           ,<PEP_REL_CD, varchar,>
+           ,<INSIDER_CD, varchar,>
+           ,<RESD_FLAG, varchar,>
+           ,<EMP_TYPE_CD, varchar,>
+           ,<PROFESSION_CD, varchar,>
+           ,<INCOME_SOURCE_CD, varchar,>
+           ,<PSIC_CD, varchar,>
+           ,<EMP_STATUS_CD, varchar,>
+           ,<EMP_NAME, varchar,>
+           ,<HOME_NUM, varchar,>
+           ,<MOBILE_NUM_1, varchar,>
+           ,<MOBILE_NUM_2, varchar,>
+           ,<OFFICE_NUM, varchar,>
+           ,<EMAIL_ADD, varchar,>
+           ,<R_ADDR, varchar,>
+           ,<R_BRGY_CD, varchar,>
+           ,<R_CITY_CD, varchar,>
+           ,<R_PROV_CD, varchar,>
+           ,<R_COUN_CD, varchar,>
+           ,<B_ADDR, varchar,>
+           ,<B_BRGY_CD, varchar,>
+           ,<B_CITY_CD, varchar,>
+           ,<B_PROV_CD, varchar,>
+           ,<B_COUN_CD, varchar,>
+           ,<A_ADDR, varchar,>
+           ,<A_BRGY_CD, varchar,>
+           ,<A_CITY_CD, varchar,>
+           ,<A_PROV_CD, varchar,>
+           ,<ID_TYPE_1, varchar,>
+           ,<ID_NUMBER_1, varchar,>
+           ,<ID_TYPE_2, varchar,>
+           ,<ID_NUMBER_2, varchar,>
+           ,<ID_TYPE_3, varchar,>
+           ,<ID_NUMBER_3, varchar,>
+           ,<ID_TYPE_4, varchar,>
+           ,<ID_NUMBER_4, varchar,>
+           ,<ID_TYPE_5, varchar,>
+           ,<ID_NUMBER_5, varchar,>
+           ,<NO_OPEN_ACC, float,>
+           ,<CUST_SEG_CD, varchar,>
+           ,<RBP_DECISION, varchar,>
+           ,<TOTAL_TRB, float,>
+           ,<REL_TYPE, varchar,>
+           ,<TOTAL_ADB_3MO, float,>
+           ,<TOTAL_ADB_6MO, float,>
+           ,<TOTAL_ADB_12MO, float,>
+           ,<TOTAL_AMD_3MO, float,>
+           ,<TOTAL_AMD_6MO, float,>
+           ,<TOTAL_AMD_12MO, float,>
+           ,<DT_LAST_TXN, date,>
+           ,<MAX_DEP_MOB, float,>
+           ,<DT_LAST_RETURNED_CHCK, date,>
+           ,<TOTAL_OB_ALL_LOANS, float,>
+           ,<TOTAL_OB_ALL_AUTO, float,>
+           ,<TOTAL_MO_AMORT, float,>
+           ,<CIF_NPL, varchar,>
+           ,<CIF_DPD, float,>
+           ,<MOS_LAST_LOAN, float,>
+           ,<OVERALL_HANDLING, varchar,>
+           ,<DT_LAST_WO, date,>
+           ,<FIRST_PRODUCT, varchar,>
+           ,<NAME_TITLE_AFTER, varchar,>
+           ,<EDUCATION_CD, varchar,>
+           ,<RESIDENCE_STATUS_CD, varchar,>
+           ,<MOTHERS_MAIDEN_NAME, varchar,>
+           ,<MONTHLY_INCOME_LEVEL, float,>)
+GO
+
+
