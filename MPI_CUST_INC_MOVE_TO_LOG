@@ -1,0 +1,216 @@
+CREATE PROCEDURE MPI_CUST_INC_MOVE_TO_LOG(@OWNERID INT)          
+AS          
+/*          
+  -- DESCRIPTION:  MOVING CUSTOMER FAILED RECORDS IN THE LOG TABLE.                  
+  -- CREATED BY :  PRADYUMAN SHARMA                       
+  -- CREATED ON :  7TH-DEC-2023                        
+  -- EXEC MPI_CUST_INC_MOVE_TO_LOG 985                      
+*/          
+BEGIN          
+      /* DECLARING LOCAL VARIABLES  */                 
+      DECLARE @BATCHNO      INT,          
+              @JOBID        INT,          
+              @TASKID       INT,          
+              @CREATEDDATE  DATE = GETUTCDATE(),          
+              @FAILURECOUNT INT = 0,          
+              @SUCCESSCOUNT INT;          
+          
+      /* UPDATING ERRORCODE AND ERROR EXCEPTION FROM CIS_RECORD (SYSTEM EXCEPTION) LOG TO THE LANDING TABLE  */                
+      SELECT @JOBID = JOBID          
+      FROM   CIS_JOB          
+      WHERE  OWNERID = @OWNERID          
+         AND JOBNAME = N'MPI - CUSTOMER INCREMENTAL DATA BOOTUP';          
+          
+      SELECT @TASKID = TASKID          
+      FROM   CIS_TASK          
+      WHERE  OWNERID = @OWNERID          
+         AND JOBID = @JOBID          
+         AND TASKNAME = N'Task 5 : Move Invalid or Failed Customer Records in Log Table'          
+          
+      SET @BATCHNO = DBO.CIS_GET_BATCH_NUMBER(@OWNERID, @JOBID)          
+          
+      ----------------------------INSERT ALL INVALID RECORDS IN LOG TABLE FROM LT TABLE ----------------------------------                        
+      INSERT INTO MPI_CUST_INC_LOG          
+                  (AS_OF_DATE,          
+                   CIF,          
+                   FIRST_NAME,          
+                   MIDDLE_NAME,          
+                   LAST_NAME,          
+                   NAME_SUFFIX,          
+                   DATE_OF_BIRTH,          
+                   BIRTH_PLACE,          
+                   GENDER,          
+                   CIVIL_STATUS,          
+                   NATIONALITY,          
+                   NO_OF_CHILD,          
+                   PEP_REL,          
+                   DOSRI_CLASSICATION,          
+                   RESIDENCE_FLAG,          
+                   EMPLOYMENT_TYPE,          
+                   PROFESSION,          
+                   INCOME_SOURCE,          
+                   NATURE_OF_BUSINESS,          
+                   EMP_STATUS,          
+                   EMP_NAME,          
+                   HOME_NUMBER,          
+                   MOBILE_NUMBER_1,          
+                   MOBILE_NUMBER_2,          
+                   OFFICE_NUMBER,          
+                   RESIDENCE_ADDRESS,          
+                   RESIDENCE_BARANGAY,          
+                   RESIDENCE_CITY,          
+                   RESIDENCE_PROVINCE,          
+                   RESIDENCE_COUNTRY,          
+                   BUSINESS_ADDRESS,          
+                   BUSINESS_BARANGAY,          
+                   BUSINESS_CITY,          
+                   BUSINESS_PROVINCE,          
+                   BUSINESS_COUNTRY,          
+                   ALTERNATE_ADDRESS,          
+                   ALTERNATE_BARANGAY,          
+                   ALTERNATE_CITY,          
+                   ALTERNATE_PROVINCE,          
+                   ALTERNATE_COUNTRY,          
+                   ID_TYPE_1,          
+                   ID_NUMBER_1,          
+                   ID_TYPE_2,          
+                   ID_NUMBER_2,          
+                   ID_TYPE_3,          
+                   ID_NUMBER_3,          
+                   ID_TYPE_4,          
+                   ID_NUMBER_4,          
+                   ID_TYPE_5,          
+                   ID_NUMBER_5,          
+                   NO_OPEN_ACCOUNTS,          
+                   CUST_SEGMENT,          
+                   REPEAT_BORROWER_FILE_FLAG,          
+                   TOTAL_TRB,          
+                   REL_TYPE,          
+                   TOTAL_ADB_6MO,          
+                   TOTAL_ADB_12MO,          
+                  TOTAL_AMD_6MO,          
+                   TOTAL_AMD_12MO,          
+                   DT_LAST_TXN,          
+                   MAX_DEP_MOB,          
+                   DT_LAST_RETURNED_CHCK,          
+                   TOTAL_OB_ALL_LOANS,          
+                   TOTAL_OB_ALL_AUTO,          
+                   TOTAL_MO_AMORT,          
+                   CIF_NPL,          
+                  CIF_DPD,          
+                   OVERALL_HANDLING,          
+                   DT_LAST_WO,          
+                   ERRORCODE,          
+                   ERRORMESSAGE,          
+                   ACCOUNTID,          
+                   LOGDATE,      
+       CRM_GENDERID,      
+       CRM_GEN_VERID1,      
+       CRM_GEN_VERID2,      
+       CRM_GEN_VERID3,      
+       CRM_GEN_VERID4,      
+       CRM_GEN_VERID5,      
+       INSERT_ID1,      
+       INSERT_ID2,      
+       INSERT_ID3,      
+       INSERT_ID4,      
+       INSERT_ID5,   
+    MOS_LAST_LOAN)          
+      SELECT AS_OF_DATE,          
+             CIF,          
+             FIRST_NAME,          
+             MIDDLE_NAME,          
+             LAST_NAME,          
+             NAME_SUFFIX,          
+             DATE_OF_BIRTH,          
+             BIRTH_PLACE,          
+             GENDER,          
+             CIVIL_STATUS,          
+             NATIONALITY,          
+             NO_OF_CHILD,          
+             PEP_REL,          
+             DOSRI_CLASSICATION,          
+             RESIDENCE_FLAG,          
+             EMPLOYMENT_TYPE,          
+             PROFESSION,          
+             INCOME_SOURCE,          
+             NATURE_OF_BUSINESS,          
+             EMP_STATUS,          
+             EMP_NAME,          
+             HOME_NUMBER,          
+             MOBILE_NUMBER_1,          
+             MOBILE_NUMBER_2,          
+             OFFICE_NUMBER,          
+             RESIDENCE_ADDRESS,          
+             RESIDENCE_BARANGAY,          
+             RESIDENCE_CITY,          
+             RESIDENCE_PROVINCE,          
+             RESIDENCE_COUNTRY,          
+             BUSINESS_ADDRESS,          
+             BUSINESS_BARANGAY,          
+             BUSINESS_CITY,          
+             BUSINESS_PROVINCE,          
+             BUSINESS_COUNTRY,          
+             ALTERNATE_ADDRESS,          
+             ALTERNATE_BARANGAY,          
+             ALTERNATE_CITY,          
+             ALTERNATE_PROVINCE,          
+             ALTERNATE_COUNTRY,          
+             ID_TYPE_1,          
+             ID_NUMBER_1,          
+             ID_TYPE_2,          
+             ID_NUMBER_2,          
+             ID_TYPE_3,          
+             ID_NUMBER_3,          
+             ID_TYPE_4,          
+             ID_NUMBER_4,          
+             ID_TYPE_5,          
+             ID_NUMBER_5,          
+             NO_OPEN_ACCOUNTS,          
+             CUST_SEGMENT,          
+             REPEAT_BORROWER_FILE_FLAG,          
+             TOTAL_TRB,          
+             REL_TYPE,          
+             TOTAL_ADB_6MO,          
+             TOTAL_ADB_12MO,          
+             TOTAL_AMD_6MO,          
+             TOTAL_AMD_12MO,          
+             DT_LAST_TXN,          
+             MAX_DEP_MOB,          
+             DT_LAST_RETURNED_CHCK,          
+             TOTAL_OB_ALL_LOANS,          
+             TOTAL_OB_ALL_AUTO,          
+             TOTAL_MO_AMORT,          
+             CIF_NPL,          
+             CIF_DPD,          
+             OVERALL_HANDLING,          
+             DT_LAST_WO,          
+             ERRORCODE,          
+             ERRORMESSAGE,          
+             ACCOUNTID,          
+             @CREATEDDATE,      
+    CRM_GENDERID,      
+    CRM_GEN_VERID1,      
+    CRM_GEN_VERID2,      
+    CRM_GEN_VERID3,      
+    CRM_GEN_VERID4,      
+    CRM_GEN_VERID5,      
+    INSERT_ID1,      
+    INSERT_ID2,      
+    INSERT_ID3,      
+    INSERT_ID4,      
+    INSERT_ID5,   
+ MOS_LAST_LOAN  
+      FROM   MPI_CUST_INC_LT          
+      WHERE  ERRORCODE != 0          
+          
+      SET @SUCCESSCOUNT =@@ROWCOUNT          
+          
+      UPDATE CIS_LOG          
+      SET    SUCCESSCOUNT = @SUCCESSCOUNT,          
+             FAILURECOUNT = @FAILURECOUNT          
+      WHERE  OWNERID = @OWNERID          
+         AND BATCHNUMBER = @BATCHNO          
+         AND SOURCETYPEID = 3          
+         AND SOURCEID = @TASKID;          
+ END 
