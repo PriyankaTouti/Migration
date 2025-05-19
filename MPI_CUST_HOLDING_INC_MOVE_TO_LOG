@@ -1,0 +1,93 @@
+CREATE PROCEDURE MPI_CUST_HOLDING_INC_MOVE_TO_LOG(@OWNERID INT)      
+AS      
+/*      
+-- Description:  Moving failed holding records in the log table.              
+-- Created By :  Pradyuman Sharma; Created On : 7th-Dec-2023                    
+-- EXEC MPI_CUST_HOLDING_INC_MOVE_TO_LOG 985                  
+*/      
+  BEGIN      
+      /* declaring local variables  */             
+      DECLARE @BATCHNO      INT,      
+              @JOBID        INT,      
+              @TASKID       INT,      
+              @CREATEDDATE  DATE,      
+              @FAILURECOUNT INT = 0,      
+              @SUCCESSCOUNT INT;      
+      
+      /* updating errorcode and error exception from CIS_record (system Exception) log to the landing table  */      
+      SELECT @JOBID = JOBID      
+      FROM   CIS_JOB      
+      WHERE  OWNERID = @OWNERID      
+         AND JOBNAME = N'MPI – Customer Data Bootup (One Time Execution)';      
+      
+      SELECT @TASKID = TASKID      
+      FROM   CIS_TASK      
+      WHERE  OWNERID = @OWNERID      
+             AND JOBID = @JOBID      
+             AND TASKNAME = N'Task 4 : Move Invalid or failed Customer Holding records in Log table'      
+      
+      /* Insert All Invalid Records in Log table from LT table */      
+      INSERT INTO MPI_CUST_HOLDING_INC_LOG      
+                  (AS_OF_DATE,      
+                   CIF,      
+                   PRODUCT,      
+                   PRODUCT_CATEGORY,      
+                   ACCT_NO,      
+                   STATUS,      
+                   CENTER_RM,      
+                   ACCT_HANDLING,      
+                   LOAN_LIMIT,      
+                   OSB,      
+                   MONTHLY_AMORT,      
+                   LOAN_TERM,      
+                   MOB,      
+                   UTIL_RATE,      
+                   DATE_OPENED,      
+                   DATE_CLOSED,      
+                   SORT_FLAG,     
+       LOGDATE,    
+       FLAG,    
+                   ERRORCODE,      
+                   ERRORMESSAGE,      
+                   CRM_PRODUCTID,    
+       CRM_PRODUCTCATEGORYID,    
+       HOLDINGID,      
+       CRM_ACCOUNTID)      
+   SELECT AS_OF_DATE,      
+          CIF,      
+          PRODUCT,      
+          PRODUCT_CATEGORY,      
+          ACCT_NO,      
+          STATUS,      
+          CENTER_RM,      
+          ACCT_HANDLING,      
+          LOAN_LIMIT,      
+          OSB,      
+          MONTHLY_AMORT,      
+          LOAN_TERM,      
+          MOB,      
+          UTIL_RATE,      
+          DATE_OPENED,      
+          DATE_CLOSED,      
+          SORT_FLAG,    
+    @CREATEDDATE,    
+    FLAG,    
+          ERRORCODE,      
+          ERRORMESSAGE,     
+    CRM_PRODUCTID,    
+    CRM_PRODUCTCATEGORYID,    
+          HOLDINGID,      
+    CRM_ACCOUNTID    
+   FROM   MPI_CUST_HOLDING_INC_LT     
+   WHERE  ERRORCODE != 0      
+      
+      SET @SUCCESSCOUNT = @@ROWCOUNT      
+      
+      UPDATE CIS_LOG      
+      SET    SUCCESSCOUNT = @SUCCESSCOUNT,      
+             FAILURECOUNT = @FAILURECOUNT      
+      WHERE  OWNERID = @OWNERID      
+         AND BATCHNUMBER = @BATCHNO      
+         AND SOURCETYPEID = 3      
+         AND SOURCEID = @TASKID;      
+  END 
