@@ -1,0 +1,72 @@
+CREATE PROCEDURE MPI_CUST_HOLDING_INC_GEN_ID(@OWNERID INT)            
+AS            
+/*            
+-- Description:  Generation of Holding ID's for customer in the landing table.                    
+-- Created By :  Pradyuman Sharma; Created On :  7th-Dec-2023                          
+-- EXEC MPI_CUST_HOLDING_INC_GEN_ID 985                        
+*/            
+BEGIN            
+    /* INTIALISING VARIABLES TO BE USED DURING RUN. */            
+    DECLARE @NEXTID   INT,            
+            @TOTALREC INT,            
+   @SUCCESSCOUNT INT;            
+            
+    /* FETCHING THE VALID NUMBER OF RECORDS FROM LT. */            
+    SELECT @TOTALREC = Count(1)            
+    FROM   MPI_CUST_HOLDING_INC_LT            
+    WHERE  ERRORCODE = 0            
+       AND FLAG = 0;            
+            
+    /* IF COUNT FOR THE VALID RECORDS IS LESS THAN 1 THEN STOPPING THE FLOW.  */            
+    IF( @TOTALREC < 1 )            
+      RETURN;            
+            
+    EXEC Getnextidblock            
+      @OWNERID,            
+      100007,            
+      @TOTALREC,            
+      @NEXTID out;            
+            
+    /* GENERATING HOLDING ID FOR VALID RECORDS PRESENT IN THE LT. */                    
+    UPDATE LT            
+    SET    LT.HOLDINGID = @NEXTID + P.ROWNUM            
+    FROM   MPI_CUST_HOLDING_INC_LT LT            
+           INNER JOIN(SELECT P.ACCT_NO,            
+                             Row_number() OVER (ORDER BY P.ROWINDEX ASC) AS ROWNUM           
+                      FROM   MPI_CUST_HOLDING_INC_LT P            
+                      WHERE  P.ERRORCODE = 0            
+                         AND P.FLAG = 0) AS P            
+                   ON LT.ACCT_NO = P.ACCT_NO            
+    WHERE  LT.ERRORCODE = 0            
+       AND LT.FLAG = 0;            
+            
+    SET @SUCCESSCOUNT = @@ROWCOUNT;            
+            
+    /* INSERTING DATA INTO LOG TABLE */               
+    DECLARE @TASKID      INT,            
+            @JOBID       INT,            
+            @CURRENTDATE DATETIME,            
+            @BATCHNO     INT            
+            
+    SELECT @JOBID = JOBID            
+    FROM   CIS_JOB            
+    WHERE  OWNERID = @OWNERID            
+       AND JOBNAME = N'MPI - Customer Incremental Data Bootup'            
+            
+    SELECT @TASKID = TASKID            
+    FROM   CIS_TASK            
+    WHERE  OWNERID = @OWNERID            
+       AND JOBID = @JOBID            
+       AND TASKNAME = N'Task 2: Generate New Holding ID'            
+            
+    SET @CURRENTDATE = GETUTCDATE();            
+    SET @BATCHNO = dbo.Cis_get_batch_number(@OWNERID, @JOBID)            
+            
+    UPDATE CIS_LOG            
+    SET    FAILURECOUNT = 0,            
+           SUCCESSCOUNT = @SUCCESSCOUNT            
+    WHERE  OWNERID = @OWNERID            
+       AND BATCHNUMBER = @BATCHNO            
+       AND SOURCETYPEID = 3             
+       AND SOURCEID = @TASKID;            
+END; 
