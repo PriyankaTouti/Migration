@@ -1,0 +1,155 @@
+CREATE PROCEDURE MPI_CUST_INC_GEN_ID(@OwnerID INT)                          
+AS                               
+/*            
+-- Description:  Generation of Account ID's for Customer in the landing table.                          
+-- Created By :  Pradyuman Sharma; Created On :  6th-Dec-2023                                
+-- EXEC MPI_CUST_INC_GEN_ID 985                              
+*/            
+BEGIN                               
+ /*intialising variables to be used during run.*/                          
+ DECLARE @SUCCESSCOUNT INT,            
+   @NEXTID INT,             
+   @TOTALCUST INT;                        
+                          
+ /*fetching the valid number of records from lt.*/                           
+ SELECT @TOTALCUST = COUNT(1) FROM MPI_CUST_INC_LT WHERE ERRORCODE = 0 AND FLAG=0;                        
+                     
+ /*generate new ids for accounts*/                        
+ EXEC GETNEXTIDBLOCK @OWNERID, 7, @TOTALCUST, @NEXTID OUT; /*7 = ACCOUNTS*/                        
+                        
+ /*generating account id for valid customers present in the lt.*/                        
+   UPDATE LT                        
+      SET LT.ACCOUNTID = @NEXTID + P.ROWINDEX                        
+   FROM MPI_CUST_INC_LT LT                        
+    INNER JOIN (                        
+      SELECT                           
+      P.CIF, ROW_NUMBER () OVER (ORDER BY P.CIF ASC) AS ROWINDEX                        
+      FROM MPI_CUST_INC_LT P                        
+      WHERE P.ERRORCODE = 0             
+        AND P.FLAG=0                        
+    ) AS P ON LT.CIF = P.CIF                        
+   WHERE LT.ERRORCODE = 0             
+     AND LT.FLAG=0;                    
+               
+   SET @SUCCESSCOUNT = @@ROWCOUNT;                    
+                        
+  /*generate var id 1*/                        
+   SELECT @TOTALCUST = COUNT(1) FROM MPI_CUST_INC_LT LT WHERE LT.ERRORCODE = 0 AND LT.INSERT_ID1 = 1;                          
+                        
+  /*generate new ids for id 1*/                        
+   EXEC GETNEXTIDBLOCK @OWNERID, 100005, @TOTALCUST, @NEXTID OUT; /*100005 = VERIFICATION*/                        
+                        
+  /*update var id 1*/                        
+   UPDATE LT                        
+      SET LT.CRM_GEN_VERID1 = @NEXTID + P.ROWINDEX                        
+   FROM MPI_CUST_INC_LT LT                         
+    INNER JOIN (                        
+     SELECT                           
+      P.CIF,ROW_NUMBER () OVER (ORDER BY P.CIF ASC) AS ROWINDEX                        
+     FROM MPI_CUST_INC_LT P                        
+     WHERE P.ERRORCODE = 0                           
+       AND P.INSERT_ID1 = 1                        
+    ) AS P ON LT.CIF = P.CIF                        
+   WHERE LT.ERRORCODE = 0             
+     AND LT.INSERT_ID1 = 1;                    
+                        
+    /*generate var id 2*/                        
+   SELECT @TOTALCUST = COUNT(1) FROM MPI_CUST_INC_LT LT WHERE LT.ERRORCODE = 0 AND LT.INSERT_ID2 = 1;                          
+                        
+   /*generate new ids for id 2*/                        
+   EXEC GETNEXTIDBLOCK @OWNERID, 100005, @TOTALCUST, @NEXTID OUT; /*100005 = VERIFICATION*/                        
+                        
+   /*update var id 2*/                        
+   UPDATE LT                        
+      SET LT.CRM_GEN_VERID2 = @NEXTID + P.ROWINDEX                        
+   FROM MPI_CUST_INC_LT LT                         
+    INNER JOIN (                        
+     SELECT                           
+      P.CIF,ROW_NUMBER () OVER (ORDER BY P.CIF ASC) AS ROWINDEX                        
+     FROM MPI_CUST_INC_LT P                        
+     WHERE P.ERRORCODE = 0                        
+       AND P.INSERT_ID2 = 1                        
+       ) AS P ON LT.CIF = P.CIF                        
+   WHERE LT.ERRORCODE = 0             
+     AND LT.INSERT_ID2 = 1;                    
+               
+   /*generate var id 3*/                        
+   SELECT @TOTALCUST = COUNT(1) FROM MPI_CUST_INC_LT LT WHERE LT.ERRORCODE = 0 AND LT.INSERT_ID3 = 1;                          
+                        
+   /*generate new ids for id 3*/                        
+   EXEC GETNEXTIDBLOCK @OWNERID, 100005, @TOTALCUST, @NEXTID OUT; /*100005 = VERIFICATION*/                        
+                        
+   /*update var id 3*/                        
+UPDATE LT                        
+     SET LT.CRM_GEN_VERID3 = @NEXTID + P.ROWINDEX                        
+     FROM MPI_CUST_INC_LT LT                         
+    INNER JOIN (                        
+     SELECT                
+      P.CIF,ROW_NUMBER () OVER (ORDER BY P.CIF ASC) AS ROWINDEX                        
+     FROM MPI_CUST_INC_LT P                        
+     WHERE P.ERRORCODE = 0                        
+       AND P.INSERT_ID3 = 1                        
+    ) AS P ON LT.CIF = P.CIF                        
+     WHERE LT.ERRORCODE = 0             
+    AND LT.INSERT_ID3 = 1;                    
+                      
+   /*generate var id 4*/                        
+   SELECT @TOTALCUST = COUNT(1) FROM MPI_CUST_INC_LT LT WHERE LT.ERRORCODE = 0 AND LT.INSERT_ID4 = 1;                          
+                        
+   /*generate new ids for id 4*/                        
+   EXEC GETNEXTIDBLOCK @OWNERID, 100005, @TOTALCUST, @NEXTID OUT; /*100005 = VERIFICATION*/                        
+                        
+   /*update var id 4*/                        
+   UPDATE LT                        
+      SET LT.CRM_GEN_VERID4 = @NEXTID + P.ROWINDEX                        
+   FROM MPI_CUST_INC_LT LT                         
+    INNER JOIN (                        
+     SELECT                           
+      P.CIF,ROW_NUMBER () OVER (ORDER BY P.CIF ASC) AS ROWINDEX                        
+     FROM MPI_CUST_INC_LT P                        
+     WHERE P.ERRORCODE = 0                          
+       AND P.INSERT_ID4 = 1                        
+    ) AS P ON LT.CIF = P.CIF                        
+   WHERE LT.ERRORCODE = 0             
+     AND LT.INSERT_ID4 = 1;                    
+               
+    /*generate var id 5*/                        
+   SELECT @TOTALCUST = COUNT(1) FROM MPI_CUST_INC_LT LT WHERE LT.ERRORCODE = 0 AND LT.INSERT_ID5 = 1;                          
+                        
+    /*generate new ids for id 5*/                        
+   EXEC GETNEXTIDBLOCK @OWNERID, 100005, @TOTALCUST, @NEXTID OUT; /*100005 = VERIFICATION*/                        
+                         
+    /*update var id 5*/                        
+   UPDATE LT                        
+      SET LT.CRM_GEN_VERID5 = @NEXTID + P.ROWINDEX                        
+   FROM MPI_CUST_INC_LT LT                         
+    INNER JOIN (                        
+     SELECT                           
+      P.CIF,ROW_NUMBER () OVER (ORDER BY P.CIF ASC) AS ROWINDEX                        
+     FROM MPI_CUST_INC_LT P                        
+     WHERE P.ERRORCODE = 0                         
+       AND P.INSERT_ID5 = 1                        
+    ) AS P ON LT.CIF = P.CIF                        
+   WHERE LT.ERRORCODE = 0             
+     AND LT.INSERT_ID5 = 1;                      
+    ------------------------------INSERT DATA IN LOG SUMMARY---------------------------------------------                            
+ DECLARE  @TASKID      INT,                               
+          @JOBID       INT,                               
+          @CURRENTDATE DATETIME,                               
+          @BATCHNO   INT                             
+                          
+      SELECT @JOBID = JOBID FROM CIS_JOB WHERE OWNERID = @OWNERID AND JOBNAME = N'MPI - Customer Incremental Data Bootup'                               
+                              
+      SELECT @TASKID = TASKID FROM CIS_TASK WHERE OWNERID = @OWNERID AND JOBID = @JOBID AND TASKNAME = N'TASK 2: GENERATE NEW CUSTOMER ID'                               
+                              
+      SET @CURRENTDATE = GETUTCDATE();                          
+      SET @BATCHNO = DBO.CIS_GET_BATCH_NUMBER(@OWNERID, @JOBID)                      
+                          
+      UPDATE CIS_LOG                       
+   SET FAILURECOUNT = 0,                       
+       SUCCESSCOUNT = @SUCCESSCOUNT                    
+      WHERE OWNERID = @OWNERID                       
+        AND BATCHNUMBER = @BATCHNO                       
+  AND SOURCETYPEID = 3            
+  AND SOURCEID = @TASKID;                                   
+END 
