@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" xmlns:local="urn:local" extension-element-prefixes="msxsl">
+	<msxsl:script language="CSharp" implements-prefix="local">
+		<msxsl:assembly name="System.Core" />
+		<msxsl:using namespace="System.Linq" />
+		<msxsl:using namespace="System.Collections.Generic" />
+		<![CDATA[
+       public static string FetchMasterValue(string masterValue, string masterName)
+        {
+            if (!string.IsNullOrEmpty(masterValue) && masterName.Equals("ERRORCODE"))
+            {
+                Dictionary<string, string> writtenoffAndSettledStatus = new Dictionary<string, string>();
+                if (writtenoffAndSettledStatus.Count.Equals(0))
+                {
+                    writtenoffAndSettledStatus.Add("FS00027", "Inquiry code must not be blanks - CFINQC field");
+                    writtenoffAndSettledStatus.Add("CFM0123", "Invalid Officer Code (Refer on JHOFFR) ");
+                    writtenoffAndSettledStatus.Add("CFM0119", "invalid insider code (Refer on CFPAR5 file)");
+                    writtenoffAndSettledStatus.Add("FS00005", "must not be blanks");
+                    writtenoffAndSettledStatus.Add("CFM9024", "invalid Hold Mail Code (Refer on JHMAIL file)");
+                    writtenoffAndSettledStatus.Add("CFM0146", "Name Title code invalid (Refer on CFPARL)");
+                    writtenoffAndSettledStatus.Add("CFM9018", "invalid resident code");
+                    writtenoffAndSettledStatus.Add("CFM9015", "Invalid State code - CFSTAT (Refer on JHSTAT)");
+                    writtenoffAndSettledStatus.Add("FS00025", "Invalid Place of Birth (Refer JHSTAT)");
+                    writtenoffAndSettledStatus.Add("CFM9019", "Invalid Country code - CFCOUN (Refer on JHCOUN)");
+                    writtenoffAndSettledStatus.Add("CFM9022", "Invalid Citizenship/Nationality (Refer JHCOUN)");
+                    writtenoffAndSettledStatus.Add("CFM9023", "Invalid Race (Refer on JHRACE) , must be blanks if corporate");
+                    writtenoffAndSettledStatus.Add("CFM0148", "Invalid Zip code if Resident flag = 'Y' (Refer on CFPAR2)");
+                    writtenoffAndSettledStatus.Add("FS00006", "Invalid Profession Code. (Refer CFSICC)");
+                    writtenoffAndSettledStatus.Add("FS00004", "must not be blanks");
+                    writtenoffAndSettledStatus.Add("CFM0122", "date is invalid");
+                    writtenoffAndSettledStatus.Add("CFM0107", "Invalid Gender - CFSEX (should be M or F), Must be 'O' if corporate");
+                    writtenoffAndSettledStatus.Add("CFM0106", "invalid class code (Refer on JHCLAS file)");
+                    writtenoffAndSettledStatus.Add("FS00002", "should be 'A' if ind.");
+                    writtenoffAndSettledStatus.Add("FS00003", "should not be 'A' if corporate");
+                    writtenoffAndSettledStatus.Add("CFM9027", "PSIC/Industry Code is invalid");
+                    writtenoffAndSettledStatus.Add("CFM9009", "Business/Economic Sector ...  Not found in Masterfile");
+                    writtenoffAndSettledStatus.Add("FS00011", "Required if RESD = 'Y'");
+                    writtenoffAndSettledStatus.Add("FS00018", "Foreign address line1 required if Resident Flag = 'N'");
+                    writtenoffAndSettledStatus.Add("FS00024", "Invalid Collection Code (Refer on CFPARO file)");
+                    writtenoffAndSettledStatus.Add("FS00007", "Should not be blanks if RESD = 'N'");
+                    writtenoffAndSettledStatus.Add("FS00022", "Invalid Mail To code. (Refer on CFPAR6 file : Mail to Code is requir+A14:E29ed when hold mail flag value is 'N')");
+                    writtenoffAndSettledStatus.Add("FS00026", "NO ID Type/Id number is attached to a blacklist customer");
+                    writtenoffAndSettledStatus.Add("FS0008", "Name or Tel number should not be blanks");
+                    writtenoffAndSettledStatus.Add("FS00009", "Invalid ID number");
+                    writtenoffAndSettledStatus.Add("CFM0105", "Wrong id length");
+                    writtenoffAndSettledStatus.Add("CFM9026", "Must not be primary id in CFIDDF");
+                    writtenoffAndSettledStatus.Add("CFM0185", "Check digit");
+                    writtenoffAndSettledStatus.Add("CFM0182", "Invalid ID Type");
+ 		    writtenoffAndSettledStatus.Add("DDM0165", "INVALID MICS TYPE");
+                }
+                return writtenoffAndSettledStatus.ContainsKey(masterValue) ? writtenoffAndSettledStatus[masterValue] : masterValue;
+            }
+            return masterValue;
+        }
+    ]]>
+	</msxsl:script>
+		<xsl:output method="xml" omit-xml-declaration="yes" indent="yes" />
+		<xsl:template match="/">
+			<xsl:variable name="recordtag" select="substring(root/result,25,1)" />
+			<xsl:choose>
+				<xsl:when test="$recordtag = 'N'">
+					<root>
+						<message>
+							<xsl:value-of select="local:FetchMasterValue(substring(root/result,26,7),'ERRORCODE')"/>
+						</message>
+						<isSuccess>
+							<xsl:value-of select="root/isSuccess" />
+						</isSuccess>
+						<cif />
+						<recordtag>
+							<xsl:value-of select="$recordtag" />
+						</recordtag>
+						<errorcode>
+							<xsl:value-of select="substring(root/result,26,7)" />
+						</errorcode>
+						<applicationid>
+							<xsl:value-of select="root/applicationid" />
+						</applicationid>
+					</root>
+				</xsl:when>
+				<xsl:when test="$recordtag = 'Y'">
+					<root>
+						<message>
+							CIF has been generated Successfully.
+						</message>
+						<isSuccess>
+							<xsl:value-of select="root/isSuccess" />
+						</isSuccess>
+						<cif>
+							<xsl:value-of select="substring(root/result,37,7)" />
+						</cif>
+						<errorcode>0</errorcode>
+						<recordtag>
+							<xsl:value-of select="$recordtag" />
+						</recordtag>
+						<applicationid>
+							<xsl:value-of select="root/applicationid" />
+						</applicationid>
+					</root>
+				</xsl:when>
+				<xsl:otherwise>
+					<root>
+						<message>
+							<xsl:value-of select="root/message" />
+						</message>
+						<isSuccess>
+							<xsl:value-of select="root/isSuccess" />
+						</isSuccess>
+						<cif />
+						<errorcode>1</errorcode>
+						<recordtag />
+						<applicationid>
+							<xsl:value-of select="root/applicationid" />
+						</applicationid>
+					</root>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:template>
+	</xsl:stylesheet>
